@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'YS Display';
+  src: local('Yandex Sans Display Regular'), local('YandexSansDisplay-Regular'), local('YSDisplay-Regular'),
+    url('../public/fonts/YSDisplay-Regular.woff2') format('woff2'),
+    url('../public/fonts/YSDisplay-Regular.woff') format('woff'),
+    url('../public/fonts/YSDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YS Display';
+  src: local('Yandex Sans Display Medium'), local('YandexSansDisplay-Medium'), local('YSDisplay-Medium'),
+    url('../public/fonts/YSDisplay-Medium.woff2') format('woff2'),
+    url('../public/fonts/YSDisplay-Medium.woff') format('woff'),
+    url('../public/fonts/YSDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YS Display';
+  src: local('Yandex Sans Display Bold'), local('YandexSansDisplay-Bold'), local('YSDisplay-Bold'),
+    url('../public/fonts/YSDisplay-Bold.woff2') format('woff2'),
+    url('../public/fonts/YSDisplay-Bold.woff') format('woff'),
+    url('../public/fonts/YSDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
