@@ -1,5 +1,5 @@
 //font
-$font-primary: 'YS Display', system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans', sans-serif;
+$font-primary: 'YS Display', system-ui, -apple-system, 'Segoe UI', roboto, ubuntu, cantarell, 'Noto Sans', sans-serif;
 $regular: 400;
 $medium: 500;
 $bold: 700;
@@ -29,7 +29,7 @@ $text-18: 1.8px;
 //color-main
 $color-main-bg: #f5f6f8;
 $color-black: #000;
-$color-yellow: #ffcc00;
+$color-yellow: #fc0;
 $color-yellow-hovered: #f2c200;
 $color-yellow-focused: $color-yellow;
 
@@ -38,8 +38,8 @@ $color-text: $color-black;
 $color-text-second: #ccc;
 
 //other system colors
-$color-red: #dd0000;
-$color-green: #007700;
+$color-red: #d00;
+$color-green: #070;
 
 // aniimation
 $transition: all 0.2s ease-in;
