@@ -15,7 +15,7 @@
     "prepare": "husky install",
     "lint": "npm run pretty-quick && npm run lint:next && npm run lint:css",
     "lint:next": "next lint",
-    "lint:css": "npx stylelint '**/*.(s)?css'",
+    "lint:css": "npx stylelint '**/*.(s)?css' --fix",
     "pretty-quick": "pretty-quick --staged"
   },
   "dependencies": {
