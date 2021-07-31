@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "delivery": "npm run push && npm-run-all delivery:*",
+    "delivery:clone": "npx pm2 deploy production setup",
+    "delivery:build": "npx pm2 deploy production exec \"npm i && npm run build\"",
+    "delivery:start": "pm2 start npm --name \"next\" -- start",
+    "push": "rsync -az --delete --delete-excluded --exclude-from '.gitignore' . restart@178.154.221.21:/home/restorator/src/repo",
+    "deploy": "npm run push && npx pm2 deploy production exec \"git pull && npm i && npm run build && pm2 restart next\""
   },
   "dependencies": {
     "next": "11.0.1",
