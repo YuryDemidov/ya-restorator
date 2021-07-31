@@ -3,7 +3,7 @@ module.exports = {
     production : {
       user : 'restorator',
       host : '178.154.221.21',
-      ref  : 'main',
+      ref  : 'master',
       repo : '/home/restorator/src/repo',
       path : '/home/restorator/src/app',
     }
