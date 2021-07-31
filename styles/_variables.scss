@@ -1,0 +1,45 @@
+//font
+$font-primary: "YS Display", sans-serif;
+$regular: 400;
+$medium: 500;
+$bold: 700;
+
+//indents
+$indent-8: 0.8rem;
+$indent-12: 1.2rem;
+$indent-18: 1.8rem;
+$indent-24: 2.4rem;
+$indent-32: 3.2rem;
+$indent-48: 4.8rem;
+$indent-64: 6.4rem;
+$indent-72: 7.2rem;
+$indent-84: 8.4rem;
+
+//font-size title
+$h1: 2.6rem;
+$h2: 2rem;
+$h3: 2.2rem;
+
+//font-size text
+$text-12: 1.2px;
+$text-14: 1.4px;
+$text-16: 1.6px;
+$text-18: 1.8px;
+
+//color-main
+$color-main-bg: #f5f6f8;
+$color-black: #000;
+$color-yellow: #ffcc00;
+$color-yellow-hovered: #f2c200;
+$color-yellow-focused: $color-yellow;
+
+//color-text
+$color-text: $color-black;
+$color-text-second: #ccc;
+
+//other system colors
+$color-red: #dd0000;
+$color-green: #007700;
+
+// aniimation
+$transition: all 0.2s ease-in;

@@ -1,18 +1,40 @@
 @use './fonts';
+@use "./variables" as *;
+* {
+  box-sizing: border-box;
+}
 
 html,
 body {
-  padding: 0;
   margin: 0;
-  font-family: 'YS Display', sans-serif;
-  font-weight: 400;
+  padding: 0;
+  background-color: $color-main-bg;
+  font-family: $font-primary;
+  font-size: $text-14;
+  color: $color-text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+button,
+textarea,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+  color: inherit;
 }
