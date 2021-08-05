@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  app:
+    image: docker.academy.yandex.net/project-1/shri-2021-restorator:${BRANCH_TAG}
+    ports:
+      - "3000:3000"
+    command: npm start
+    deploy:
+      replicas: 3
+      update_config:
+        parallelism: 2
+        order: start-first
+        failure_action: rollback
+        delay: 5s
+      restart_policy:
+        max_attempts: 3
