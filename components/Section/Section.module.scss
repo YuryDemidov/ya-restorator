@@ -1,8 +1,6 @@
-@use '../../styles/tools' as *;
+@use "../../styles/_tools.scss" as *;
 
 .section {
-  @include centered-block(102.4rem);
-
-  margin-bottom: 8.2rem;
-  padding: 0 $indent-2xs;
+  width: 100%;
+  max-width: 1024px;
 }
