@@ -1,21 +1,26 @@
-@use "./variables" as *;
+@use './variables' as *;
 @use './fonts';
+@use './lib/normalize';
 
 * {
   box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: $color-main-bg;
   font-family: $font-primary;
   color: $color-text;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-width: 32rem;
+  font-size: $text-s;
 }
 
 h1,
@@ -38,7 +43,28 @@ li {
   list-style: none;
 }
 
+button,
+a {
+  -webkit-tap-highlight-color: $color-transparent;
+}
+
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.link {
+  color: $color-link;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 0.1rem;
+  height: 0.1rem;
+  margin: -0.1rem;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(100%);
 }
