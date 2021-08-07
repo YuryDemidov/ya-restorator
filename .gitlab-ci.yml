@@ -116,7 +116,7 @@ deploy-production-job:
     DOCKER_HOST: "tcp://${HOST}:2376"
     DOCKER_TLS_VERIFY: 1
     DOCKER_CERT_PATH: "/certs"
-    APP_NAME: $CI_COMMIT_REF_SLUG
+    APP_NAME: "production"
     PORT: "3000"
   rules:
     - if: $CI_COMMIT_REF_SLUG == "master"
