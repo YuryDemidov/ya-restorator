@@ -1,3 +1,12 @@
+## Ресторатор
+
+### Чтобы всё корректно работало, проверьте версию nodejs и npm:
+
+- nodejs: 16.3.0
+- npm: 7.19.1
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

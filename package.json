@@ -7,6 +7,8 @@
     "dev:docker": "docker run -p 3000:3000 -w /app -v \"$(pwd):/app\" node:16-alpine sh -c \"apk add --no-cache libc6-compat && npm install && npm run dev\"",
     "build": "next build",
     "start": "next start",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "prepare": "husky install",
     "lint": "npm run pretty-quick && npm run lint:next && npm run lint:css",
     "lint:next": "next lint",
@@ -19,10 +21,16 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@types/enzyme": "^3.10.9",
+    "@types/jest": "^26.0.24",
     "@types/react": "17.0.15",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
     "classnames": "^2.3.1",
+    "enzyme": "^3.11.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^12.3.1",
@@ -39,6 +47,7 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.1",
+    "jest": "^27.0.6",
     "lint-staged": "^11.1.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.3.2",
@@ -47,6 +56,7 @@
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-scss": "^3.20.1",
+    "ts-jest": "^27.0.4",
     "typescript": "4.3.5"
   }
 }
