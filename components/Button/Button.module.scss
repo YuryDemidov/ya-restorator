@@ -1,0 +1,20 @@
+@use "../../styles/_tools.scss" as *;
+
+.button {
+  border-radius: $br-button;
+  padding: $indent-vertical-button-desktop $indent-horizontal-button-desktop;
+
+  @include link-animation;
+}
+
+.primary {
+  background: $color-yellow;
+
+  &:hover {
+    background: $color-yellow-hovered;
+  }
+}
+
+.secondry {
+  background: $color-black;
+}

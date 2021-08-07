@@ -9,12 +9,14 @@ $h-xl: 4.8rem;
 $h-l: 4rem;
 $h-m: 3.4rem;
 $h-s: 2.8rem;
+$h-xs: 2.4rem;
 
-// line-height text
+// line-height title
 $h-lh-xl: 5.6rem;
 $h-lh-l: 4.8rem;
 $h-lh-m: 4rem;
 $h-lh-s: 3.6rem;
+$h-lh-xs: 2rem;
 
 // font-size text
 $text-xxl: 3.2rem;
@@ -37,11 +39,15 @@ $text-lh-2xs: 1.6rem;
 //indents
 $indent-3xs: 0.8rem;
 $indent-2xs: 1.2rem;
-$indent-xs: 1.8rem;
+$indent-xs: 1.6rem;
 $indent-s: 2.4rem;
 $indent-m: 3.6rem;
 $indent-l: 4.8rem;
 $indent-xl: 8.2rem;
+
+// buttons
+$indent-vertical-button-desktop: 1.5rem;
+$indent-horizontal-button-desktop: 1.8rem;
 
 //color-main
 $color-main-bg: #f5f6f8;
@@ -65,3 +71,7 @@ $color-green: #070;
 
 //animation
 $transition: all 0.2s ease-in;
+
+//border-radius
+$br-button: 16px;
+$br-block: 24px;

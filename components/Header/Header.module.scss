@@ -1,0 +1,56 @@
+@use "../../styles/_tools.scss" as *;
+
+.header {
+  position: fixed;
+  background-color: $color-main-bg;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 6.5rem;
+
+  @include text-s;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 1px rgba(210, 208, 204, 0.25);
+
+  .burger {
+    display: none;
+  }
+
+  .headerLeft,
+  .headerRight {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu {
+    .link {
+      margin-right: $indent-m;
+
+      @include link-animation;
+    }
+
+    .link:hover {
+      color: inherit;
+    }
+  }
+}
+
+.phone {
+  margin-left: $indent-m;
+
+  @include text-m;
+}
+
+@include tablet-landscape {
+  .menu {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+}
