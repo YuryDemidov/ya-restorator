@@ -131,19 +131,19 @@
 }
 
 @mixin desktop {
-  @media screen and (min-width: 991px) and (max-width: 1439px) {
+  @media screen and (max-width: 1439px) {
     @content;
   }
 }
 
 @mixin tablet-landscape {
-  @media screen and (min-width: 768px) and (max-width: 991px) {
+  @media screen and (max-width: 991px) {
     @content;
   }
 }
 
 @mixin tablet-portrait {
-  @media screen and (min-width: 540px) and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     @content;
   }
 }
@@ -177,6 +177,12 @@
   //2.8rem
   font-size: $h-s;
   line-height: $h-lh-s;
+}
+
+@mixin title-xs {
+  //2.4rem
+  font-size: $h-xs;
+  line-height: $h-lh-xs;
 }
 // text
 @mixin text-xxl {
@@ -212,4 +218,9 @@
 @mixin text-2xs {
   font-size: $text-2xs;
   line-height: $text-lh-2xs;
+}
+
+// animaton
+@mixin link-animation {
+  transition: all 0.3s ease-in-out;
 }

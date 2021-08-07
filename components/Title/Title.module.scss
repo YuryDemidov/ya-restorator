@@ -1,46 +1,51 @@
 @use "../../styles/_tools.scss" as *;
 
-// @include big-desktop {
-//   .h1 {
-//     font-size: $h1;
-//   }
-//   .h2 {
-//     font-size: $h2;
-//   }
-// }
-// @mixin desktop {
-//   .h1 {
-//     font-size: $h1;
-//   }
+@include big-desktop {
+  .h1 {
+    @include title-xl;
+  }
 
-//   .h2 {
-//     font-size: $h2;
-//   }
-// }
-// @mixin tablet-landscape {
-//   .h1 {
-//     font-size: $h1;
-//   }
+  .h2 {
+    @include title-l;
+  }
+}
 
-//   .h2 {
-//     font-size: $h2;
-//   }
-// }
-// @mixin tablet-portrait {
-//   .h1 {
-//     font-size: $h1;
-//   }
+@mixin desktop {
+  .h1 {
+    @include title-xl;
+  }
 
-//   .h2 {
-//     font-size: $h2;
-//   }
-// }
-// @mixin phone-only {
-//   .h1 {
-//     font-size: $h1;
-//   }
+  .h2 {
+    @include title-l;
+  }
+}
 
-//   .h2 {
-//     font-size: $h2;
-//   }
-// }
+@mixin tablet-landscape {
+  .h1 {
+    @include title-l;
+  }
+
+  .h2 {
+    @include title-m;
+  }
+}
+
+@mixin tablet-portrait {
+  .h1 {
+    @include title-m;
+  }
+
+  .h2 {
+    @include title-s;
+  }
+}
+
+@mixin phone-only {
+  .h1 {
+    @include title-s;
+  }
+
+  .h2 {
+    @include title-xs;
+  }
+}
