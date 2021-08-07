@@ -1,10 +1,10 @@
-version: "3.7"
+version: '3.7'
 
 services:
   app:
     image: ${REGISTRY_IMAGE}:${IMAGE_TAG}
     ports:
-      - "${PORT}:3000"
+      - '${PORT}:3000'
     command: npm start
     deploy:
       replicas: 3
@@ -15,4 +15,3 @@ services:
         delay: 5s
       restart_policy:
         max_attempts: 3
-
