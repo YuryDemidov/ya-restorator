@@ -1,4 +1,128 @@
-@use "./variables" as *;
+@use './variables' as *;
+
+@mixin reset-indents() {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin reset-button() {
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+@mixin reset-number-input() {
+  /* Chrome, Safari, Edge, Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+@mixin reset-list() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin centered-block($max-width) {
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+@mixin horizontally-centered() {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin vertically-centered() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin absolute-centered($manual-transform: translate(-50%, -50%)) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: $manual-transform;
+}
+
+@mixin box($width, $height: $width, $padding: null, $border: null, $border-radius: 0) {
+  width: $width;
+  height: $height;
+
+  @if $padding {
+    padding: $padding;
+  }
+
+  @if $border {
+    border: $border;
+  }
+
+  @if $border-radius != 0 {
+    border-radius: $border-radius;
+  }
+}
+
+@mixin min-box($width, $height: $width, $padding: null, $border: null, $border-radius: 0) {
+  min-width: $width;
+  min-height: $height;
+
+  @if $padding {
+    padding: $padding;
+  }
+
+  @if $border {
+    border: $border;
+  }
+
+  @if $border-radius != 0 {
+    border-radius: $border-radius;
+  }
+}
+
+@mixin in-focus() {
+  &:not([disabled]):hover,
+  &:not([disabled]):focus {
+    outline: none;
+    @content;
+  }
+}
+
+@mixin custom-numbered-list($id, $number-format, $child-tag: null) {
+  @include reset-list();
+
+  counter-reset: $id;
+
+  > li {
+    $number-pos: string.index($number-format, '#');
+    $counter-content: string.slice($number-format, 1, $number-pos - 1) counter($id)
+      string.slice($number-format, $number-pos + 1);
+
+    counter-increment: $id;
+
+    @if ($child-tag) {
+      #{$child-tag}::before {
+        content: $counter-content;
+      }
+    } @else {
+      &::before {
+        content: $counter-content;
+      }
+    }
+  }
+}
 
 @mixin big-desktop {
   @media (min-width: 1440px) {
@@ -86,6 +210,6 @@
 }
 
 @mixin text-2xs {
-  font-size: $text--2xs;
-  line-height: $text-lh--2xs;
+  font-size: $text-2xs;
+  line-height: $text-lh-2xs;
 }

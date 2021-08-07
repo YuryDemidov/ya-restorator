@@ -1,3 +1,8 @@
+@use '../../styles/tools' as *;
+
 .section {
-  margin: 8.2rem 0;
+  @include centered-block(102.4rem);
+
+  margin-bottom: 8.2rem;
+  padding: 0 $indent-2xs;
 }

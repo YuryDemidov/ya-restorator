@@ -1,0 +1,87 @@
+@use '../../styles/tools' as *;
+
+.list {
+  @include centered-block(102.5rem);
+
+  margin-bottom: 10rem;
+  border-bottom: 0.1rem solid $color-light-gray;
+}
+
+.definition {
+  max-height: 0;
+  overflow: hidden;
+  margin: 0 $indent-2xs;
+  transition: max-height 0.3s ease;
+}
+
+.questionContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.questionIcon {
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.termOpened .questionIcon {
+  transform: rotate(-180deg);
+}
+
+.trigger:focus .questionIcon {
+  fill: $color-dark-dim;
+}
+
+.trigger {
+  @include reset-button();
+
+  width: 100%;
+  padding: 2.2rem $indent-2xs;
+  border-top: 0.1rem solid $color-light-gray;
+  transition: border-color 0.3s;
+
+  &:focus {
+    color: $color-dark-dim;
+  }
+}
+
+.term {
+  &:first-of-type {
+    .trigger {
+      border-top: none;
+    }
+  }
+
+  &Opened {
+    + .definition + .term .trigger {
+      border-color: $color-yellow;
+    }
+  }
+}
+
+.answer {
+  padding-top: $indent-s;
+  padding-bottom: $indent-m;
+  color: $color-blue-gray;
+}
+
+@media (max-width: 54rem) {
+  .list {
+    font-size: 1.4rem;
+  }
+
+  .trigger {
+    text-align: left;
+  }
+
+  .questionIcon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .answer {
+    padding-top: $indent-3xs;
+    padding-bottom: $indent-s;
+  }
+}
