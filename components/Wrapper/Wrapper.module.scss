@@ -1,0 +1,48 @@
+@use "../../styles/_tools.scss" as *;
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  padding: 0 $indent-xs;
+}
+
+@include big-desktop {
+  .wrapper {
+    row-gap: $indent_xl;
+    padding-top: $indent_xl;
+    padding-bottom: $indent_xl;
+  }
+}
+
+@include desktop {
+  .wrapper {
+    row-gap: $indent_xl;
+    padding-top: $indent_xl;
+    padding-bottom: $indent_xl;
+  }
+}
+
+@include tablet-landscape {
+  .wrapper {
+    row-gap: $indent_m;
+    padding-top: $indent_m;
+    padding-bottom: $indent_m;
+  }
+}
+
+@include tablet-portrait {
+  .wrapper {
+    row-gap: $indent_m;
+    padding-top: $indent_m;
+    padding-bottom: $indent_m;
+  }
+}
+
+@include phone-only {
+  .wrapper {
+    row-gap: $indent_m;
+    padding-top: $indent_m;
+    padding-bottom: $indent_m;
+  }
+}
