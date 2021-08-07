@@ -4,27 +4,44 @@ $regular: 400;
 $medium: 500;
 $bold: 700;
 
+// font-size title
+$h-xl: 4.8rem;
+$h-l: 4rem;
+$h-m: 3.4rem;
+$h-s: 2.8rem;
+
+// line-height text
+$h-lh-xl: 5.6rem;
+$h-lh-l: 4.8rem;
+$h-lh-m: 4rem;
+$h-lh-s: 3.6rem;
+
+// font-size text
+$text-xxl: 3.2rem;
+$text-xl: 2.8rem;
+$text-l: 2.4rem;
+$text-m: 1.8rem;
+$text-s: 1.6rem;
+$text-xs: 1.4rem;
+$text-2xs: 1.3rem;
+
+// font-size line-height
+$text-lh-xxl: 4rem;
+$text-lh-xl: 3.6rem;
+$text-lh-l: 3rem;
+$text-lh-m: 2.4rem;
+$text-lh-s: 2rem;
+$text-lh-xs: 1.8rem;
+$text-lh-2xs: 1.6rem;
+
 //indents
-$indent-8: 0.8rem;
-$indent-12: 1.2rem;
-$indent-18: 1.8rem;
-$indent-24: 2.4rem;
-$indent-32: 3.2rem;
-$indent-48: 4.8rem;
-$indent-64: 6.4rem;
-$indent-72: 7.2rem;
-$indent-84: 8.4rem;
-
-//font-size title
-$h1: 2.6rem;
-$h2: 2rem;
-$h3: 2.2rem;
-
-//font-size text
-$text-12: 1.2rem;
-$text-14: 1.4rem;
-$text-16: 1.6rem;
-$text-18: 1.8rem;
+$indent-3xs: 0.8rem;
+$indent-2xs: 1.2rem;
+$indent-xs: 1.8rem;
+$indent-s: 2.4rem;
+$indent-m: 3.6rem;
+$indent-l: 4.8rem;
+$indent-xl: 8.2rem;
 
 //color-main
 $color-main-bg: #f5f6f8;
@@ -32,6 +49,7 @@ $color-black: #000;
 $color-yellow: #fc0;
 $color-yellow-hovered: #f2c200;
 $color-yellow-focused: $color-yellow;
+$color-light-gray: #e6e9f0;
 
 //color-text
 $color-text: $color-black;
@@ -41,5 +59,5 @@ $color-text-second: #ccc;
 $color-red: #d00;
 $color-green: #070;
 
-// aniimation
+//animation
 $transition: all 0.2s ease-in;

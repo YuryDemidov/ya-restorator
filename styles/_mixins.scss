@@ -1,1 +1,91 @@
 @use "./variables" as *;
+
+@mixin big-desktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 991px) and (max-width: 1439px) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait {
+  @media screen and (min-width: 540px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin phone-only {
+  @media screen and (max-width: 539px) {
+    @content;
+  }
+}
+
+// titles
+@mixin title-xl {
+  //4.8rem
+  font-size: $h-xl;
+  line-height: $h-lh-xl;
+}
+
+@mixin title-l {
+  //4rem
+  font-size: $h-l;
+  line-height: $h-lh-l;
+}
+
+@mixin title-m {
+  //3.4rem
+  font-size: $h-m;
+  line-height: $h-lh-m;
+}
+
+@mixin title-s {
+  //2.8rem
+  font-size: $h-s;
+  line-height: $h-lh-s;
+}
+// text
+@mixin text-xxl {
+  font-size: $text-xxl;
+  line-height: $text-lh-xxl;
+}
+
+@mixin text-xl {
+  font-size: $text-xl;
+  line-height: $text-lh-xl;
+}
+
+@mixin text-l {
+  font-size: $text-l;
+  line-height: $text-lh-l;
+}
+
+@mixin text-m {
+  font-size: $text-m;
+  line-height: $text-lh-m;
+}
+
+@mixin text-s {
+  font-size: $text-s;
+  line-height: $text-lh-s;
+}
+
+@mixin text-xs {
+  font-size: $text-xs;
+  line-height: $text-lh-xs;
+}
+
+@mixin text-2xs {
+  font-size: $text--2xs;
+  line-height: $text-lh--2xs;
+}
