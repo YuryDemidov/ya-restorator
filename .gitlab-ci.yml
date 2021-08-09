@@ -1,5 +1,5 @@
 default:
-  image: node:16-alpine
+  image: node:16.6.1-alpine
   before_script:
     - apk add --no-cache libc6-compat
 
@@ -21,6 +21,7 @@ build-job:
   stage: build
   only:
     - merge_requests
+    - master
   before_script:
     - npm ci --cache .npm --prefer-offline
   script:
@@ -30,6 +31,7 @@ unit-test-job:
   stage: test
   only:
     - merge_requests
+    - master
   before_script:
     - npm ci --cache .npm --prefer-offline
   script:
@@ -40,6 +42,7 @@ intg-test-job:
   stage: test
   only:
     - merge_requests
+    - master
   before_script:
     - npm ci --cache .npm --prefer-offline
   script:
@@ -57,9 +60,11 @@ image-push-job:
     - if: $CI_MERGE_REQUEST_ASSIGNEES && $CI_COMMIT_REF_SLUG != "master"
       variables:
         IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_MERGE_REQUEST_ASSIGNEES
+      when: manual
     - if: $CI_COMMIT_REF_SLUG == "master"
       variables:
         IMAGE_TAG: $CI_REGISTRY_IMAGE:production
+      when: on_success
     - if: $CI_MERGE_REQUEST_ASSIGNEES == null && $CI_COMMIT_REF_SLUG != "master"
       when: never
   before_script:
@@ -82,15 +87,19 @@ deploy-feature-stand-job:
     - if: $CI_MERGE_REQUEST_ASSIGNEES == "spelot"
       variables:
         PORT: '3001'
+      when: manual
     - if: $CI_MERGE_REQUEST_ASSIGNEES == "demidov1109"
       variables:
         PORT: '3002'
+      when: manual
     - if: $CI_MERGE_REQUEST_ASSIGNEES == "dmahno"
       variables:
         PORT: '3003'
+      when: manual
     - if: $CI_MERGE_REQUEST_ASSIGNEES == "wansmer"
       variables:
         PORT: '3004'
+      when: manual
     - if: $CI_COMMIT_REF_SLUG == "master"
       when: never
   before_script:
