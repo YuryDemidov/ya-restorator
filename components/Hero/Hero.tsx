@@ -1,11 +1,9 @@
-import Title from '../Title/Title';
+import { Title } from '~c/Title/Title';
 
-const Hero = () => {
+export const Hero = () => {
   return (
     <div>
       <Title level="h1">Подключите ресторан к сервису Яндекс.Еда</Title>
     </div>
   );
 };
-
-export default Hero;

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import cn from 'classnames';
 
-import { SvgIcon } from '../Svg/SvgIcon';
+import { SvgIcon } from '~c/Svg/SvgIcon';
 
 import styles from './Faq.module.scss';
 
@@ -11,7 +11,7 @@ interface IFaqItemProps {
   answer: React.ReactChild;
 }
 
-const FaqItem = ({ id, question, answer }: IFaqItemProps): React.ReactElement => {
+export const FaqItem = ({ id, question, answer }: IFaqItemProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [answerHeight, setAnswerHeight] = useState(0);
 
@@ -54,5 +54,3 @@ const FaqItem = ({ id, question, answer }: IFaqItemProps): React.ReactElement =>
     </>
   );
 };
-
-export default FaqItem;

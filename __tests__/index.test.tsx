@@ -1,8 +1,8 @@
 import { shallow } from 'enzyme';
 
-import Section from '../components/Section/Section';
-import Title from '../components/Title/Title';
-import App from '../pages/index';
+import { Section } from '~c/Section/Section';
+import { Title } from '~c/Title/Title';
+import App from '~p/index';
 
 describe('Базовые тесты', () => {
   const app = shallow(<App />);

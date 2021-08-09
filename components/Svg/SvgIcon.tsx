@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface ISvgIconProps {
   id: string;
   width: number;
@@ -7,7 +5,7 @@ interface ISvgIconProps {
   className?: string;
 }
 
-export const SvgIcon = ({ id, width, height, className }: ISvgIconProps): React.ReactElement => {
+export const SvgIcon = ({ id, width, height, className }: ISvgIconProps) => {
   return (
     <svg width={width} height={height} className={className}>
       <use xlinkHref={`#${id}`} />
