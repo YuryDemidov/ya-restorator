@@ -1,5 +1,13 @@
 import React from 'react';
-import Document, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from 'next/document';
+import Document, {
+  Html,
+  Head as NextJSHead,
+  Main,
+  NextScript,
+  DocumentContext,
+  DocumentInitialProps,
+} from 'next/document';
+
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx);
@@ -8,7 +16,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="ru">
-        <Head>
+        <NextJSHead>
           <title>Доставка — ваш новый канал продаж</title>
           <meta
             name="description"
@@ -20,7 +28,7 @@ export default class MyDocument extends Document {
           <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />
-        </Head>
+        </NextJSHead>
         <body>
           <Main />
           <NextScript />
