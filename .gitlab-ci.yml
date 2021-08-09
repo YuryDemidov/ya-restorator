@@ -35,8 +35,7 @@ unit-test-job:
   before_script:
     - npm ci --cache .npm --prefer-offline
   script:
-    - echo "Start unit tests"
-    - echo "Done!"
+    - npm test
 
 intg-test-job:
   stage: test
@@ -46,8 +45,7 @@ intg-test-job:
   before_script:
     - npm ci --cache .npm --prefer-offline
   script:
-    - echo "Start integration tests"
-    - echo "Done!"
+    - echo "TODO integration tests"
 
 image-push-job:
   stage: image-push
