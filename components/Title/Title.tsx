@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
-import styles from './Title.module.scss';
 import cn from 'classnames';
+
+import styles from './Title.module.scss';
 
 interface IHeadingLevel {
   [n: string]: number;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
+
 import { SvgIcon } from '../Svg/SvgIcon';
 
 import styles from './Faq.module.scss';

@@ -1,6 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
-import styles from './Section.module.scss';
 import cn from 'classnames';
+
+import styles from './Section.module.scss';
 
 interface ISectionProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   children: ReactNode;

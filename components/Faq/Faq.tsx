@@ -1,4 +1,5 @@
 import React, { ComponentProps } from 'react';
+
 import FaqItem from './FaqItem';
 
 import styles from './Faq.module.scss';

@@ -1,6 +1,7 @@
-import styles from './Header.module.scss';
-import LogoShogo from './logo-desktop.svg';
 import Button from '../Button/Button';
+
+import Logotype from './logo-desktop.svg';
+import styles from './Header.module.scss';
 
 const Header = (): JSX.Element => {
   const menuLinks = [
@@ -13,7 +14,7 @@ const Header = (): JSX.Element => {
       <div className={styles.headerLeft}>
         <div className={styles.logo}>
           <a href="#">
-            <LogoShogo />
+            <Logotype />
           </a>
         </div>
         <div className={styles.phone}>
