@@ -1,6 +1,4 @@
-import React from 'react';
-
-export const SvgSprite = (): React.ReactElement => {
+export const SvgSprite = () => {
   return (
     <svg className="visually-hidden" xmlns="http://www.w3.org/2000/svg">
       <defs>

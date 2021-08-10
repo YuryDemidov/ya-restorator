@@ -1,6 +1,6 @@
-import React, { ComponentProps } from 'react';
+import { ComponentProps } from 'react';
 
-import FaqItem from './FaqItem';
+import { FaqItem } from './FaqItem';
 
 import styles from './Faq.module.scss';
 
@@ -120,12 +120,10 @@ const faqList: ComponentProps<typeof FaqItem>[] = [
   },
 ];
 
-const Faq = (): React.ReactElement => (
+export const Faq = () => (
   <dl className={styles.list}>
     {faqList.map((faqListItem) => (
       <FaqItem {...faqListItem} key={faqListItem.id} />
     ))}
   </dl>
 );
-
-export default Faq;

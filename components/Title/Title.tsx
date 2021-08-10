@@ -1,28 +1,13 @@
-import React, { ReactNode } from 'react';
 import cn from 'classnames';
 
 import styles from './Title.module.scss';
 
-interface IHeadingLevel {
-  [n: string]: number;
+type THeadingLevel = 'h1' | 'h2';
+
+interface ITitleProps {
+  level?: THeadingLevel;
 }
 
-interface HeadingProps {
-  level?: 'h1' | 'h2';
-  children: ReactNode;
-}
-
-const HEADING_LEVEL: IHeadingLevel = {
-  h1: 1,
-  h2: 2,
+export const Title: React.FC<ITitleProps> = ({ children, level: Tag = 'h1' }) => {
+  return <Tag className={cn({ [styles.h1]: Tag === 'h1', [styles.h2]: Tag === 'h2' })}>{children}</Tag>;
 };
-
-const Title: React.FC<HeadingProps> = ({ children, level = 'h1' }) => {
-  const headingProps = {
-    className: `${cn({ [styles.h1]: level == 'h1' }, { [styles.h2]: level == 'h2' })}`,
-  };
-
-  return React.createElement(`h${HEADING_LEVEL[level]}`, headingProps, children);
-};
-
-export default Title;

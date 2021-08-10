@@ -1,14 +1,15 @@
-import Button from '../Button/Button';
+import { Button } from '~c/Button/Button';
 
 import Logotype from './logo-desktop.svg';
 import styles from './Header.module.scss';
 
-const Header = (): JSX.Element => {
-  const menuLinks = [
-    { name: 'Условия', link: '#conditions' },
-    { name: 'Калькулятор', link: '#calculator' },
-    { name: 'Частые вопросы', link: '#faq' },
-  ];
+const menuLinks = [
+  { name: 'Условия', link: '#conditions' },
+  { name: 'Калькулятор', link: '#calculator' },
+  { name: 'Частые вопросы', link: '#faq' },
+];
+
+export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.headerLeft}>
@@ -37,5 +38,3 @@ const Header = (): JSX.Element => {
     </header>
   );
 };
-
-export default Header;
