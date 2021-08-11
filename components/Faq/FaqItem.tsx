@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import cn from 'classnames';
 
-import { SvgIcon } from '~c/Svg/SvgIcon';
+import { Icon } from '~c/Icon/Icon';
 
 import styles from './Faq.module.scss';
 
@@ -42,7 +42,7 @@ export const FaqItem = ({ id, question, answer }: IFaqItemProps) => {
           onClick={isExpanded ? close : open}>
           <span className={styles.questionContent}>
             {question}
-            <SvgIcon id={`icon-arrow`} className={styles.questionIcon} width={24} height={24} />
+            <Icon className={styles.questionIcon} type="arrow" size="l" />
           </span>
         </button>
       </dt>
