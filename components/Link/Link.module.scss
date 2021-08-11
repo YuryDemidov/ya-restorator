@@ -1,0 +1,10 @@
+@use "../../styles/_tools.scss" as *;
+
+.link {
+  background-color: transparent; //Remove the gray background on active links in IE 10.
+  -webkit-tap-highlight-color: $color-transparent;
+  text-decoration: none;
+  color: inherit;
+
+  @include link-animation;
+}

@@ -49,18 +49,8 @@ li {
   list-style: none;
 }
 
-button,
-a {
+button {
   -webkit-tap-highlight-color: $color-transparent;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.link {
-  color: $color-link;
 }
 
 .visually-hidden {

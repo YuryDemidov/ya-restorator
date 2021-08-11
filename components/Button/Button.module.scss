@@ -3,8 +3,6 @@
 .button {
   border-radius: $br-button;
   padding: $indent-vertical-button-desktop $indent-horizontal-button-desktop;
-
-  @include link-animation;
 }
 
 .primary {

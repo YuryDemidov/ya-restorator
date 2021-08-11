@@ -64,11 +64,8 @@
     @include text-l;
 
     font-weight: $medium;
-    text-decoration: none;
     display: block;
     color: $color-white;
-
-    @include link-animation;
 
     &:hover {
       color: $color-yellow-hovered;

@@ -1,3 +1,4 @@
+import { Link } from '~c/Link/Link';
 import styles from './Footer.module.scss';
 
 export const Footer = () => {
@@ -17,9 +18,9 @@ export const Footer = () => {
         </div>
         <div className={styles.footerRight}>
           <p className={styles.footerNote}>Есть вопросы? Задайте нам</p>
-          <a href="tel:+78006001310" className={styles.footerPhone}>
+          <Link href="tel:+78006001310" className={styles.footerPhone}>
             +7 800 600 13 10
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

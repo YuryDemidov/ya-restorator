@@ -1,5 +1,6 @@
 import { ComponentProps } from 'react';
 
+import { Link } from '~c/Link/Link';
 import { FaqItem } from './FaqItem';
 
 import styles from './Faq.module.scss';
@@ -35,9 +36,9 @@ const faqList: ComponentProps<typeof FaqItem>[] = [
     answer: (
       <>
         Оферту можно изучить{' '}
-        <a className="link" href="https://yandex.ru/legal/oferta_eda/" target="_blank" rel="noreferrer">
+        <Link className={styles.link} href="https://yandex.ru/legal/oferta_eda/" target="_blank" rel="noreferrer">
           по ссылке
-        </a>
+        </Link>
         .
       </>
     ),
@@ -60,26 +61,26 @@ const faqList: ComponentProps<typeof FaqItem>[] = [
       <>
         Работа с заказами ведётся в бесплатном приложении «Яндекс.Еда для ресторанов»:
         <br />— в{' '}
-        <a className="link" href="https://vendor.eda.yandex/auth" target="_blank" rel="noreferrer">
+        <Link className={styles.link} href="https://vendor.eda.yandex/auth" target="_blank" rel="noreferrer">
           веб-версии
-        </a>{' '}
+        </Link>{' '}
         , которую мы подключим на вашем компьютере;
         <br />— на{' '}
-        <a
-          className="link"
+        <Link
+          className={styles.link}
           href="https://apps.apple.com/ru/app/%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81-%D0%B5%D0%B4%D0%B0-%D0%B4%D0%BB%D1%8F-%D1%80%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD%D0%BE%D0%B2/id1440757437?l=en"
           target="_blank"
           rel="noreferrer">
           iOS
-        </a>
+        </Link>
         или{' '}
-        <a
-          className="link"
+        <Link
+          className={styles.link}
           href="https://play.google.com/store/apps/details?id=ru.foodfox.vendor&hl=ru=en"
           target="_blank"
           rel="noreferrer">
           Android
-        </a>
+        </Link>
       </>
     ),
   },
@@ -111,9 +112,9 @@ const faqList: ComponentProps<typeof FaqItem>[] = [
     answer: (
       <>
         Если ваш ресторан находится в Москве, вы можете заказать упаковку для доставки у нас на{' '}
-        <a className="link" href="https://eda-pack.ru/" target="_blank" rel="noreferrer">
+        <Link className={styles.link} href="https://eda-pack.ru/" target="_blank" rel="noreferrer">
           сайте
-        </a>
+        </Link>
         .
       </>
     ),
