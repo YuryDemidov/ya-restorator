@@ -1,5 +1,6 @@
 //font
 $font-primary: 'YS Display', system-ui, -apple-system, 'Segoe UI', roboto, ubuntu, cantarell, 'Noto Sans', sans-serif;
+$light: 300;
 $regular: 400;
 $medium: 500;
 $bold: 700;
@@ -52,6 +53,7 @@ $indent-horizontal-button-desktop: 1.8rem;
 //color-main
 $color-main-bg: #f5f6f8;
 $color-black: #000;
+$color-white: #fff;
 $color-dark-dim: #444;
 $color-yellow: #fc0;
 $color-yellow-hovered: #f2c200;
@@ -60,10 +62,12 @@ $color-light-gray: #e6e9f0;
 $color-blue-gray: #696b80;
 $color-link: #04b;
 $color-transparent: rgba(255, 255, 255, 0);
+$color-x-dark-dim: #333;
 
 //color-text
 $color-text: $color-black;
 $color-text-second: #ccc;
+$color-text-gray-transparent: rgba(132, 133, 133, 0.8);
 
 //other system colors
 $color-red: #d00;

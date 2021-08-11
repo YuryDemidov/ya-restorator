@@ -30,19 +30,3 @@
     padding-bottom: $indent_m;
   }
 }
-
-@include tablet-portrait {
-  .wrapper {
-    row-gap: $indent_m;
-    padding-top: $indent_m;
-    padding-bottom: $indent_m;
-  }
-}
-
-@include phone-only {
-  .wrapper {
-    row-gap: $indent_m;
-    padding-top: $indent_m;
-    padding-bottom: $indent_m;
-  }
-}

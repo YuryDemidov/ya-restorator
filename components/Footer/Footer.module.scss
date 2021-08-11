@@ -1,0 +1,93 @@
+@use "../../styles/_tools.scss" as *;
+
+.footer {
+  padding: $indent-l $indent-xs;
+  background: $color-x-dark-dim;
+  display: flex;
+  justify-content: center;
+  // Временное решение
+  margin-top: auto;
+
+  &Section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1024px;
+  }
+
+  &Left {
+    width: 100%;
+    max-width: 610px;
+    flex-basis: 504px;
+    flex-grow: 2;
+  }
+
+  &Right {
+    width: 100%;
+    flex-basis: 232px;
+  }
+
+  &Paragraph,
+  &Copyright {
+    @include text-xs;
+
+    font-weight: $regular;
+    color: $color-text-gray-transparent;
+  }
+
+  &Paragraph + &Paragraph {
+    // Взял line-height, т.к. на макете между параграфами и копирайтом 1 и 2 перевода строки, что равно line-height
+    margin-top: $text-lh-xs;
+  }
+
+  &Copyright {
+    // Взял line-height, т.к. на макете между параграфами и копирайтом 1 и 2 перевода строки, что равно line-height
+    margin-top: calc(#{$text-lh-xs} * 2);
+  }
+
+  &Note,
+  &Phone {
+    text-align: right;
+  }
+
+  &Note {
+    @include text-m;
+
+    font-weight: $light;
+    margin-bottom: $indent-2xs;
+    // Взял максимально близкий из уже заведенных
+    color: $color-text-second;
+  }
+
+  &Phone {
+    @include text-l;
+
+    font-weight: $medium;
+    text-decoration: none;
+    display: block;
+    color: $color-white;
+
+    @include link-animation;
+
+    &:hover {
+      color: $color-yellow-hovered;
+    }
+  }
+}
+
+@include tablet-portrait {
+  .footer {
+    padding: $indent-s $indent-xs;
+
+    &Left {
+      order: 1;
+      margin-top: $indent-s;
+    }
+
+    &Note,
+    &Phone {
+      text-align: left;
+    }
+  }
+}
