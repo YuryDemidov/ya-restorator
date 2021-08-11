@@ -1,4 +1,5 @@
 import { Button } from '~c/Button/Button';
+import { Link } from '~c/Link/Link';
 
 import Logotype from './logo-desktop.svg';
 import styles from './Header.module.scss';
@@ -14,12 +15,12 @@ export const Header = () => {
     <header className={styles.header}>
       <div className={styles.headerLeft}>
         <div className={styles.logo}>
-          <a href="#">
+          <Link href="#">
             <Logotype />
-          </a>
+          </Link>
         </div>
         <div className={styles.phone}>
-          <a href="tel:+78006001310">+7 800 600 13 10</a>
+          <Link href="tel:+78006001310">+7 800 600 13 10</Link>
         </div>
       </div>
       <div className={styles.headerRight}>
@@ -27,9 +28,9 @@ export const Header = () => {
           {menuLinks.map((menuItem, index) => {
             const { name, link } = menuItem;
             return (
-              <a className={styles.link} key={index} href={link}>
+              <Link className={styles.link} key={index} href={link}>
                 {name}
-              </a>
+              </Link>
             );
           })}
         </nav>

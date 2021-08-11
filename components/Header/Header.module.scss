@@ -29,12 +29,6 @@
   .menu {
     .link {
       margin-right: $indent-m;
-
-      @include link-animation;
-    }
-
-    .link:hover {
-      color: inherit;
     }
   }
 }

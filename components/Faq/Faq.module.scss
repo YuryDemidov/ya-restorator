@@ -66,6 +66,10 @@
   color: $color-blue-gray;
 }
 
+.link {
+  color: $color-link;
+}
+
 @media (max-width: 54rem) {
   .list {
     font-size: 1.4rem;
