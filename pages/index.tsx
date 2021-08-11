@@ -6,6 +6,7 @@ import { Wrapper } from '~c/Wrapper/Wrapper';
 import { Title } from '~c/Title/Title';
 import { Faq } from '~c/Faq/Faq';
 import { Footer } from '~c/Footer/Footer';
+import { Conditions } from '~c/Conditions/Conditions';
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <Section>
           <Title level="h1">Ресторатор</Title>
         </Section>
+        <Conditions />
         <Section>
           <Title level="h2">Частые вопросы (FAQ)</Title>
           <Faq />

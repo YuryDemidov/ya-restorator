@@ -9,24 +9,24 @@
 
 @include big-desktop {
   .wrapper {
-    row-gap: $indent_xl;
-    padding-top: $indent_xl;
-    padding-bottom: $indent_xl;
+    row-gap: $indent-xl;
+    padding-top: $indent-xl;
+    padding-bottom: $indent-xl;
   }
 }
 
 @include desktop {
   .wrapper {
-    row-gap: $indent_xl;
-    padding-top: $indent_xl;
-    padding-bottom: $indent_xl;
+    row-gap: $indent-xl;
+    padding-top: $indent-xl;
+    padding-bottom: $indent-xl;
   }
 }
 
 @include tablet-landscape {
   .wrapper {
-    row-gap: $indent_m;
-    padding-top: $indent_m;
-    padding-bottom: $indent_m;
+    row-gap: $indent-m;
+    padding-top: $indent-m;
+    padding-bottom: $indent-m;
   }
 }
