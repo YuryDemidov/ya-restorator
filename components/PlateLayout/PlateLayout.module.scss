@@ -1,0 +1,14 @@
+@use "../../styles/_tools.scss" as *;
+
+.PlateLayout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $indent-s;
+}
+
+@include tablet-portrait {
+  .PlateLayout {
+    grid-template-columns: 1fr;
+    gap: $indent-2xs;
+  }
+}
