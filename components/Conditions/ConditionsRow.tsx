@@ -1,10 +1,9 @@
 import cn from 'classnames';
 
-import styles from './Conditions.module.scss';
-
 import { Condition } from './conditionList';
 import { ConditionTextItem } from './ConditionTextItem';
 import { ConditionTariffItem } from './CoditionTariffItem';
+import styles from './Conditions.module.scss';
 
 interface IConditionProps {
   item: Condition;

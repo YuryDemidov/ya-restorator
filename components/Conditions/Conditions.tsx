@@ -2,9 +2,9 @@ import cn from 'classnames';
 
 import { Section } from '~c/Section/Section';
 import { Title } from '~c/Title/Title';
-import styles from './Conditions.module.scss';
 import { ConditionsRow } from './ConditionsRow';
 import { conditionList, Condition } from './conditionList';
+import styles from './Conditions.module.scss';
 
 const compareSortByPriority = (a: Condition, b: Condition) => a.priority - b.priority;
 const sortedConditionList = conditionList.sort(compareSortByPriority);

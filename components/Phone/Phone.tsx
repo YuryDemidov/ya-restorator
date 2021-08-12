@@ -1,7 +1,6 @@
 import cn from 'classnames';
 
 import { Link } from '~c/Link/Link';
-
 import styles from './Phone.module.scss';
 
 interface IPhoneProps {

@@ -1,7 +1,7 @@
 import cn from 'classnames';
 
-import styles from './Conditions.module.scss';
 import { Icon } from '~c/Icon/Icon';
+import styles from './Conditions.module.scss';
 
 interface IConditionTariffItemProps {
   isInclude: boolean;

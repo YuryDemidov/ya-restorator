@@ -1,0 +1,10 @@
+@use "../../styles/_tools.scss" as *;
+
+.moreInfoLink {
+  color: $color-link-plate;
+  margin-top: auto;
+
+  &:hover {
+    color: $color-blue-gray;
+  }
+}

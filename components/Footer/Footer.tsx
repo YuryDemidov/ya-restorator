@@ -18,7 +18,7 @@ export const Footer = () => {
         </div>
         <div className={styles.footerRight}>
           <p className={styles.footerNote}>Есть вопросы? Задайте нам</p>
-          <Link href="tel:+78006001310" className={styles.footerPhone}>
+          <Link href="tel:+78006001310" className={styles.footerPhone} defaultColor={false}>
             +7 800 600 13 10
           </Link>
         </div>

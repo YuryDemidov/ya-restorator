@@ -2,10 +2,9 @@ import { ComponentProps } from 'react';
 
 import { Link } from '~c/Link/Link';
 import { FaqItem } from './FaqItem';
-
-import styles from './Faq.module.scss';
 import { Section } from '~c/Section/Section';
 import { Title } from '~c/Title/Title';
+import styles from './Faq.module.scss';
 
 export const faqList: ComponentProps<typeof FaqItem>[] = [
   {
@@ -39,6 +38,7 @@ export const faqList: ComponentProps<typeof FaqItem>[] = [
       <>
         Оферту можно изучить{' '}
         <Link
+          defaultColor={false}
           className={styles.link}
           href="https://yandex.ru/legal/oferta_eda/"
           target="_blank"

@@ -3,7 +3,6 @@ import cn from 'classnames';
 
 import { Link } from '~c/Link/Link';
 import { Phone } from '~c/Phone/Phone';
-
 import styles from './Menu.module.scss';
 
 interface IMenuProps {
