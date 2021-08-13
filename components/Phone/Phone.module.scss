@@ -1,0 +1,41 @@
+@use "../../styles/_tools.scss" as *;
+
+.phone {
+  margin-left: $indent-m;
+  display: inline-block;
+
+  @include text-m;
+
+  &Mobile {
+    margin-top: $indent-3xs;
+    display: block;
+    font-weight: $bold;
+    color: $color-black;
+
+    @include text-l;
+  }
+}
+
+.mobileNote {
+  display: none;
+  padding: $indent-m $indent-xs $indent-s;
+  color: $color-dark-dim;
+
+  @include text-s;
+}
+
+@include tablet-landscape {
+  .phone {
+    margin-left: $indent-xs;
+  }
+}
+
+@include phone-only {
+  .mobileNote {
+    display: block;
+  }
+
+  .phone {
+    display: none;
+  }
+}

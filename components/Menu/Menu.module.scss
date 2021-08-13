@@ -1,0 +1,38 @@
+@use "../../styles/_tools.scss" as *;
+
+.mobileMenuContent {
+  position: fixed;
+  top: 6.6rem;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 2;
+
+  .link {
+    padding: $indent-2xs $indent-s;
+    display: block;
+    border-bottom: 0.1rem solid $line;
+  }
+}
+
+.menuContent {
+  display: flex;
+  align-items: center;
+
+  .link {
+    margin-right: $indent-m;
+
+    @include link-animation;
+  }
+
+  .link:hover {
+    color: inherit;
+  }
+}
+
+@include tablet-landscape {
+  .menuContent {
+    display: none;
+  }
+}

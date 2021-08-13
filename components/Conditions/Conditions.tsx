@@ -15,7 +15,7 @@ const conditionsRowList = sortedConditionList.map((item, index) => {
 
 export const Conditions = () => {
   return (
-    <Section className={styles.conditions}>
+    <Section className={styles.conditions} id="conditions">
       <Title level="h2">Условия сотрудничества</Title>
       <div className={styles.conditionsBlock}>
         {conditionsRowList}

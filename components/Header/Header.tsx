@@ -1,40 +1,38 @@
-import { Button } from '~c/Button/Button';
-import { Link } from '~c/Link/Link';
+import { useState, useEffect } from 'react';
+import { Sling as Hamburger } from 'hamburger-react';
 
-import Logotype from './logo-desktop.svg';
+import { Button } from '~c/Button/Button';
+import { Menu } from '~c/Menu/Menu';
+import { Logo } from '~c/Logo/Logo';
+import { Phone } from '~c/Phone/Phone';
+
 import styles from './Header.module.scss';
 
-const menuLinks = [
-  { name: 'Условия', link: '#conditions' },
-  { name: 'Калькулятор', link: '#calculator' },
-  { name: 'Частые вопросы', link: '#faq' },
-];
-
 export const Header = () => {
+  const [isOpen, setOpen] = useState(false);
+  const hideMenuOnClick = () => setOpen((isOpen) => !isOpen);
+
+  useEffect(() => {
+    document.body.style.overflowY = isOpen ? 'hidden' : 'scroll';
+  }, [isOpen]);
+
   return (
     <header className={styles.header}>
-      <div className={styles.headerLeft}>
-        <div className={styles.logo}>
-          <Link href="#">
-            <Logotype />
-          </Link>
+      <div className={styles.wrapper}>
+        <div className={styles.headerLeft}>
+          <div className={styles.mobileMenu}>
+            <Hamburger toggled={isOpen} toggle={hideMenuOnClick} rounded size={24} />
+            {isOpen && <Menu onClickMenu={hideMenuOnClick} mobile />}
+          </div>
+          <div className={styles.logo}>
+            <Logo />
+          </div>
+          <Phone />
         </div>
-        <div className={styles.phone}>
-          <Link href="tel:+78006001310">+7 800 600 13 10</Link>
+        <div className={styles.headerRight}>
+          <Menu />
+          <Button link="#">Подключиться</Button>
         </div>
-      </div>
-      <div className={styles.headerRight}>
-        <nav className={styles.menu}>
-          {menuLinks.map((menuItem, index) => {
-            const { name, link } = menuItem;
-            return (
-              <Link className={styles.link} key={index} href={link}>
-                {name}
-              </Link>
-            );
-          })}
-        </nav>
-        <Button link="#">Подключиться</Button>
       </div>
     </header>
   );
