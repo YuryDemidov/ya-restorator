@@ -1,16 +1,18 @@
 @use '../../styles/tools' as *;
 
 .list {
-  @include centered-block(102.5rem);
-
-  border-bottom: 0.1rem solid $color-light-gray;
+  margin: 0;
 }
 
 .definition {
   max-height: 0;
   overflow: hidden;
-  margin: 0 $indent-2xs;
-  transition: max-height 0.3s ease;
+  margin: 0;
+  padding: 0 $indent-2xs;
+  border-bottom: 0.1rem solid $color-light-gray;
+  transition-property: max-height, border-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
 }
 
 .questionContent {
@@ -21,6 +23,7 @@
 
 .questionIcon {
   flex-shrink: 0;
+  margin-left: 1rem;
   transition: transform 0.3s;
 }
 
@@ -28,20 +31,18 @@
   transform: rotate(-180deg);
 }
 
-.trigger:focus .questionIcon {
-  fill: $color-dark-dim;
-}
-
 .trigger {
   @include reset-button();
 
   width: 100%;
   padding: 2.2rem $indent-2xs;
-  border-top: 0.1rem solid $color-light-gray;
-  transition: border-color 0.3s;
 
   &:focus {
     color: $color-dark-dim;
+
+    .questionIcon {
+      fill: $color-dark-dim;
+    }
   }
 }
 
@@ -52,8 +53,9 @@
     }
   }
 
-  &Opened {
-    + .definition + .term .trigger {
+  &Opened,
+  &:focus-within {
+    + .definition {
       border-color: $color-yellow;
     }
   }
