@@ -1,0 +1,14 @@
+@use "../../styles/_tools.scss" as *;
+
+.logo {
+  background: url('/images/logo-desktop.svg') no-repeat center;
+  width: 14.7rem;
+  height: 2.6rem;
+}
+
+@include phone-only {
+  .logo {
+    background: url('/images/logo-mobile.svg') no-repeat center;
+    width: 8.6rem;
+  }
+}

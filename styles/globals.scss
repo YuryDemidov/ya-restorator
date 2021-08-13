@@ -16,6 +16,8 @@ body {
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: $indent-xl;
 }
 
 body {
@@ -51,6 +53,10 @@ li {
 
 button {
   -webkit-tap-highlight-color: $color-transparent;
+}
+
+.main {
+  padding-top: 6.5rem;
 }
 
 .visually-hidden {

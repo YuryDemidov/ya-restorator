@@ -13,6 +13,11 @@
     padding-top: $indent-xl;
     padding-bottom: $indent-xl;
   }
+
+  .wrapperHeader {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
 @include desktop {
@@ -21,12 +26,22 @@
     padding-top: $indent-xl;
     padding-bottom: $indent-xl;
   }
+
+  .wrapperHeader {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
 @include tablet-landscape {
   .wrapper {
     row-gap: $indent-m;
-    padding-top: $indent-m;
+    padding-top: $indent-s;
     padding-bottom: $indent-m;
+  }
+
+  .wrapperHeader {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }

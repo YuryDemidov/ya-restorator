@@ -5,6 +5,7 @@ import { Header } from '~c/Header/Header';
 import { Wrapper } from '~c/Wrapper/Wrapper';
 import { Title } from '~c/Title/Title';
 import { Faq } from '~c/Faq/Faq';
+import { Hero } from '~c/Hero/Hero';
 import { Footer } from '~c/Footer/Footer';
 import { Conditions } from '~c/Conditions/Conditions';
 
@@ -25,16 +26,18 @@ export default function Home() {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <Header />
-      <Wrapper>
-        <Section>
-          <Title level="h1">Ресторатор</Title>
-        </Section>
-        <Conditions />
-        <Section>
-          <Title level="h2">Частые вопросы (FAQ)</Title>
-          <Faq />
-        </Section>
-      </Wrapper>
+      <main className="main">
+        <Wrapper>
+          <Section>
+            <Hero />
+          </Section>
+          <Conditions />
+          <Section id="faq">
+            <Title level="h2">Частые вопросы (FAQ)</Title>
+            <Faq />
+          </Section>
+        </Wrapper>
+      </main>
       <Footer />
     </>
   );

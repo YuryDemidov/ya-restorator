@@ -1,50 +1,60 @@
 @use "../../styles/_tools.scss" as *;
 
 .header {
-  position: fixed;
+  position: sticky;
   background-color: $color-main-bg;
-  z-index: 2;
-  left: 0;
-  right: 0;
+  z-index: 3;
   top: 0;
-  height: 6.5rem;
+  border-bottom: 1px solid $line;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  padding: 0 $indent-xs;
 
   @include text-s;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 1px 1px rgba(210, 208, 204, 0.25);
+  .wrapper {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 6.5rem;
+  }
 
-  .burger {
+  .mobileMenu {
     display: none;
   }
 
-  .headerLeft,
-  .headerRight {
+  &Left,
+  &Right {
     display: flex;
     align-items: center;
   }
-
-  .menu {
-    .link {
-      margin-right: $indent-m;
-    }
-  }
-}
-
-.phone {
-  margin-left: $indent-m;
-
-  @include text-m;
 }
 
 @include tablet-landscape {
-  .menu {
-    display: none;
+  .header {
+    .mobileMenu {
+      display: block;
+      margin-right: $indent-s;
+    }
   }
 
-  .burger {
-    display: block;
+  .phone {
+    margin-left: $indent-xs;
+  }
+}
+
+@include phone-only {
+  .header {
+    .mobileMenu {
+      display: block;
+      margin-right: $indent-3xs;
+    }
+  }
+
+  .phone {
+    display: none;
   }
 }

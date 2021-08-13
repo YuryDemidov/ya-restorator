@@ -7,40 +7,48 @@
 
   .h2 {
     @include title-l;
+
+    margin-bottom: $indent-m;
   }
 }
 
-@mixin desktop {
+@include desktop {
   .h1 {
     @include title-xl;
   }
 
   .h2 {
     @include title-l;
+
+    margin-bottom: $indent-s;
   }
 }
 
-@mixin tablet-landscape {
+@include tablet-landscape {
   .h1 {
     @include title-l;
   }
 
   .h2 {
     @include title-m;
+
+    margin-bottom: $indent-xs;
   }
 }
 
-@mixin tablet-portrait {
+@include tablet-portrait {
   .h1 {
     @include title-m;
   }
 
   .h2 {
     @include title-s;
+
+    margin-bottom: $indent-xs;
   }
 }
 
-@mixin phone-only {
+@include phone-only {
   .h1 {
     @include title-s;
   }

@@ -201,6 +201,7 @@
 }
 
 @mixin text-m {
+  // 1.8rem
   font-size: $text-m;
   line-height: $text-lh-m;
 }
@@ -216,6 +217,7 @@
 }
 
 @mixin text-2xs {
+  // 1.3rem
   font-size: $text-2xs;
   line-height: $text-lh-2xs;
 }

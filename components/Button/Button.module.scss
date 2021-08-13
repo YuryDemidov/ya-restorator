@@ -3,6 +3,7 @@
 .button {
   border-radius: $br-button;
   padding: $indent-vertical-button-desktop $indent-horizontal-button-desktop;
+  display: inline-block;
 }
 
 .primary {
@@ -15,4 +16,10 @@
 
 .secondary {
   background: $color-black;
+}
+
+@include phone-only {
+  .button {
+    padding: $indent-vertical-button-mobile $indent-horizontal-button-mobile;
+  }
 }

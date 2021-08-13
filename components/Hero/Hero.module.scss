@@ -1,1 +1,51 @@
-@use "./variables" as *;
+@use "../../styles/_tools.scss" as *;
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &Content {
+    z-index: 2;
+  }
+
+  &Title {
+    margin-bottom: $indent-m;
+    max-width: 45.6rem;
+  }
+
+  .subtitle {
+    margin-bottom: $indent-m;
+    max-width: 37.6rem;
+    color: $color-dark-blue-gray;
+    font-weight: $medium;
+  }
+}
+
+@include phone-only {
+  .heroImage {
+    @include box(23.8rem, 22.5rem);
+
+    position: absolute;
+    right: 0;
+    z-index: 1;
+
+    img {
+      right: -22rem !important;
+    }
+  }
+
+  .hero {
+    &Title {
+      max-width: 33.8rem;
+      margin-bottom: $indent-s;
+    }
+
+    .subtitle {
+      max-width: 23.8rem;
+      margin-bottom: $indent-s;
+
+      @include text-2xs;
+    }
+  }
+}
