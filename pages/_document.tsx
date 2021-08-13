@@ -11,7 +11,9 @@ export default class MyDocument extends Document {
       <Html lang="ru">
         <Head />
         <body>
-          <Main />
+          <main>
+            <Main />
+          </main>
           <NextScript />
         </body>
       </Html>
