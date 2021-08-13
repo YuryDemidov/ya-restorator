@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { Section } from '~c/Section/Section';
 import { Header } from '~c/Header/Header';
 import { Wrapper } from '~c/Wrapper/Wrapper';
-import { Title } from '~c/Title/Title';
 import { Faq } from '~c/Faq/Faq';
 import { Hero } from '~c/Hero/Hero';
 import { Footer } from '~c/Footer/Footer';
@@ -32,10 +31,7 @@ export default function Home() {
             <Hero />
           </Section>
           <Conditions />
-          <Section id="faq">
-            <Title level="h2">Частые вопросы (FAQ)</Title>
-            <Faq />
-          </Section>
+          <Faq />
         </Wrapper>
       </main>
       <Footer />

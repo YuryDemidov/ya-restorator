@@ -4,8 +4,10 @@ import { Link } from '~c/Link/Link';
 import { FaqItem } from './FaqItem';
 
 import styles from './Faq.module.scss';
+import { Section } from '~c/Section/Section';
+import { Title } from '~c/Title/Title';
 
-const faqList: ComponentProps<typeof FaqItem>[] = [
+export const faqList: ComponentProps<typeof FaqItem>[] = [
   {
     id: 1,
     question: <>Какие условия размещения? За&nbsp;что&nbsp;я&nbsp;плачу?</>,
@@ -36,7 +38,12 @@ const faqList: ComponentProps<typeof FaqItem>[] = [
     answer: (
       <>
         Оферту можно изучить{' '}
-        <Link className={styles.link} href="https://yandex.ru/legal/oferta_eda/" target="_blank" rel="noreferrer">
+        <Link
+          className={styles.link}
+          href="https://yandex.ru/legal/oferta_eda/"
+          target="_blank"
+          rel="noreferrer"
+          tabIndex={-1}>
           по ссылке
         </Link>
         .
@@ -61,7 +68,12 @@ const faqList: ComponentProps<typeof FaqItem>[] = [
       <>
         Работа с заказами ведётся в бесплатном приложении «Яндекс.Еда для ресторанов»:
         <br />— в{' '}
-        <Link className={styles.link} href="https://vendor.eda.yandex/auth" target="_blank" rel="noreferrer">
+        <Link
+          className={styles.link}
+          href="https://vendor.eda.yandex/auth"
+          target="_blank"
+          rel="noreferrer"
+          tabIndex={-1}>
           веб-версии
         </Link>{' '}
         , которую мы подключим на вашем компьютере;
@@ -70,15 +82,17 @@ const faqList: ComponentProps<typeof FaqItem>[] = [
           className={styles.link}
           href="https://apps.apple.com/ru/app/%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81-%D0%B5%D0%B4%D0%B0-%D0%B4%D0%BB%D1%8F-%D1%80%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD%D0%BE%D0%B2/id1440757437?l=en"
           target="_blank"
-          rel="noreferrer">
+          rel="noreferrer"
+          tabIndex={-1}>
           iOS
-        </Link>
+        </Link>{' '}
         или{' '}
         <Link
           className={styles.link}
           href="https://play.google.com/store/apps/details?id=ru.foodfox.vendor&hl=ru=en"
           target="_blank"
-          rel="noreferrer">
+          rel="noreferrer"
+          tabIndex={-1}>
           Android
         </Link>
       </>
@@ -112,7 +126,7 @@ const faqList: ComponentProps<typeof FaqItem>[] = [
     answer: (
       <>
         Если ваш ресторан находится в Москве, вы можете заказать упаковку для доставки у нас на{' '}
-        <Link className={styles.link} href="https://eda-pack.ru/" target="_blank" rel="noreferrer">
+        <Link className={styles.link} href="https://eda-pack.ru/" target="_blank" rel="noreferrer" tabIndex={-1}>
           сайте
         </Link>
         .
@@ -122,9 +136,12 @@ const faqList: ComponentProps<typeof FaqItem>[] = [
 ];
 
 export const Faq = () => (
-  <dl className={styles.list}>
-    {faqList.map((faqListItem) => (
-      <FaqItem {...faqListItem} key={faqListItem.id} />
-    ))}
-  </dl>
+  <Section id="faq">
+    <Title level="h2">Частые вопросы (FAQ)</Title>
+    <dl className={styles.list}>
+      {faqList.map((faqListItem) => (
+        <FaqItem {...faqListItem} key={faqListItem.id} />
+      ))}
+    </dl>
+  </Section>
 );

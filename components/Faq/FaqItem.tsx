@@ -11,21 +11,37 @@ interface IFaqItemProps {
   answer: React.ReactChild;
 }
 
+type TTabIndexValue = 0 | -1;
+
 export const FaqItem = ({ id, question, answer }: IFaqItemProps) => {
-  const [isExpanded, setIsExpanded] = useState(false);
   const [answerHeight, setAnswerHeight] = useState(0);
+  const isExpanded = answerHeight > 0;
 
-  const open = (evt: React.MouseEvent<HTMLButtonElement>) => {
-    const answerId = evt.currentTarget.getAttribute('aria-controls');
-    const answerNode = evt.currentTarget.closest('dl')?.querySelector(`#${answerId}`);
-    const answerHeight = answerNode ? answerNode.scrollHeight : 0;
-
-    setAnswerHeight(answerHeight);
-    setIsExpanded(true);
+  const getAnswerNode = (questionNode: HTMLButtonElement) => {
+    const answerId = questionNode.getAttribute('aria-controls');
+    return questionNode.closest('dl')?.querySelector<HTMLParagraphElement>(`#${answerId}`);
   };
-  const close = () => {
-    setAnswerHeight(0);
-    setIsExpanded(false);
+
+  const changeLinksTabIndex = (parent: HTMLParagraphElement, tabIndex: TTabIndexValue) => {
+    parent.querySelectorAll('a').forEach((link) => (link.tabIndex = tabIndex));
+  };
+  const enableLinksFocus = (parent: HTMLParagraphElement) => changeLinksTabIndex(parent, 0);
+  const disableLinksFocus = (parent: HTMLParagraphElement) => changeLinksTabIndex(parent, -1);
+
+  const toggleAccordion = (evt: React.MouseEvent<HTMLButtonElement>) => {
+    const answerNode = getAnswerNode(evt.currentTarget);
+
+    if (!answerNode) {
+      return;
+    }
+
+    if (isExpanded) {
+      setAnswerHeight(0);
+      disableLinksFocus(answerNode);
+    } else {
+      setAnswerHeight(answerNode.scrollHeight || 0);
+      enableLinksFocus(answerNode);
+    }
   };
 
   return (
@@ -39,7 +55,7 @@ export const FaqItem = ({ id, question, answer }: IFaqItemProps) => {
           type="button"
           aria-controls={`faq${id}`}
           aria-expanded={isExpanded}
-          onClick={isExpanded ? close : open}>
+          onClick={toggleAccordion}>
           <span className={styles.questionContent}>
             {question}
             <Icon className={styles.questionIcon} type="arrow" size="l" />
