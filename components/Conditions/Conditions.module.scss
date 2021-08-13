@@ -4,10 +4,12 @@
   &Block {
     background: $color-light-gray-second;
     border-radius: $br-block;
-    padding: $indent-s;
+    padding: $indent-l $indent-s $indent-l $indent-l;
     display: grid;
-    grid-template-columns: 1fr 180px 180px;
+    grid-template-columns: 1fr 18rem 18rem;
+    grid-template-rows: auto;
     column-gap: $indent-s;
+    z-index: 1;
 
     // FIXME: Убрать, как только будет готов Title с отступами
     margin-top: $indent-l;
@@ -15,21 +17,48 @@
 
   &List,
   &Tariff {
-    display: grid;
-    row-gap: $indent-s;
-    padding: $indent-s;
-
     &Item {
       height: $text-lh-l;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
     }
   }
 
+  &IndentRadius {
+    &Top,
+    &Bottom {
+      position: relative;
+      z-index: 1;
+
+      &::before {
+        @include box(100%);
+        content: '';
+        display: block;
+        position: absolute;
+        background: inherit;
+        z-index: -1;
+        border-radius: $br-block;
+      }
+    }
+
+    &Top::before {
+      top: -$indent-s;
+    }
+
+    &Bottom::before {
+      bottom: -$indent-s;
+    }
+  }
+
+  .icon {
+    height: $text-lh-l;
+  }
+
   &Tariff {
-    border-radius: $br-block;
-    justify-items: center;
+    &Item {
+      height: auto;
+    }
 
     &Yellow {
       background: $color-yellow-second;
@@ -50,16 +79,17 @@
     @include text-xxl;
 
     font-weight: $bold;
-    margin-top: auto;
+    padding-top: $indent-3xs;
   }
 
-  &Describe {
-    margin-top: $indent-3xs;
+  &Fee {
+    text-align: center;
   }
 
   &TextItem {
     display: grid;
     row-gap: $indent-3xs;
+    padding-bottom: $indent-s;
 
     &Text {
       @include text-l;
@@ -79,27 +109,17 @@
 @include tablet-landscape {
   .conditions {
     &Block {
-      grid-template-columns: 1fr 80px 80px;
-      padding: $indent-2xs $indent-s $indent-2xs $indent-2xs;
+      grid-template-columns: 1fr 8rem 8rem;
+      padding: $indent-s $indent-2xs $indent-s $indent-s;
       column-gap: $indent-2xs;
 
       // FIXME: Убрать, как только будет готов Title с отступами
       margin-top: $indent-s;
     }
 
-    &List,
-    &Tariff {
-      row-gap: $indent-xs;
-      padding: $indent-2xs;
-    }
-
-    &Tariff {
-      &Item {
-        height: $text-lh-xs;
-      }
-    }
-
     &TextItem {
+      padding-bottom: $indent-xs;
+
       &Text {
         @include text-xs;
       }
@@ -112,13 +132,23 @@
     }
 
     .icon {
-      width: 12px;
-      height: 12px;
+      width: 1.2rem;
+      height: $text-lh-2xs;
     }
 
     &Describe,
     &Fee {
       @include text-m;
+    }
+
+    &IndentRadius {
+      &Top::before {
+        top: -$indent-xs;
+      }
+
+      &Bottom::before {
+        bottom: -$indent-xs;
+      }
     }
   }
 }
@@ -126,14 +156,21 @@
 @include phone-only {
   .conditions {
     &Block {
-      grid-template-columns: 1fr 60px 60px;
-      padding: $indent-3xs $indent-xs $indent-3xs $indent-3xs;
+      grid-template-columns: 1fr 6rem 6rem;
+      padding: $indent-xs;
       column-gap: $indent-3xs;
     }
 
-    &List,
-    &Tariff {
-      row-gap: $indent-2xs;
+    &IndentRadius {
+      &Top::before {
+        top: -$indent-3xs;
+        border-radius: 1rem;
+      }
+
+      &Bottom::before {
+        bottom: -$indent-3xs;
+        border-radius: 1rem;
+      }
     }
   }
 }

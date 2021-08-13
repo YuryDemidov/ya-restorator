@@ -110,7 +110,7 @@ deploy-feature-stand-job:
     - echo "$TLSKEY" > $DOCKER_CERT_PATH/key.pem
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   script:
-    - docker stack deploy --with-registry-auth -c ./docker-compose.yml $APP_NAME
+    - docker stack deploy --prune --with-registry-auth -c ./docker-compose.yml $APP_NAME
   after_script:
     - docker service update "${APP_NAME}_app"
 
@@ -137,6 +137,6 @@ deploy-production-job:
     - echo "$TLSKEY" > $DOCKER_CERT_PATH/key.pem
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   script:
-    - docker stack deploy --with-registry-auth -c ./docker-compose.yml $APP_NAME
+    - docker stack deploy --prune --with-registry-auth -c ./docker-compose.yml $APP_NAME
   after_script:
     - docker service update "${APP_NAME}_app"
