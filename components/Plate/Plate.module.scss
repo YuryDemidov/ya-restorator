@@ -16,11 +16,11 @@
   color: $color-black;
   border-radius: $br-block;
   text-align: left;
-  padding: 36px 0 36px 36px;
-  min-height: 248px;
+  padding: 3.6rem;
+  min-height: 24.8rem;
 
   .title {
-    margin-bottom: 24px;
+    margin-bottom: 2.4rem;
 
     @include text-l;
   }
@@ -62,17 +62,17 @@
     .leftWrapper {
       position: relative;
       z-index: 1;
-      width: 249px;
-      margin-right: 20px;
+      width: 24.9rem;
+      margin-right: 2rem;
     }
   }
 
   &WithImageAndAction {
-    min-height: 256px;
+    display: flex;
+    min-height: 25.6rem;
 
     .leftWrapper {
-      height: 100%;
-      width: 241px;
+      width: 24.1rem;
       margin-right: 0;
       display: flex;
       flex-direction: column;
@@ -81,23 +81,23 @@
     }
 
     .title {
-      margin-bottom: 18px;
+      margin-bottom: 1.8rem;
     }
 
     .description {
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
       color: $color-dark-gray;
     }
   }
 }
 
 .plateListItem {
-  min-height: 317px;
-  padding: 60px 19px 54px;
+  min-height: 31.7rem;
+  padding: 6rem 1.9rem 5.4rem;
   border-radius: $br-block-small;
 
   .title {
-    margin-bottom: 16px;
+    margin-bottom: 1.6rem;
 
     @include text-l;
   }
@@ -112,24 +112,109 @@
     display: block;
     color: inherit;
     font-weight: $medium;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 
     @include title-xl;
   }
 }
 
 .plateHowItWorks {
-  padding: 39px;
+  padding: 3.9rem;
   border-radius: $br-block;
-  min-height: 204px;
+  min-height: 20.4rem;
 
   .title {
     margin-bottom: 0;
   }
 
   &::before {
-    margin-bottom: 9px;
+    margin-bottom: 0.9rem;
 
     @include title-l;
+  }
+}
+
+@include tablet-portrait {
+  .plate {
+    padding: 2.8rem;
+    min-height: 14rem;
+
+    &WithImage {
+      .leftWrapper {
+        width: 60%;
+      }
+    }
+
+    &WithImageAndAction {
+      min-height: 14rem;
+
+      .leftWrapper {
+        width: 60%;
+      }
+    }
+  }
+
+  .plateListItem {
+    padding: 2.8rem;
+    min-height: 14rem;
+  }
+
+  .plateHowItWorks {
+    padding: 2.8rem;
+    min-height: 14rem;
+  }
+}
+
+@include phone-only {
+  .plate {
+    padding: 2.4rem;
+    min-height: 14rem;
+
+    .title {
+      @include text-m;
+    }
+
+    .description {
+      @include text-xs;
+    }
+
+    &WithImage {
+      .leftWrapper {
+        width: 100%;
+        margin-right: 2rem;
+      }
+    }
+
+    &WithImageAndAction {
+      min-height: 14rem;
+
+      .leftWrapper {
+        width: 100%;
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  .plateListItem {
+    min-height: 14rem;
+    padding: 2.2rem;
+    border-radius: $br-block-small;
+
+    .title {
+      @include text-m;
+    }
+
+    .description {
+      @include text-xs;
+    }
+
+    &::before {
+      @include title-l;
+    }
+  }
+
+  .plateHowItWorks {
+    padding: 2.2rem;
+    min-height: 14rem;
   }
 }
