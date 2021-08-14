@@ -13,19 +13,19 @@
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
-    max-width: 1024px;
+    max-width: 102.4rem;
   }
 
   &Left {
     width: 100%;
-    max-width: 610px;
-    flex-basis: 504px;
+    max-width: 61rem;
+    flex-basis: 50.4rem;
     flex-grow: 2;
   }
 
   &Right {
     width: 100%;
-    flex-basis: 232px;
+    flex-basis: 23.2rem;
   }
 
   &Paragraph,
