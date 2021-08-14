@@ -20,14 +20,10 @@ export const Button: React.FC<IButtonProps> = ({
     <Link
       {...defaultLinkProps}
       href={link}
-      className={cn(
-        styles.button,
-        {
-          [styles.primary]: appearance === 'primary',
-          [styles.secondary]: appearance === 'secondary',
-        },
-        className,
-      )}>
+      className={cn(styles.button, className, {
+        [styles.primary]: appearance === 'primary',
+        [styles.secondary]: appearance === 'secondary',
+      })}>
       {children}
     </Link>
   );

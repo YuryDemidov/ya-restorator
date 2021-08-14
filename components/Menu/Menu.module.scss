@@ -16,6 +16,10 @@
   }
 }
 
+.mobileContactInfo {
+  padding: $indent-s $indent-xs;
+}
+
 .menuContent {
   display: flex;
   align-items: center;
@@ -28,6 +32,10 @@
 
   .link:hover {
     color: inherit;
+  }
+
+  &mobile {
+    margin-top: $indent-m;
   }
 }
 

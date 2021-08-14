@@ -30,7 +30,12 @@ export const Header = () => {
         </div>
         <div className={styles.headerRight}>
           <Menu />
-          <Button link="#">Подключиться</Button>
+          <div className={styles.headerRightButtons}>
+            <Button className={styles.mobile} appearance="secondary" link="#">
+              Личный кабинет
+            </Button>
+            <Button link="#">Подключиться</Button>
+          </div>
         </div>
       </div>
     </header>

@@ -57,10 +57,6 @@ button {
   -webkit-tap-highlight-color: $color-transparent;
 }
 
-.main {
-  padding-top: 6.5rem;
-}
-
 .visually-hidden {
   position: absolute;
   overflow: hidden;
@@ -71,4 +67,9 @@ button {
   border: 0;
   clip: rect(0, 0, 0, 0);
   clip-path: inset(100%);
+}
+
+// lib hamburger react padding-left-fix
+.hamburger-react {
+  left: -12px;
 }

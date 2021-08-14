@@ -4,6 +4,7 @@ import cn from 'classnames';
 import { Link } from '~c/Link/Link';
 import { Phone } from '~c/Phone/Phone';
 import styles from './Menu.module.scss';
+import { Button } from '~c/Button/Button';
 
 interface IMenuProps {
   name: string;
@@ -18,13 +19,11 @@ interface IMenuComponentProps {
 const menuLinks: IMenuProps[] = [
   { name: 'Условия', link: '#conditions' },
   { name: 'Калькулятор', link: '#calculator' },
-  { name: 'Частые вопросы', link: '#faq' },
 ];
 
 export const Menu = ({ mobile, onClickMenu }: IMenuComponentProps) => {
   return (
     <div className={cn({ [styles.mobileMenuContent]: mobile })}>
-      {mobile && <Phone noteStyle="mobile" />}
       <nav>
         <ul className={cn({ [styles.menuContent]: !mobile })}>
           {menuLinks.map(({ name, link }) => {
@@ -38,6 +37,14 @@ export const Menu = ({ mobile, onClickMenu }: IMenuComponentProps) => {
           })}
         </ul>
       </nav>
+      {mobile && (
+        <div className={styles.mobileContactInfo}>
+          <Phone noteStyle="mobile" />
+          <Button appearance="secondary" link="#">
+            Личный кабинет
+          </Button>
+        </div>
+      )}
     </div>
   );
 };

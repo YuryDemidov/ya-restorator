@@ -30,6 +30,12 @@
   &Right {
     display: flex;
     align-items: center;
+
+    &Buttons {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-column-gap: $indent-2xs;
+    }
   }
 }
 
@@ -39,6 +45,12 @@
       display: block;
       margin-right: $indent-s;
     }
+
+    &Right {
+      &Buttons {
+        grid-column-gap: 0;
+      }
+    }
   }
 
   .phone {
@@ -46,7 +58,7 @@
   }
 }
 
-@include phone-only {
+@include tablet-portrait {
   .header {
     .mobileMenu {
       display: block;
@@ -55,6 +67,12 @@
   }
 
   .phone {
+    display: none;
+  }
+}
+
+@include tablet-landscape {
+  .mobile {
     display: none;
   }
 }
