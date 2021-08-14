@@ -12,10 +12,11 @@ interface IPlateProps {
   actionBlock?: React.ReactChild;
   image?: React.ReactChild; //TODO: когда будут готовы картинки в плашках
   color?: 'yellow' | 'grey' | 'black' | 'blue' | 'light-black';
+  sectionType?: 'HowItWorks';
 }
 
 export const Plate = (props: IPlateProps) => {
-  const { withIndex = false, color = 'yellow', className } = props;
+  const { withIndex = false, color = 'yellow', sectionType, className } = props;
   const baseClassNames = cn(
     styles.plate,
     {
@@ -24,6 +25,7 @@ export const Plate = (props: IPlateProps) => {
       [styles.plateBlack]: color === 'black',
       [styles.plateBlue]: color === 'blue',
       [styles.plateLightBlack]: color === 'light-black',
+      [styles[`plate${sectionType}`]]: sectionType !== undefined,
     },
     className,
   );

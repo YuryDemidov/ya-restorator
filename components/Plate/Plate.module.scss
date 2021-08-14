@@ -107,11 +107,29 @@
   }
 
   &::before {
+    position: relative;
+    z-index: 1;
     display: block;
     color: inherit;
     font-weight: $medium;
     margin-bottom: 20px;
 
     @include title-xl;
+  }
+}
+
+.plateHowItWorks {
+  padding: 39px;
+  border-radius: $br-block;
+  min-height: 204px;
+
+  .title {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    margin-bottom: 9px;
+
+    @include title-l;
   }
 }

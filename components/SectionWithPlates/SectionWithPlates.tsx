@@ -10,7 +10,10 @@ export interface IPlate extends ComponentProps<typeof Plate> {
 }
 
 interface ISectionWithPlatesProps
-  extends Pick<ComponentProps<typeof PlateLayout>, 'withIndexes' | 'desktopMaxElemsInRow' | 'plateList'> {
+  extends Pick<
+    ComponentProps<typeof PlateLayout>,
+    'withIndexes' | 'desktopMaxElemsInRow' | 'plateList' | 'sectionType'
+  > {
   title?: React.ReactChild;
 }
 
@@ -19,11 +22,17 @@ export const SectionWithPlates = ({
   plateList,
   withIndexes = false,
   desktopMaxElemsInRow = 2,
+  sectionType,
 }: ISectionWithPlatesProps) => {
   return (
     <Section>
       <Title level="h2">{title}</Title>
-      <PlateLayout withIndexes={withIndexes} desktopMaxElemsInRow={desktopMaxElemsInRow} plateList={plateList} />
+      <PlateLayout
+        withIndexes={withIndexes}
+        desktopMaxElemsInRow={desktopMaxElemsInRow}
+        sectionType={sectionType}
+        plateList={plateList}
+      />
     </Section>
   );
 };
