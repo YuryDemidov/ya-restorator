@@ -2,20 +2,21 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 
 import App from '~p/index';
-import { Section } from '~c/Section/Section';
 import { Hero } from '~c/Hero/Hero';
-import { Title } from '~c/Title/Title';
+import { MobileAppScreen } from '~c/MobileAppScreen/MobileAppScreen';
+import { Profit } from '~c/Profit/Profit';
+import { WhatCanOffer } from '~c/WhatCanOffer/WhatCanOffer';
+import { HowToStart } from '~c/HowToStart/HowToStart';
+import { Conditions } from '~c/Conditions/Conditions';
 import { Faq, faqList } from '~c/Faq/Faq';
 
 describe('Базовые тесты', () => {
   const app = shallow(<App />);
-  const section = app.find(Section);
-  const hero = app.find(Hero);
-  const titles = section.find(Title);
-  const heroTitle = hero.dive().find(Title);
 
-  describe('Нужные заголовки', () => {
-    describe('h1', () => {
+  describe('Компонент Hero', () => {
+    describe('Имеет один заголовок', () => {
+      const hero = app.find(Hero);
+      const heroTitle = hero.dive().find('Title');
       const titlesH1 = heroTitle.filterWhere((wrap) => {
         return wrap.prop('level') === 'h1';
       });
@@ -24,23 +25,85 @@ describe('Базовые тесты', () => {
         expect(titlesH1.length).toEqual(1);
       });
 
-      it('На странице есть h1 с текстом "Подключите ресторан к сервису Яндекс.Еда"', () => {
+      it('Содержит правильный текст', () => {
         expect(titlesH1.dive().find('h1').text()).toEqual('Подключите ресторан к сервису Яндекс.Еда');
       });
     });
+  });
 
-    // FIXME
-    //  Не работает, потому что Title не находится в shallow-копии App, а внутри каждого компонента отдельно
-    //  Плюс, количество секций захардкожено как 1
-    // describe('h2', () => {
-    //   const titlesH2 = titles.filterWhere((wrap) => {
-    //     return wrap.prop('level') === 'h2';
-    //   });
-    //
-    //   it('Количество заголовков h2 совпадает с общим количеством секций на странице', () => {
-    //     expect(titlesH2.length).toEqual(1);
-    //   });
-    // });
+  describe('Компонент Profit', () => {
+    const profit = mount(<Profit />);
+    const title = profit.find('Title');
+
+    describe('Заголовок', () => {
+      it('Только один в компоненте', () => {
+        expect(title.length).toEqual(1);
+      });
+
+      it('Содержит правильный текст', () => {
+        expect(title.text()).toEqual('Что вы получаете');
+      });
+    });
+  });
+
+  describe('Компонент MobileAppScreen', () => {
+    const mobileAppScreen = mount(<MobileAppScreen />);
+    const title = mobileAppScreen.find('Title');
+
+    describe('Заголовок', () => {
+      it('Только один в компоненте', () => {
+        expect(title.length).toEqual(1);
+      });
+
+      it('Содержит правильный текст', () => {
+        expect(title.text()).toEqual('Управляйте рестораном через приложение');
+      });
+    });
+  });
+
+  describe('Компонент Conditions', () => {
+    const component = mount(<Conditions />);
+    const title = component.find('Title');
+
+    describe('Заголовок', () => {
+      it('Только один в компоненте', () => {
+        expect(title.length).toEqual(1);
+      });
+
+      it('Содержит правильный текст', () => {
+        expect(title.text()).toEqual('Условия сотрудничества');
+      });
+    });
+  });
+
+  describe('Компонент HowToStart', () => {
+    const component = mount(<HowToStart />);
+    const title = component.find('Title');
+
+    describe('Заголовок', () => {
+      it('Только один в компоненте', () => {
+        expect(title.length).toEqual(1);
+      });
+
+      it('Содержит правильный текст', () => {
+        expect(title.text()).toEqual('Три шага, чтобы начать');
+      });
+    });
+  });
+
+  describe('Компонент WhatCanOffer', () => {
+    const component = mount(<WhatCanOffer />);
+    const title = component.find('Title');
+
+    describe('Заголовок', () => {
+      it('Только один в компоненте', () => {
+        expect(title.length).toEqual(1);
+      });
+
+      it('Содержит правильный текст', () => {
+        expect(title.text()).toEqual('Что еще можем предложить');
+      });
+    });
   });
 
   describe('Компонент FAQ', () => {
