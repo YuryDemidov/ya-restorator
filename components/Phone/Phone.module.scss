@@ -18,7 +18,7 @@
 
 .mobileNote {
   display: none;
-  padding: $indent-m $indent-xs $indent-s;
+  margin-bottom: $indent-s;
   color: $color-dark-dim;
 
   @include text-s;

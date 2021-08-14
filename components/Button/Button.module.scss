@@ -16,7 +16,11 @@
 }
 
 .secondary {
-  background: $color-black;
+  background: $color-gray;
+
+  &:hover {
+    background: $color-gray-hovered;
+  }
 }
 
 @include phone-only {
