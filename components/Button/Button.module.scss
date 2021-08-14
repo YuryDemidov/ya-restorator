@@ -1,13 +1,14 @@
 @use "../../styles/_tools.scss" as *;
 
 .button {
+  display: inline-block;
   border-radius: $br-button;
   padding: $indent-vertical-button-desktop $indent-horizontal-button-desktop;
-  display: inline-block;
 }
 
 .primary {
-  background: $color-yellow;
+  background: $color-action-base;
+  color: $color-black;
 
   &:hover {
     background: $color-yellow-hovered;

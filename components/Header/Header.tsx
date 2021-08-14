@@ -5,7 +5,6 @@ import { Button } from '~c/Button/Button';
 import { Menu } from '~c/Menu/Menu';
 import { Logo } from '~c/Logo/Logo';
 import { Phone } from '~c/Phone/Phone';
-
 import styles from './Header.module.scss';
 
 export const Header = () => {

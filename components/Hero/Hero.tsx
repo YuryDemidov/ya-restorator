@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { Title } from '~c/Title/Title';
 import { Button } from '~c/Button/Button';
 import HeroImage from './hero-image.png';
-
 import styles from './Hero.module.scss';
 
 export const Hero = () => {

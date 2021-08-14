@@ -57,12 +57,17 @@ $color-main-bg: #fff;
 $color-black: #000;
 $color-white: #fff;
 $color-dark-dim: #555;
+$color-action-base: #ffdb4d;
 $color-yellow: #fc0;
 $color-yellow-second: #ffe45c;
 $color-yellow-hovered: #f2c200;
 $color-yellow-focused: $color-yellow;
 $color-light-gray: #e6e9f0;
 $color-light-gray-second: #f4f4f0;
+$color-lighter-gray: #f4f4f4;
+$color-dark-gray: #403c38;
+$color-blue-start: #d1dcf9;
+$color-blue-end: #c0cdef;
 $color-blue-gray: #696b80;
 $color-dark-blue-gray: #404152;
 $color-link: #04b;
@@ -74,6 +79,9 @@ $color-text: $color-black;
 $color-text-second: #ccc;
 $color-text-gray-transparent: rgba(132, 133, 133, 0.8);
 
+// color-link
+$color-link-plate: #669;
+
 //other system colors
 $color-red: #d00;
 $color-green: #070;
@@ -84,6 +92,7 @@ $transition: all 0.2s ease-in;
 //border-radius
 $br-button: 16px;
 $br-block: 24px;
+$br-block-small: 15px;
 
 // separation lines
 $line: #f1f2f5;

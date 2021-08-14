@@ -2,7 +2,6 @@ import { useState } from 'react';
 import cn from 'classnames';
 
 import { Icon } from '~c/Icon/Icon';
-
 import styles from './Faq.module.scss';
 
 interface IFaqItemProps {

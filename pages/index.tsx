@@ -7,6 +7,9 @@ import { Faq } from '~c/Faq/Faq';
 import { Hero } from '~c/Hero/Hero';
 import { Footer } from '~c/Footer/Footer';
 import { Conditions } from '~c/Conditions/Conditions';
+import { Profit } from '~c/Profit/Profit';
+import { HowToStart } from '~c/HowToStart/HowToStart';
+import { WhatCanOffer } from '~c/WhatCanOffer/WhatCanOffer';
 
 export default function Home() {
   return (
@@ -30,7 +33,10 @@ export default function Home() {
           <Section>
             <Hero />
           </Section>
+          <Profit />
           <Conditions />
+          <HowToStart />
+          <WhatCanOffer />
           <Faq />
         </Wrapper>
       </main>

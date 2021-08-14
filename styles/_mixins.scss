@@ -1,4 +1,5 @@
 @use './variables' as *;
+@use 'sass:string';
 
 @mixin reset-indents() {
   margin: 0;

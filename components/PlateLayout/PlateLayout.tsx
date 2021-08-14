@@ -1,13 +1,38 @@
 import cn from 'classnames';
 
+import { Plate } from '~c/Plate/Plate';
+import { IPlate } from '~c/SectionWithPlates/SectionWithPlates';
 import styles from './PlateLayout.module.scss';
 
 interface IPlateLayoutProps {
-  // FIXME: заменить ReactClild на typeof Plate, как будет готов
-  plateList: React.ReactChild;
   className?: string;
+  withIndexes?: boolean;
+  desktopMaxElemsInRow?: 2 | 3;
+  plateList: IPlate[];
 }
 
-export const Profit = ({ plateList, className = '' }: IPlateLayoutProps) => {
-  return <div className={cn(styles.PlateLayout, className)}>{plateList}</div>;
+export const PlateLayout = ({
+  className,
+  withIndexes = false,
+  desktopMaxElemsInRow = 2,
+  plateList,
+}: IPlateLayoutProps) => {
+  const Tag = withIndexes ? 'ol' : 'div';
+
+  return (
+    <Tag
+      className={cn(
+        styles.layout,
+        {
+          [styles.layoutNumbered]: withIndexes,
+          [styles.layoutMedium]: desktopMaxElemsInRow === 2,
+          [styles.layoutSmall]: desktopMaxElemsInRow === 3,
+        },
+        className,
+      )}>
+      {plateList.map(({ key, ...otherProps }) => {
+        return <Plate key={key} {...otherProps} withIndex={withIndexes} />;
+      })}
+    </Tag>
+  );
 };

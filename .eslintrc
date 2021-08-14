@@ -3,9 +3,6 @@
   "plugins": ["promise", "node", "import"],
   "rules": {
     "no-unused-vars": 2,
-    "import/order": [
-      2,
-      { "groups": [["builtin", "external"], "internal"], "newlines-between": "always-and-inside-groups" }
-    ]
+    "import/order": [2, { "groups": [["builtin", "external"], "internal"], "newlines-between": "always" }]
   }
 }

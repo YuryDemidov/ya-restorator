@@ -1,13 +1,24 @@
 @use "../../styles/_tools.scss" as *;
 
-.PlateLayout {
+.layout {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: $indent-s;
+
+  &Medium {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &Small {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &Numbered {
+    @include custom-numbered-list(plate, '#');
+  }
 }
 
 @include tablet-portrait {
-  .PlateLayout {
+  .layout {
     grid-template-columns: 1fr;
     gap: $indent-2xs;
   }
