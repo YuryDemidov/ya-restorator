@@ -11,8 +11,8 @@ export const PlateContent = ({ title, description, image, actionBlock }: IPlateC
   return (
     <>
       <div className={styles.leftWrapper}>
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.description}>{description}</p>
+        {title && <h3 className={styles.title}>{title}</h3>}
+        {description && <p className={styles.description}>{description}</p>}
         {actionBlock}
       </div>
       {withImage && image}

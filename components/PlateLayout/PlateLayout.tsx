@@ -9,6 +9,7 @@ interface IPlateLayoutProps {
   withIndexes?: boolean;
   desktopMaxElemsInRow?: 2 | 3;
   plateList: IPlate[];
+  sectionType?: IPlate['sectionType'];
 }
 
 export const PlateLayout = ({
@@ -16,6 +17,7 @@ export const PlateLayout = ({
   withIndexes = false,
   desktopMaxElemsInRow = 2,
   plateList,
+  sectionType,
 }: IPlateLayoutProps) => {
   const Tag = withIndexes ? 'ol' : 'div';
 
@@ -31,7 +33,7 @@ export const PlateLayout = ({
         className,
       )}>
       {plateList.map(({ key, ...otherProps }) => {
-        return <Plate key={key} {...otherProps} withIndex={withIndexes} />;
+        return <Plate key={key} {...otherProps} withIndex={withIndexes} sectionType={sectionType} />;
       })}
     </Tag>
   );
