@@ -1,0 +1,151 @@
+@use '../../styles/tools' as *;
+
+.wrapper {
+  position: relative;
+  margin-bottom: $indent-s;
+  padding: $indent-l;
+  padding-right: 0;
+
+  &::before {
+    @include horizontally-centered();
+    @include box(100vw, 100%);
+
+    content: '';
+    top: 0;
+    z-index: -1;
+    background-color: $color-yellow-second;
+  }
+}
+
+.title {
+  max-width: 40rem;
+}
+
+.list {
+  max-width: 32rem;
+  color: $color-dark-font;
+}
+
+.item {
+  @include text-m();
+
+  position: relative;
+  margin-bottom: $indent-s;
+  padding-left: 0.9rem;
+
+  &::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    font-size: larger;
+    color: inherit;
+  }
+}
+
+.phoneMockup {
+  @include box(27.8rem, 0);
+
+  position: absolute;
+  top: 5rem;
+  right: 28.5%;
+  padding-bottom: 50%;
+  background-image: url(../../public/images/phone-mockup.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  + .phoneMockup {
+    right: 0;
+  }
+}
+
+.hiddenDesktop {
+  display: none;
+}
+
+@include tablet-landscape() {
+  .phoneMockup {
+    top: auto;
+    right: 26%;
+    bottom: -4rem;
+    width: 25%;
+    padding-bottom: 45%;
+  }
+}
+
+@include tablet-portrait() {
+  .wrapper {
+    padding-left: $indent-s;
+  }
+
+  .list {
+    max-width: 50%;
+  }
+
+  .item {
+    @include text-s();
+
+    margin-bottom: $indent-xs;
+  }
+
+  .phoneMockup {
+    top: 62%;
+    bottom: auto;
+    width: calc(20% + 6rem);
+    padding-bottom: calc(40% + 10rem);
+    transform: translateY(-50%);
+
+    + .phoneMockup {
+      right: 5%;
+    }
+  }
+
+  .hiddenDesktop {
+    display: block;
+  }
+
+  .hiddenMobile {
+    display: none;
+  }
+}
+
+@include phone-only() {
+  .wrapper {
+    padding-top: $indent-m;
+    padding-bottom: $indent-m;
+  }
+
+  .title {
+    @include text-m();
+
+    max-width: 25rem;
+  }
+
+  .item {
+    @include text-2xs();
+  }
+
+  .phoneMockup {
+    top: auto;
+    bottom: -8%;
+    width: calc(10rem + 13%);
+    padding-bottom: calc(25rem + 10%);
+    transform: none;
+
+    + .phoneMockup {
+      right: 2%;
+    }
+  }
+}
+
+@media (max-width: 413px) {
+  .wrapper {
+    padding: $indent-s 0;
+  }
+
+  .phoneMockup {
+    + .phoneMockup {
+      right: 0;
+    }
+  }
+}

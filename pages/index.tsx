@@ -1,15 +1,16 @@
 import Head from 'next/head';
 
+import { Wrapper } from '~c/Wrapper/Wrapper';
 import { Section } from '~c/Section/Section';
 import { Header } from '~c/Header/Header';
-import { Wrapper } from '~c/Wrapper/Wrapper';
-import { Faq } from '~c/Faq/Faq';
 import { Hero } from '~c/Hero/Hero';
-import { Footer } from '~c/Footer/Footer';
-import { Conditions } from '~c/Conditions/Conditions';
 import { Profit } from '~c/Profit/Profit';
+import { MobileAppScreen } from '~c/MobileAppScreen/MobileAppScreen';
+import { Conditions } from '~c/Conditions/Conditions';
 import { HowToStart } from '~c/HowToStart/HowToStart';
 import { WhatCanOffer } from '~c/WhatCanOffer/WhatCanOffer';
+import { Faq } from '~c/Faq/Faq';
+import { Footer } from '~c/Footer/Footer';
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
             <Hero />
           </Section>
           <Profit />
+          <MobileAppScreen />
           <Conditions />
           <HowToStart />
           <WhatCanOffer />
