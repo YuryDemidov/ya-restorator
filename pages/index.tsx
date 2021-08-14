@@ -1,7 +1,6 @@
 import Head from 'next/head';
 
 import { Wrapper } from '~c/Wrapper/Wrapper';
-import { Section } from '~c/Section/Section';
 import { Header } from '~c/Header/Header';
 import { Hero } from '~c/Hero/Hero';
 import { Profit } from '~c/Profit/Profit';
@@ -32,9 +31,7 @@ export default function Home() {
       <Header />
       <main className="main">
         <Wrapper>
-          <Section>
-            <Hero />
-          </Section>
+          <Hero />
           <Profit />
           <MobileAppScreen />
           <HowItWorks />
