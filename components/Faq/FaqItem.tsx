@@ -37,6 +37,9 @@ export const FaqItem = ({ id, question, answer }: IFaqItemProps) => {
     if (isExpanded) {
       setAnswerHeight(0);
       disableLinksFocus(answerNode);
+      if (evt.clientX && evt.clientY) {
+        (document.activeElement as HTMLElement).blur();
+      }
     } else {
       setAnswerHeight(answerNode.scrollHeight || 0);
       enableLinksFocus(answerNode);
