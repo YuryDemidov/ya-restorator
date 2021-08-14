@@ -10,9 +10,6 @@
     grid-template-rows: auto;
     column-gap: $indent-s;
     z-index: 1;
-
-    // FIXME: Убрать, как только будет готов Title с отступами
-    margin-top: $indent-l;
   }
 
   &List,

@@ -21,6 +21,7 @@ html {
 }
 
 body {
+  overflow: hidden;
   min-width: 32rem;
   font-size: $text-s;
 }
