@@ -1,10 +1,9 @@
-import React from 'react';
 import cn from 'classnames';
 
 import { Link } from '~c/Link/Link';
 import { Phone } from '~c/Phone/Phone';
-import styles from './Menu.module.scss';
 import { Button } from '~c/Button/Button';
+import styles from './Menu.module.scss';
 
 interface IMenuProps {
   name: string;

@@ -1,0 +1,17 @@
+@use "../../styles/_tools.scss" as *;
+
+.wrapper {
+  margin-bottom: $indent-xs;
+}
+
+.title {
+  display: inline-block;
+  font-weight: $bold;
+
+  @include text-m;
+}
+
+.tooltip {
+  display: inline-block;
+  margin-left: 0.8rem;
+}

@@ -2,7 +2,7 @@
   "extends": ["next", "next/core-web-vitals"],
   "plugins": ["promise", "node", "import"],
   "rules": {
-    "no-unused-vars": 2,
+    "no-unused-vars": 0,
     "import/order": [2, { "groups": [["builtin", "external"], "internal"], "newlines-between": "always" }]
   }
 }

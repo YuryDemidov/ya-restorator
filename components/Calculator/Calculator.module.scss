@@ -1,0 +1,82 @@
+@use "../../styles/_tools.scss" as *;
+
+.calculatorSection {
+  position: relative;
+  margin-bottom: $indent-s;
+  padding: $indent-l 0;
+
+  &::before {
+    content: '';
+    background-color: $color-x-dark-dim;
+    z-index: -1;
+    top: 0;
+
+    @include horizontally-centered;
+    @include box(100vw, 100%);
+  }
+}
+
+.title {
+  color: $color-white;
+  margin-bottom: 3.6rem;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  row-gap: $indent-s;
+  padding: $indent-l;
+  border-radius: $br-block;
+  background-color: $color-main-bg;
+}
+
+.baseValues,
+.additional {
+  grid-column: span 8;
+}
+
+.results {
+  position: relative;
+  grid-column: span 12;
+  grid-row: span 2;
+  border-radius: $br-block;
+  margin-left: $indent-l;
+  z-index: 0;
+
+  &Wrapper {
+    background-color: $color-main-bg;
+    border-radius: 2.2rem;
+    padding: $indent-s;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -0.2rem;
+    border-radius: inherit;
+    background: linear-gradient(to right, #ffe033, #fa6a3c);
+  }
+}
+
+.annotation {
+  @include text-2xs;
+
+  color: $color-white;
+  margin-left: $indent-l;
+  margin-top: $indent-s;
+}
+
+@include tablet-landscape {
+  .calculator {
+    grid-template-columns: 1fr;
+  }
+
+  .results {
+    margin-left: 0;
+  }
+}
