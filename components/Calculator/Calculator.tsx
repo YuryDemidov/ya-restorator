@@ -77,17 +77,15 @@ export const Calculator = () => {
             <InputNumberRangeFieldset {...averageCheckData} value={averageCheck} setOrdersDaily={setAverageCheck} />
           </div>
           <div className={styles.results}>
-            <div className={styles.resultsWrapper}>
-              <p>ordersDaily: {ordersDaily}</p>
-              <p>averageCheck: {averageCheck}</p>
-              <p>deliveryByYandex: {deliveryByYandex.toString()}</p>
-              <p>adsInApp: {adsInApp.toString()}</p>
-              <p>promotions: {promotions.toString()}</p>
-              <p>period: {period}</p>
-              {/* FIXME: Пример использования toLocaleString */}
-              <p>income: {income.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}</p>
-              <p>profit: {profit.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}</p>
-            </div>
+            <p>ordersDaily: {ordersDaily}</p>
+            <p>averageCheck: {averageCheck}</p>
+            <p>deliveryByYandex: {deliveryByYandex.toString()}</p>
+            <p>adsInApp: {adsInApp.toString()}</p>
+            <p>promotions: {promotions.toString()}</p>
+            <p>period: {period}</p>
+            {/* FIXME: Пример использования toLocaleString */}
+            <p>income: {income.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}</p>
+            <p>profit: {profit.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}</p>
           </div>
           <div className={styles.additional}>
             <BlockWithTooltip
