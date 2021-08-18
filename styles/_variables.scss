@@ -27,6 +27,8 @@ $text-m: 1.8rem;
 $text-s: 1.6rem;
 $text-xs: 1.4rem;
 $text-2xs: 1.3rem;
+$text-3xs: 1.1rem;
+$text-calc-s: 1.5rem;
 
 // font-size line-height
 $text-lh-xxl: 4rem;
@@ -99,3 +101,6 @@ $br-block-small: 1.5rem;
 
 // separation lines
 $line: $color-gray;
+
+// shadows
+$thumb-shadow: 0 6px 20px rgba(252, 185, 0, 0.5);

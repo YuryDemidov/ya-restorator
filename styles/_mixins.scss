@@ -223,7 +223,32 @@
   line-height: $text-lh-2xs;
 }
 
+@mixin text-3xs {
+  //1.1rem
+  font-size: $text-3xs;
+  line-height: $text-lh-2xs;
+}
+
 // animation
 @mixin link-animation {
   transition: all 0.3s ease-in-out;
+}
+
+// input range
+@mixin common-thumb {
+  @include box($indent-xs);
+  // FIXME: В макете указан FCE000.Взял ближайший из заведенных.
+  border: 0.2rem solid $color-yellow;
+  cursor: ew-resize;
+  border-radius: 50%;
+  background: $color-white;
+  margin-top: -6px;
+  box-shadow: $thumb-shadow;
+}
+
+@mixin common-track {
+  width: 100%;
+  height: 0.3rem;
+  border-radius: 1rem;
+  z-index: 3;
 }

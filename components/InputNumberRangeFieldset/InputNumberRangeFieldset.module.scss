@@ -1,0 +1,222 @@
+@use "~s/_tools.scss" as *;
+
+.legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+
+  &Text {
+    font-size: $text-calc-s;
+    line-height: $text-lh-xs;
+    color: $color-blue-gray;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;
+  }
+
+  &IconBox {
+    display: flex;
+    align-items: center;
+    height: $text-lh-xs;
+    flex-basis: $text-lh-xs;
+    flex-shrink: 0;
+  }
+
+  &Text + &IconBox {
+    margin-left: $indent-3xs;
+  }
+}
+
+.fieldset {
+  width: 100%;
+  max-width: 40.7rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  column-gap: $indent-3xs;
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  & + & {
+    margin-top: $indent-xs;
+  }
+}
+
+.field {
+  position: relative;
+
+  &Text {
+    @include box(0.1rem);
+
+    position: absolute;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  &Range,
+  &Number {
+    display: flex;
+    align-items: center;
+  }
+
+  &Number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    text-align: right;
+    margin-left: auto;
+
+    &Input,
+    &Output,
+    &Currency {
+      @include title-l;
+
+      color: $color-black;
+      font-weight: $medium;
+      text-align: right;
+      margin-left: $indent-3xs;
+    }
+
+    &Currency {
+      margin-right: 0;
+    }
+
+    &Input {
+      @include title-l;
+
+      border: none;
+      width: 100%;
+      -moz-appearance: textfield;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+    }
+  }
+
+  &Range {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &Input {
+      -webkit-appearance: none;
+      display: block;
+      cursor: pointer;
+      width: 100%;
+      // INFO: Намеренно жесткая фиксация высоты для большой площади касания
+      height: $indent-l;
+      position: relative;
+      background: transparent;
+      z-index: 1;
+
+      // THUMB
+      &::-webkit-slider-thumb {
+        @include common-thumb;
+
+        -webkit-appearance: none;
+      }
+
+      &::-moz-range-thumb {
+        // TODO: решить проблему с шириной на firefox
+        @include common-thumb;
+      }
+
+      // TRACK
+      &::-webkit-slider-runnable-track {
+        @include common-track;
+
+        -webkit-appearance: none;
+      }
+
+      &::-moz-range-track {
+        @include common-track;
+      }
+    }
+  }
+}
+
+.pseudoTrack {
+  @include common-track;
+
+  position: absolute;
+  z-index: 1;
+  // FIXME: в макете указан E5E4DD. Взял ближайший из заведенных
+  background: $color-light-gray;
+}
+
+.range {
+  &Start,
+  &End {
+    @include text-2xs;
+    // FIXME: В макете указан #9598AD. Взял ближайший $color-blue-gray: #696b80;
+    color: $color-blue-gray;
+    font-weight: $regular;
+  }
+
+  &Start {
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &End {
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@include phone-only {
+  .fieldset {
+    & + & {
+      margin-top: 0;
+    }
+  }
+
+  .legend {
+    &Text {
+      @include text-2xs;
+    }
+
+    &IconBox {
+      height: $text-lh-2xs;
+      flex-basis: $text-lh-2xs;
+    }
+
+    &Text + &IconBox {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .range {
+    &Start,
+    &End {
+      @include text-3xs;
+    }
+  }
+
+  .field {
+    &Number {
+      &Input,
+      &Output,
+      &Currency {
+        @include text-xxl;
+      }
+    }
+
+    &Range {
+      &Input {
+        height: 4.3rem;
+      }
+    }
+  }
+}

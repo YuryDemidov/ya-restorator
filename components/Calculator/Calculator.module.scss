@@ -1,4 +1,4 @@
-@use "../../styles/_tools.scss" as *;
+@use "~s/_tools.scss" as *;
 
 .calculatorSection {
   position: relative;
@@ -74,6 +74,7 @@
 @include tablet-landscape {
   .calculator {
     grid-template-columns: 1fr;
+    padding: $indent-xs;
   }
 
   .results {
