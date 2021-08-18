@@ -4,6 +4,7 @@
     "paths": {
       "~c/*": ["./components/*"],
       "~p/*": ["./pages/*"],
+      "~u/*": ["./utils/*"],
       "~s/*": ["./styles/*"]
     },
     "target": "es5",
@@ -18,7 +19,9 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

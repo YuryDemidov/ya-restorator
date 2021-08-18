@@ -15,6 +15,7 @@ module.exports = {
     '\\.(css|scss)$': '<rootDir>/__mocks__/styleMock.js',
     '~c/(.*)': '<rootDir>/components/$1',
     '~p/(.*)': '<rootDir>/pages/$1',
+    '~u/(.*)': '<rootDir>/utils/$1',
   },
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',

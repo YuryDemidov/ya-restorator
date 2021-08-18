@@ -11,6 +11,7 @@ import { WhatCanOffer } from '~c/WhatCanOffer/WhatCanOffer';
 import { Faq } from '~c/Faq/Faq';
 import { Footer } from '~c/Footer/Footer';
 import { HowItWorks } from '~c/HowItWorks/HowItWorks';
+import { Calculator } from '~c/Calculator/Calculator';
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
       <main className="main">
         <Wrapper>
           <Hero />
+          <Calculator />
           <Profit />
           <MobileAppScreen />
           <HowItWorks />
