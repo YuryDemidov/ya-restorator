@@ -1,4 +1,4 @@
-@use "../../styles/_tools.scss" as *;
+@use "~s/_tools.scss" as *;
 
 .conditions {
   &Block {
@@ -103,16 +103,12 @@
   }
 }
 
-// TODO: выбрать брейкпоинт, синхронизировать с Title
 @include tablet-landscape {
   .conditions {
     &Block {
       grid-template-columns: 1fr 8rem 8rem;
       padding: $indent-s $indent-2xs $indent-s $indent-s;
       column-gap: $indent-2xs;
-
-      // FIXME: Убрать, как только будет готов Title с отступами
-      margin-top: $indent-s;
     }
 
     &TextItem {

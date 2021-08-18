@@ -1,14 +1,13 @@
 import cn from 'classnames';
 
+import { sortListByPriority } from '~u/helpers';
 import { Section } from '~c/Section/Section';
 import { Title } from '~c/Title/Title';
 import { ConditionsRow } from './ConditionsRow';
-import { conditionList, Condition } from './conditionList';
+import { conditionList } from './conditionList';
 import styles from './Conditions.module.scss';
 
-const compareSortByPriority = (a: Condition, b: Condition) => a.priority - b.priority;
-const sortedConditionList = conditionList.sort(compareSortByPriority);
-
+const sortedConditionList = conditionList.sort(sortListByPriority);
 const conditionsRowList = sortedConditionList.map((item, index) => {
   return <ConditionsRow item={item} index={index} key={item.id} />;
 });
