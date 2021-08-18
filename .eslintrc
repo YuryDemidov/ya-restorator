@@ -3,6 +3,7 @@
   "plugins": ["promise", "node", "import"],
   "rules": {
     "no-unused-vars": 0,
-    "import/order": [2, { "groups": [["builtin", "external"], "internal"], "newlines-between": "always" }]
+    "import/order": [2, { "groups": [["builtin", "external"], "internal"], "newlines-between": "always" }],
+    "import/no-duplicates": 2
   }
 }
