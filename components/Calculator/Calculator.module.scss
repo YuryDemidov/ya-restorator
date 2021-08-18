@@ -36,31 +36,16 @@
 }
 
 .results {
-  position: relative;
   grid-column: span 12;
   grid-row: span 2;
   border-radius: $br-block;
+  padding: $indent-s;
   margin-left: $indent-l;
-  z-index: 0;
-
-  &Wrapper {
-    background-color: $color-main-bg;
-    border-radius: 2.2rem;
-    padding: $indent-s;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    margin: -0.2rem;
-    border-radius: inherit;
-    background: linear-gradient(to right, #ffe033, #fa6a3c);
-  }
+  border: 0.2rem solid $color-transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient($color-main-bg, $color-main-bg),
+    linear-gradient(to right, $color-calc-gradient-start, $color-calc-gradient-end);
 }
 
 .annotation {
