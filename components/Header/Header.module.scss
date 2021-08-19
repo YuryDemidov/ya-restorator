@@ -1,11 +1,11 @@
-@use "~s/_tools.scss" as *;
+@use "~s/tools.scss" as *;
 
 .header {
   position: sticky;
   background-color: $color-main-bg;
   z-index: 3;
   top: 0;
-  border-bottom: 1px solid $line;
+  border-bottom: 0.1rem solid $line;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;

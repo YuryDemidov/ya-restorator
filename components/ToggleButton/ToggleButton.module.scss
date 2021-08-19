@@ -1,0 +1,123 @@
+@use '~s/tools' as *;
+@use 'sass:color';
+
+$primary-size: 2.4rem;
+$border-size: 0.2rem;
+$transition-duration: 0.3s;
+
+.block {
+  padding-bottom: $indent-s;
+  border-bottom: 0.1rem solid $color-light-gray;
+
+  + .block {
+    margin: $indent-xs 0;
+    border-bottom: none;
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: $text-xl;
+  margin-bottom: $indent-xs;
+}
+
+.label {
+  @include text-s;
+
+  &::before,
+  &::after {
+    @include vertically-centered;
+
+    content: '';
+    cursor: pointer;
+  }
+
+  &::before {
+    @include box(2 * $primary-size + $border-size, $primary-size + 2 * $border-size);
+
+    right: 0;
+    background-color: $color-gray;
+    border-radius: $br-button;
+    transition: background-color $transition-duration;
+  }
+
+  &::after {
+    @include box($primary-size);
+
+    right: $primary-size;
+    background-color: $color-white;
+    border-radius: 50%;
+    box-shadow: 0 0.2rem 0.2rem -0.1rem change_color($color-shadow, $alpha: 0.15),
+      0 0 0 change_color($color-shadow, $alpha: 0.1);
+    transition: transform $transition-duration;
+  }
+}
+
+.input {
+  &:checked {
+    + .label {
+      &::before {
+        background-color: $color-action-base;
+      }
+
+      &::after {
+        transform: translate($primary-size - $border-size, -50%);
+      }
+    }
+  }
+
+  &:focus {
+    + .label {
+      &::before {
+        @include focus-ring(false);
+      }
+    }
+  }
+
+  &:checked:focus {
+    + .label {
+      &::before {
+        border-color: $color-light-dim;
+      }
+    }
+  }
+}
+
+.output {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  line-height: $text-lh-m;
+}
+
+.description {
+  color: $color-blue-gray;
+}
+
+.outputText {
+  font-weight: $bold;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  &Visible {
+    opacity: 1;
+  }
+}
+
+@include tablet-landscape {
+  .output {
+    @include text-m;
+  }
+}
+
+@include tablet-portrait {
+  .label {
+    font-size: $text-calc-s;
+  }
+}

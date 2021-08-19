@@ -29,6 +29,7 @@ $text-xs: 1.4rem;
 $text-2xs: 1.3rem;
 $text-3xs: 1.1rem;
 $text-calc-s: 1.5rem;
+$text-calc-m: 2rem;
 
 // font-size line-height
 $text-lh-xxl: 4rem;
@@ -71,6 +72,8 @@ $color-lighter-gray: #f4f4f4;
 $color-dark-gray: #403c38;
 $color-blue-start: #d1dcf9;
 $color-blue-end: #c0cdef;
+$color-calc-gradient-start: #ffe033;
+$color-calc-gradient-end: #fa6a3c;
 $color-blue-gray: #696b80;
 $color-dark-blue-gray: #404152;
 $color-dark-font: #33302d;
@@ -78,8 +81,8 @@ $color-link: #04b;
 $color-transparent: rgba(255, 255, 255, 0);
 $color-x-dark-dim: #333;
 $color-dark-dim: #555;
-$color-calc-gradient-start: #ffe033;
-$color-calc-gradient-end: #fa6a3c;
+$color-light-dim: #aaa;
+$color-shadow: rgb(0, 44, 94);
 
 //color-text
 $color-text: $color-black;

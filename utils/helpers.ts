@@ -1,14 +1,17 @@
-interface IsortListByPriority {
+type TSortableByPriority = {
   priority: number;
   [key: string]: any;
-}
+};
 
-// TODO: реализовать более изящно в плане дженериков
-export function sortListByPriority<T extends IsortListByPriority>(a: T, b: T) {
+export function sortListByPriority<T extends TSortableByPriority>(a: T, b: T) {
   return a.priority - b.priority;
 }
 
-// TODO: переписать, как обертку над toLocaleString
+export const formatPrice = (price: number) => {
+  return price.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' });
+};
+
+// TODO: переписать все использования этой функции на formatPrice
 export const splitNumberIntoDigits = (num: number): string => {
   const value = num.toString();
   let arr = value.split('');
