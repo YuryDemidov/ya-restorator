@@ -24,6 +24,10 @@ const PseudoTrack = ({ value, min, max }: IPseudoTrackProps) => {
 };
 
 export const InputRangePartField = ({ min, max, step, value, units, onChange }: IBasicInputProps) => {
+  const handleFocus = () => {
+    setTimeout(() => (document.activeElement as HTMLElement).blur());
+  };
+
   return (
     <>
       <PseudoTrack value={value} min={min} max={max} />
@@ -38,6 +42,7 @@ export const InputRangePartField = ({ min, max, step, value, units, onChange }: 
         step={step}
         value={value}
         onChange={onChange}
+        onMouseDown={handleFocus}
       />
       <span className={styles.rangeStart}>{[splitNumberIntoDigits(min), units].join(' ')}</span>
       <span className={styles.rangeEnd}>{[splitNumberIntoDigits(max), units].join(' ')}</span>

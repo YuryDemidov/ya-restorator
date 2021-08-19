@@ -1,4 +1,4 @@
-@use "~s/_tools.scss" as *;
+@use "~s/tools.scss" as *;
 
 .legend {
   display: flex;
@@ -96,6 +96,10 @@
       &::-webkit-inner-spin-button {
         -webkit-appearance: none;
       }
+
+      &:focus {
+        @include focus-ring(true);
+      }
     }
   }
 
@@ -106,15 +110,20 @@
     align-items: center;
 
     &Input {
+      // INFO: Намеренно жесткая фиксация высоты для большой площади касания
+      @include box(100%, $indent-l);
+
       -webkit-appearance: none;
       display: block;
       cursor: pointer;
-      width: 100%;
-      // INFO: Намеренно жесткая фиксация высоты для большой площади касания
-      height: $indent-l;
       position: relative;
       background: transparent;
       z-index: 1;
+      outline: 0.2rem solid $color-transparent;
+      outline-offset: 0.2rem;
+      transition-property: outline-color;
+      transition-duration: 0.3s;
+      transition-delay: 0.1s;
 
       // THUMB
       &::-webkit-slider-thumb {
@@ -137,6 +146,10 @@
 
       &::-moz-range-track {
         @include common-track;
+      }
+
+      &:focus {
+        outline-color: $color-action-base;
       }
     }
   }
@@ -175,6 +188,40 @@
   }
 }
 
+@include tablet-landscape {
+  .field {
+    &Number {
+      &Input,
+      &Output,
+      &Currency {
+        @include title-s;
+      }
+    }
+  }
+
+  .legend {
+    &Text {
+      @include text-xs;
+    }
+  }
+}
+
+@include tablet-portrait {
+  .field {
+    &Number {
+      &Input,
+      &Output,
+      &Currency {
+        @include text-xxl;
+      }
+    }
+  }
+
+  .fieldset {
+    max-width: 100%;
+  }
+}
+
 @include phone-only {
   .fieldset {
     & + & {
@@ -205,14 +252,6 @@
   }
 
   .field {
-    &Number {
-      &Input,
-      &Output,
-      &Currency {
-        @include text-xxl;
-      }
-    }
-
     &Range {
       &Input {
         height: 4.3rem;

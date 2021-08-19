@@ -1,17 +1,15 @@
-@use "~s/_tools.scss" as *;
+@use "~s/tools.scss" as *;
 
 .wrapper {
+  display: flex;
+  align-items: center;
   margin-bottom: $indent-xs;
-}
 
-.title {
-  display: inline-block;
-  font-weight: $bold;
-
-  @include text-m;
+  &NoMargin {
+    margin-bottom: 0;
+  }
 }
 
 .tooltip {
-  display: inline-block;
-  margin-left: 0.8rem;
+  margin-left: $indent-3xs;
 }

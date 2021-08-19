@@ -1,0 +1,146 @@
+@use '~s/tools' as *;
+
+.container {
+  @include reset-fieldset;
+
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: $indent-s;
+}
+
+.legend {
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  color: $color-blue-gray;
+}
+
+.container:focus-within {
+  .legend {
+    color: $color-black;
+  }
+}
+
+.label {
+  $small-border-radius: 0.8rem;
+  $big-border-radius: 1.2rem;
+
+  @include text-xs;
+
+  position: relative;
+  z-index: 0;
+  margin-left: -0.1rem;
+  padding: 1.5rem calc(1.2rem + 0.4vw);
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    @include absolute-centered;
+
+    content: '';
+    z-index: -1;
+  }
+
+  &::before {
+    @include box(100%);
+
+    background-color: $color-gray;
+  }
+
+  &::after {
+    @include box(calc(100% - #{$big-border-radius - $small-border-radius} * 2));
+
+    opacity: 0;
+    background-color: $color-action-base;
+    border-radius: $small-border-radius;
+    transition: opacity 0.3s;
+  }
+
+  &:first-of-type {
+    &::before {
+      border-top-left-radius: $big-border-radius;
+      border-bottom-left-radius: $big-border-radius;
+    }
+  }
+
+  &:last-of-type {
+    &::before {
+      border-top-right-radius: $big-border-radius;
+      border-bottom-right-radius: $big-border-radius;
+    }
+  }
+}
+
+.input {
+  &:checked {
+    + .label {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &:focus {
+    + .label {
+      &::after {
+        background-color: $color-yellow-hovered;
+      }
+    }
+  }
+}
+
+@include tablet-landscape {
+  .label {
+    @include text-2xs;
+
+    padding: 1.4vw 1vw;
+  }
+
+  .legend {
+    @include vertically-centered;
+    @include text-2xs;
+  }
+}
+
+@include tablet-portrait {
+  .container {
+    justify-content: flex-start;
+  }
+
+  .label {
+    @include text-xs;
+
+    padding: 1.2rem 1.8rem;
+  }
+
+  .legend {
+    @include text-xs;
+
+    position: relative;
+    margin-bottom: $indent-3xs;
+    transform: none;
+  }
+}
+
+@include phone-only {
+  .label {
+    padding: 1.4rem 3.5vw;
+  }
+
+  .legend {
+    @include text-xs;
+
+    position: relative;
+    margin-bottom: $indent-3xs;
+    transform: none;
+  }
+}
+
+@include big-desktop {
+  .label {
+    padding-right: 1.8rem;
+    padding-left: 1.8rem;
+  }
+}

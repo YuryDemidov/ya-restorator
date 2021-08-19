@@ -1,4 +1,4 @@
-@use "~s/_tools.scss" as *;
+@use '~s/tools' as *;
 
 .calculatorSection {
   position: relative;
@@ -6,63 +6,224 @@
   padding: $indent-l 0;
 
   &::before {
-    content: '';
-    background-color: $color-x-dark-dim;
-    z-index: -1;
-    top: 0;
-
     @include horizontally-centered;
     @include box(100vw, 100%);
+
+    content: '';
+    top: 0;
+    z-index: -1;
+    background-color: $color-x-dark-dim;
   }
 }
 
-.title {
-  color: $color-white;
+.headline {
   margin-bottom: 3.6rem;
+  color: $color-white;
+}
+
+.title {
+  font-size: $text-calc-m;
+  line-height: $text-lh-m;
+}
+
+.subtitle {
+  margin-bottom: $indent-3xs;
+  font-weight: $medium;
+  font-size: $text-calc-s;
+  line-height: $text-lh-s;
+}
+
+.textHighlight {
+  font-weight: $bold;
 }
 
 .calculator {
+  position: relative;
+  z-index: 0;
   display: grid;
-  grid-template-columns: repeat(20, 1fr);
+  grid-template-columns: 44% 50%;
   row-gap: $indent-s;
+  justify-content: space-between;
   padding: $indent-l;
-  border-radius: $br-block;
   background-color: $color-main-bg;
+  border-radius: $br-block;
+}
+
+.baseValues {
+  border-bottom: 0.1rem solid $color-light-gray;
 }
 
 .baseValues,
 .additional {
-  grid-column: span 8;
+  grid-column: 1 / 2;
+}
+
+.deliveryToggle {
+  margin: $indent-s 0;
 }
 
 .results {
-  grid-column: span 12;
+  @include gradient-border(
+    linear-gradient(90deg, $color-calc-gradient-start, $color-calc-gradient-end),
+    $color-white,
+    0.2rem,
+    $br-block
+  );
+
+  grid-column: -2 / -1;
   grid-row: span 2;
-  border-radius: $br-block;
+  align-self: flex-start;
   padding: $indent-s;
-  margin-left: $indent-l;
-  border: 0.2rem solid $color-transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: linear-gradient($color-main-bg, $color-main-bg),
-    linear-gradient(to right, $color-calc-gradient-start, $color-calc-gradient-end);
+}
+
+.mainOutput {
+  margin-bottom: $indent-l;
+}
+
+.totalIncome {
+  display: inline-block;
+  margin-bottom: $indent-xs;
+  font-weight: $bold;
+  font-size: 5.2rem;
+}
+
+.fee {
+  @include text-xxl;
+
+  font-weight: $medium;
+  color: $color-blue-gray;
+}
+
+.featuresList {
+  position: relative;
+}
+
+.featuresTitle {
+  margin-bottom: $indent-s;
+  font-size: $text-calc-m;
+  line-height: $text-lh-m;
+}
+
+.features {
+  @include reset-list;
+  @include text-s;
+
+  padding-left: $indent-xs;
+  color: $color-dark-blue-gray;
+}
+
+.feature {
+  list-style: decimal;
+  margin-bottom: 0.4rem;
 }
 
 .annotation {
   @include text-2xs;
 
-  color: $color-white;
   margin-left: $indent-l;
   margin-top: $indent-s;
+  color: $color-white;
 }
 
 @include tablet-landscape {
   .calculator {
-    grid-template-columns: 1fr;
-    padding: $indent-xs;
+    padding: 3.2rem $indent-s;
+    border-radius: $br-block-small;
+  }
+
+  .title {
+    @include text-m;
   }
 
   .results {
-    margin-left: 0;
+    padding: 2rem $indent-xs;
+  }
+
+  .totalIncome {
+    font-size: $h-m;
+  }
+
+  .fee {
+    font-size: $h-s;
+  }
+
+  .featuresTitle {
+    @include text-m;
+
+    margin-bottom: $indent-xs;
+  }
+
+  .features {
+    @include text-xs;
+  }
+
+  .annotation {
+    margin-left: $indent-s;
+  }
+}
+
+@include tablet-portrait {
+  .calculator {
+    grid-template-columns: 1fr;
+    padding: 3.6rem;
+  }
+
+  .results {
+    padding: $indent-s;
+  }
+
+  .totalIncome {
+    @include title-l;
+  }
+
+  .fee {
+    @include title-m;
+  }
+
+  .featuresTitle {
+    font-weight: $medium;
+  }
+
+  .annotation {
+    margin-left: 3.6rem;
+  }
+}
+
+@include phone-only {
+  .calculator {
+    padding: $indent-s $indent-xs;
+  }
+
+  .headline,
+  .mainOutput {
+    margin-bottom: $indent-s;
+  }
+
+  .feature {
+    margin-bottom: 0;
+  }
+
+  .annotation {
+    margin-left: $indent-xs;
+  }
+}
+
+@include small-phone {
+  .results {
+    @include reset-indents;
+
+    background: $color-white;
+  }
+
+  .totalIncome {
+    @include title-m;
+  }
+
+  .fee {
+    @include title-s;
+  }
+
+  .subtitle {
+    @include text-xs;
   }
 }

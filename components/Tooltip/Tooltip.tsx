@@ -18,13 +18,13 @@ export const Tooltip: React.FC<ITooltipProps> = ({ className, children }) => {
   };
 
   return (
-    <div className={cn(styles.icon, className)} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <p
+    <span className={cn(styles.icon, className)} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <span
         className={cn(styles.text, {
           [styles.visible]: isVisible,
         })}>
         {children}
-      </p>
-    </div>
+      </span>
+    </span>
   );
 };

@@ -7,7 +7,7 @@
   padding-right: 0;
 
   &::before {
-    @include horizontally-centered();
+    @include horizontally-centered;
     @include box(100vw, 100%);
 
     content: '';
@@ -27,7 +27,7 @@
 }
 
 .item {
-  @include text-m();
+  @include text-m;
 
   position: relative;
   margin-bottom: $indent-s;
@@ -63,7 +63,7 @@
   display: none;
 }
 
-@include tablet-landscape() {
+@include tablet-landscape {
   .phoneMockup {
     top: auto;
     right: 26%;
@@ -73,7 +73,7 @@
   }
 }
 
-@include tablet-portrait() {
+@include tablet-portrait {
   .wrapper {
     padding-left: $indent-s;
   }
@@ -83,7 +83,7 @@
   }
 
   .item {
-    @include text-s();
+    @include text-s;
 
     margin-bottom: $indent-xs;
   }
@@ -109,20 +109,20 @@
   }
 }
 
-@include phone-only() {
+@include phone-only {
   .wrapper {
     padding-top: $indent-m;
     padding-bottom: $indent-m;
   }
 
   .title {
-    @include text-m();
+    @include text-m;
 
     max-width: 25rem;
   }
 
   .item {
-    @include text-2xs();
+    @include text-2xs;
   }
 
   .phoneMockup {
@@ -138,7 +138,7 @@
   }
 }
 
-@media (max-width: 413px) {
+@include small-phone {
   .wrapper {
     padding: $indent-s 0;
   }
