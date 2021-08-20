@@ -28,6 +28,7 @@ export default function Home() {
         <link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <script src="/pixeles/ya-metrika.js" async />
       </Head>
       <Header />
