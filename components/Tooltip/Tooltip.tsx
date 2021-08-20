@@ -16,9 +16,13 @@ const useTooltipPosition = (tooltipIconRef: MutableRefObject<HTMLSpanElement | n
         return;
       }
 
+      const windowWidth =
+        window.innerWidth && document.documentElement.clientWidth
+          ? Math.min(window.innerWidth, document.documentElement.clientWidth)
+          : window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
       const iconBox = tooltipIconRef.current.getBoundingClientRect();
       const tooltipDiffXLeft = baseDiffX - iconBox.left;
-      const tooltipDiffXRight = baseDiffX - (window.innerWidth - iconBox.right);
+      const tooltipDiffXRight = baseDiffX - (windowWidth - iconBox.right);
 
       let diffStr = defaultDiffX;
       if (tooltipDiffXLeft > 0) {
