@@ -7,5 +7,5 @@ interface IWrapperProps {
 }
 
 export const Wrapper: React.FC<IWrapperProps> = ({ children, className }) => {
-  return <div className={cn(styles.wrapper, className)}>{children}</div>;
+  return <main className={cn(styles.wrapper, className)}>{children}</main>;
 };

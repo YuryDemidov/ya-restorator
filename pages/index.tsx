@@ -28,21 +28,20 @@ export default function Home() {
         <link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
+        <script src="/pixeles/ya-metrika.js" async />
       </Head>
       <Header />
-      <main className="main">
-        <Wrapper>
-          <Hero />
-          <Profit />
-          <MobileAppScreen />
-          <HowItWorks />
-          <Conditions />
-          <Calculator />
-          <HowToStart />
-          <WhatCanOffer />
-          <Faq />
-        </Wrapper>
-      </main>
+      <Wrapper>
+        <Hero />
+        <Profit />
+        <MobileAppScreen />
+        <HowItWorks />
+        <Conditions />
+        <Calculator />
+        <HowToStart />
+        <WhatCanOffer />
+        <Faq />
+      </Wrapper>
       <Footer />
     </>
   );
