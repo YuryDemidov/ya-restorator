@@ -13,7 +13,7 @@ export const conditionList: Condition[] = [
   {
     id: '1',
     priority: 1,
-    condition: <>Размещение в сервисе Яндекс.Еда</>,
+    condition: <>Размещение в катологе ресторанов</>,
     tariff15: true,
     tariff35: true,
   },
@@ -39,21 +39,10 @@ export const conditionList: Condition[] = [
     tariff35: true,
   },
   {
-    id: '5',
-    priority: 5,
-    condition: <>Оплата только за выполненные заказы</>,
-    tariff15: true,
-    tariff35: true,
-  },
-  {
     id: '6',
-    priority: 6,
-    condition: (
-      <>
-        <b>Доставка ~32 минуты</b> курьерами Яндекс.Еды
-      </>
-    ),
-    footnote: <>Пешими курьерами на 3 км, автокурьерами на 10 км</>,
+    priority: 0,
+    condition: <>Доставка курьерами Яндекс.Еды</>,
+    footnote: <>Пешими курьерами на 3 км, автокурьерами на 10 км, за ~32 мин</>,
     tariff15: false,
     tariff35: true,
   },

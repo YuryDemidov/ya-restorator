@@ -1,18 +1,36 @@
 @use "~s/tools.scss" as *;
 
 .conditions {
+  $layout-percent: 62%;
+
   &Block {
     background: $color-light-gray-second;
-    border-radius: $br-block;
     padding: $indent-l $indent-s $indent-l $indent-l;
     display: grid;
-    grid-template-columns: 1fr 18rem 18rem;
+    grid-template-columns: $layout-percent 1fr 1fr;
     grid-template-rows: auto;
     column-gap: $indent-s;
+    position: relative;
     z-index: 1;
+    overflow: hidden;
+
+    @include gradient-border(
+      linear-gradient(90deg, $color-calc-gradient-start, $color-calc-gradient-end),
+      $color-white,
+      0.2rem,
+      $br-block
+    );
+
+    &::before {
+      @include box($layout-percent, 100%);
+
+      content: '';
+      position: absolute;
+      z-index: -1;
+      background: $color-yellow-second;
+    }
   }
 
-  &List,
   &Tariff {
     &Item {
       height: $text-lh-l;
@@ -22,72 +40,29 @@
     }
   }
 
-  &IndentRadius {
-    &Top,
-    &Bottom {
-      position: relative;
-      z-index: 1;
-
-      &::before {
-        @include box(100%);
-
-        content: '';
-        display: block;
-        position: absolute;
-        background: inherit;
-        z-index: -1;
-        border-radius: $br-block;
-      }
-    }
-
-    &Top::before {
-      top: -$indent-s;
-    }
-
-    &Bottom::before {
-      bottom: -$indent-s;
-    }
-  }
-
   .icon {
     height: $text-lh-l;
   }
 
-  &Tariff {
-    &Item {
-      height: auto;
-    }
+  &Describe {
+    @include text-l;
 
-    &Yellow {
-      background: $color-yellow-second;
-    }
-
-    &Dark {
-      background: $color-x-dark-dim;
-      color: $color-white;
-
-      .icon {
-        stroke: $color-white;
-      }
-    }
-  }
-
-  &Describe,
-  &Fee {
-    @include text-xxl;
-
-    font-weight: $bold;
-    padding-top: $indent-3xs;
+    font-weight: $regular;
+    padding-right: $indent-s;
   }
 
   &Fee {
+    @include text-l;
+
     text-align: center;
+    font-weight: $bold;
   }
 
   &TextItem {
     display: grid;
     row-gap: $indent-3xs;
-    padding-bottom: $indent-s;
+    padding-bottom: $indent-xs;
+    padding-right: $indent-s;
 
     &Text {
       @include text-l;
@@ -98,6 +73,7 @@
     &Footnote {
       @include text-s;
 
+      color: #6b6350;
       font-weight: $regular;
     }
   }
@@ -106,43 +82,34 @@
 @include tablet-landscape {
   .conditions {
     &Block {
-      grid-template-columns: 1fr 8rem 8rem;
-      padding: $indent-s $indent-2xs $indent-s $indent-s;
-      column-gap: $indent-2xs;
+      padding: $indent-s;
     }
 
     &TextItem {
-      padding-bottom: $indent-xs;
+      row-gap: 0.6rem;
 
       &Text {
         @include text-xs;
       }
 
       &Footnote {
-        font-size: 1.1rem;
-        line-height: $text-lh-2xs;
-        font-weight: $regular;
+        font-size: 1rem;
+        line-height: 1.2rem;
       }
-    }
-
-    .icon {
-      width: 1.2rem;
-      height: $text-lh-2xs;
     }
 
     &Describe,
     &Fee {
-      @include text-m;
+      @include text-xs;
     }
 
-    &IndentRadius {
-      &Top::before {
-        top: -$indent-xs;
-      }
+    &Desctibe {
+      padding-right: $indent-xs;
+    }
 
-      &Bottom::before {
-        bottom: -$indent-xs;
-      }
+    .icon {
+      height: $text-lh-xs;
+      width: $indent-xs;
     }
   }
 }
@@ -150,21 +117,9 @@
 @include phone-only {
   .conditions {
     &Block {
-      grid-template-columns: 1fr 6rem 6rem;
       padding: $indent-xs;
-      column-gap: $indent-3xs;
-    }
-
-    &IndentRadius {
-      &Top::before {
-        top: -$indent-3xs;
-        border-radius: 1rem;
-      }
-
-      &Bottom::before {
-        bottom: -$indent-3xs;
-        border-radius: 1rem;
-      }
+      padding-right: 0;
+      column-gap: 0;
     }
   }
 }

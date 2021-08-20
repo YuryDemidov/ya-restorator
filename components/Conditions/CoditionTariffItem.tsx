@@ -11,9 +11,9 @@ export const ConditionTariffItem = ({ isInclude, className = '' }: IConditionTar
   return (
     <div className={cn(styles.conditionsTariffItem, className)}>
       {isInclude ? (
-        <Icon type="checkMark" size="l" className={styles.icon} />
+        <Icon type="checkMarkCircle" size="l" className={styles.icon} />
       ) : (
-        <Icon type="cross" size="l" className={styles.icon} />
+        <Icon type="crossCircle" size="l" className={styles.icon} />
       )}
     </div>
   );
