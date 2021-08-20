@@ -1,5 +1,3 @@
-import cn from 'classnames';
-
 import { sortListByPriority } from '~u/helpers';
 import { Section } from '~c/Section/Section';
 import { Title } from '~c/Title/Title';
@@ -8,8 +6,8 @@ import { conditionList } from './conditionList';
 import styles from './Conditions.module.scss';
 
 const sortedConditionList = conditionList.sort(sortListByPriority);
-const conditionsRowList = sortedConditionList.map((item, index) => {
-  return <ConditionsRow item={item} index={index} key={item.id} />;
+const conditionsRowList = sortedConditionList.map((item) => {
+  return <ConditionsRow item={item} key={item.id} />;
 });
 
 export const Conditions = () => {
@@ -18,13 +16,11 @@ export const Conditions = () => {
       <Title level="h2">Условия сотрудничества</Title>
       <div className={styles.conditionsBlock}>
         {conditionsRowList}
-        <p className={styles.conditionsDescribe}>Комиссия</p>
-        <p className={cn(styles.conditionsFee, styles.conditionsTariffYellow, styles.conditionsIndentRadiusBottom)}>
-          15%
+        <p className={styles.conditionsDescribe}>
+          Оплата <b>только</b> за выполненные заказы
         </p>
-        <p className={cn(styles.conditionsFee, styles.conditionsTariffDark, styles.conditionsIndentRadiusBottom)}>
-          35%
-        </p>
+        <p className={styles.conditionsFee}>15%</p>
+        <p className={styles.conditionsFee}>35%</p>
       </div>
     </Section>
   );
