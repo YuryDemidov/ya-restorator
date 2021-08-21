@@ -1,9 +1,8 @@
-import Image from 'next/image';
+import cn from 'classnames';
 
 import { Section } from '~c/Section/Section';
 import { Title } from '~c/Title/Title';
 import { Button } from '~c/Button/Button';
-import HeroImage from './hero-image.png';
 import styles from './Hero.module.scss';
 
 export const Hero = () => {
@@ -17,7 +16,12 @@ export const Hero = () => {
         <Button link="https://yandex.secure.force.com/welcome/">Оставить заявку</Button>
       </div>
       <div className={styles.heroImage}>
-        <Image alt="Подключение ресторана Еды" src={HeroImage} />
+        <div className={styles.heroMainImage}></div>
+        <div className={styles.heroMainBg}></div>
+        <div className={cn(styles.heroTab1, 'heroTab')} />
+        <div className={cn(styles.heroTab2, 'heroTab')} />
+        <div className={cn(styles.heroTab3, 'heroTab')} />
+        <div className={cn(styles.heroTab4, 'heroTab')} />
       </div>
     </Section>
   );

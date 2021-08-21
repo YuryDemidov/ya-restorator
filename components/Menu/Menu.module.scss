@@ -6,7 +6,9 @@
   right: 0;
   left: 0;
   bottom: 0;
+  opacity: 1;
   background-color: white;
+  animation: slidein 0.3s ease-in-out forwards;
   z-index: 2;
 
   .link {
@@ -42,5 +44,17 @@
 @include tablet-landscape {
   .menuContent {
     display: none;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(0%);
   }
 }
