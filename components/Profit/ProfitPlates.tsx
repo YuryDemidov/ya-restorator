@@ -1,25 +1,20 @@
+import cn from 'classnames';
+
 import { IPlate } from '~c/SectionWithPlates/SectionWithPlates';
+import styles from './ProfitPlates.module.scss';
 
 export const plateList: IPlate[] = [
   {
     key: 0,
     color: 'grey',
-    title: <>Доставка — ваш новый канал продаж</>,
+    title: <>Доставка — ваш новый канал&nbsp;продаж</>,
     description: (
-      <>Даём все инструменты для быстрой доставки. Если у вас свои курьеры, помогаем получать и отслеживать заказы.</>
+      <>
+        Даём все инструменты для быстрой доставки. Если у&nbsp;вас свои курьеры, помогаем получать и&nbsp;отслеживать
+        заказы.
+      </>
     ),
-    image: (
-      <div
-        style={{
-          backgroundColor: 'red',
-          width: 186,
-          height: 186,
-          position: 'absolute',
-          top: 38,
-          right: 9,
-        }}
-      />
-    ),
+    image: <div className={cn(styles.image, styles.image1)} />,
   },
   {
     key: 1,
@@ -27,58 +22,29 @@ export const plateList: IPlate[] = [
     title: <>Возможности продвижения</>,
     description: (
       <>
-        Проводите акции для пользователей, управляйте настройками рекламы в личном кабинете и увеличивайте свою прибыль.
+        Проводите акции для поль&shy;зователей, управляйте настройками рекламы  в&nbsp;личном кабинете
+        и&nbsp;увеличивайте свою прибыль.
       </>
     ),
-    image: (
-      <div
-        style={{
-          backgroundColor: 'red',
-          width: 186,
-          height: 186,
-          position: 'absolute',
-          top: 38,
-          right: 9,
-        }}
-      />
-    ),
+    image: <div className={cn(styles.image, styles.image2)} />,
   },
   {
     key: 2,
     color: 'grey',
-    title: <>Покажем ресторан в наших сервисах</>,
-    description: <>Пользователи Яндекса увидят вас в сервисах Еда, Go, Карты, Поиск.</>,
-    image: (
-      <div
-        style={{
-          backgroundColor: 'red',
-          width: 186,
-          height: 186,
-          position: 'absolute',
-          top: 38,
-          right: 9,
-        }}
-      />
-    ),
+    title: <>Покажем ресторан в&nbsp;наших сервисах</>,
+    description: <>Пользователи Яндекса увидят вас в&nbsp;сервисах Еда, Go, Карты, Поиск.</>,
+    image: <div className={cn(styles.image, styles.image3)} />,
   },
   {
     key: 3,
     color: 'grey',
-    title: <>Больше продаж теми же силами</>,
+    title: <>Больше продаж теми&nbsp;же&nbsp;силами</>,
     description: (
-      <>На 100% используйте потенциал своего ресторана. Кухня не будет стоять без дела, а еда — портиться.</>
+      <>
+        На 100% используйте потенциал  своего ресторана. Кухня не&nbsp;будет  стоять без&nbsp;дела, а&nbsp;еда&nbsp;—
+        портиться.
+      </>
     ),
-    image: (
-      <div
-        style={{
-          backgroundColor: 'red',
-          width: 186,
-          height: 186,
-          position: 'absolute',
-          top: 38,
-          right: 9,
-        }}
-      />
-    ),
+    image: <div className={cn(styles.image, styles.image4)} />,
   },
 ];

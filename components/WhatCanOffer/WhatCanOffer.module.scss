@@ -8,3 +8,107 @@
     color: $color-blue-gray;
   }
 }
+
+.image {
+  @include min-box(25.6rem);
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+
+  &1 {
+    background-image: url('./images/1.png');
+  }
+
+  &2 {
+    background-image: url('./images/2.png');
+  }
+
+  &3 {
+    right: -2rem;
+    background-image: url('./images/3.png');
+  }
+
+  &4 {
+    background-image: url('./images/4.png');
+  }
+
+  &5 {
+    background-image: url('./images/5.png');
+  }
+
+  &6 {
+    right: -2rem;
+    background-image: url('./images/6.png');
+  }
+}
+
+@include tablet-landscape {
+  .image {
+    @include min-box(22vw);
+
+    &3 {
+      right: -3rem;
+    }
+  }
+}
+
+@include tablet-portrait {
+  .image {
+    @include min-box(18rem);
+
+    &3,
+    &6 {
+      right: 0;
+    }
+  }
+}
+
+@include phone-only {
+  .image {
+    position: static;
+    background-position: center;
+
+    &1 {
+      background-image: url('./images/1_mobile.jpg');
+    }
+
+    &2 {
+      background-image: url('./images/2_mobile.jpg');
+      background-position: 50% 60%;
+    }
+
+    &3 {
+      margin-bottom: -1rem;
+      background-image: url('./images/3_mobile.jpg');
+    }
+
+    &4 {
+      background-image: url('./images/4_mobile.jpg');
+    }
+
+    &5 {
+      background-image: url('./images/5_mobile.jpg');
+    }
+
+    &6 {
+      background-image: url('./images/6_mobile.jpg');
+    }
+  }
+
+  .moreInfoLink {
+    @include text-2xs;
+
+    border-bottom: 1px solid;
+
+    &::before {
+      @include box(100%);
+
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}

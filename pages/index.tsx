@@ -23,13 +23,15 @@ export default function Home() {
           name="description"
           content="Подключите услуги доставки еды к вашему ресторану. Доставка за ~32 минуты 🚴. Эквайринг. Бух отчетность.👍"
         />
-        <link rel="manifest" href="/images/favicons/manifest.webmanifest" crossOrigin="use-credentials" />
-        <link rel="icon" href="/images/favicons/favicon.ico" sizes="any" />
-        <link rel="icon" href="/images/favicons/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="msapplication-TileColor" content="#fa9200" />
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="manifest" href="/images/favicons/manifest.webmanifest?v=1" crossOrigin="use-credentials" />
+        <link rel="icon" href="/images/favicons/favicon.ico?v=1" sizes="any" />
+        <link rel="icon" href="/images/favicons/favicon.svg?v=1" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png?v=1" />
+        <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg?v=1" color="#000000" />
+        <script src="/analytics/ya-metrika.js" async />
       </Head>
       <YMInitializer accounts={[84037351]} options={{ webvisor: true }} version="2" />
       <Header />

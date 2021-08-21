@@ -10,9 +10,9 @@ interface IPlateProps {
   title?: React.ReactChild;
   description?: React.ReactChild;
   actionBlock?: React.ReactChild;
-  image?: React.ReactChild; //TODO: когда будут готовы картинки в плашках
-  color?: 'yellow' | 'grey' | 'black' | 'blue' | 'light-black';
-  sectionType?: 'HowItWorks';
+  image?: React.ReactChild;
+  color?: 'yellow' | 'grey' | 'light-black';
+  sectionType?: 'HowItWorks' | 'Profit' | 'WhatCanOffer' | 'HowToStart';
 }
 
 export const Plate = (props: IPlateProps) => {
@@ -22,8 +22,6 @@ export const Plate = (props: IPlateProps) => {
     {
       [styles.plateYellow]: color === 'yellow',
       [styles.plateGrey]: color === 'grey',
-      [styles.plateBlack]: color === 'black',
-      [styles.plateBlue]: color === 'blue',
       [styles.plateLightBlack]: color === 'light-black',
       [styles[`plate${sectionType}`]]: sectionType !== undefined,
     },

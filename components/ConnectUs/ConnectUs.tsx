@@ -17,7 +17,7 @@ export const ConnectUs = () => {
           детали подключения.
         </p>
         <Button className={styles.connectUsButton} link={LINKS.linkWelcome} appearance="thirdly">
-          Присоедениться к нам
+          Оставить заявку
         </Button>
       </div>
       <div className={styles.connectUsImage}>

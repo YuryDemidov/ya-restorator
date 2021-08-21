@@ -1,5 +1,16 @@
 @use '~s/tools' as *;
 
+@keyframes show-hide {
+  0% {
+    opacity: 0;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+  }
+}
+
 .wrapper {
   position: relative;
   margin-bottom: $indent-s;
@@ -48,19 +59,17 @@
   position: absolute;
   top: 5rem;
   right: 28.5%;
-  padding-bottom: 50%;
-  background-image: url(../../public/images/phone-mockup.png);
+  padding-bottom: 51%;
+  background-image: url(./images/phone-mockup-1.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  transform: scale(1.001); // For properly text render
 
   + .phoneMockup {
     right: 0;
+    background-image: url(./images/phone-mockup-2.png);
   }
-}
-
-.hiddenDesktop {
-  display: none;
 }
 
 @include tablet-landscape {
@@ -90,6 +99,7 @@
 
   .phoneMockup {
     top: 62%;
+    right: 5%;
     bottom: auto;
     width: calc(20% + 6rem);
     padding-bottom: calc(40% + 10rem);
@@ -97,15 +107,12 @@
 
     + .phoneMockup {
       right: 5%;
+      z-index: 1;
+      animation-name: show-hide;
+      animation-timing-function: steps(1);
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
     }
-  }
-
-  .hiddenDesktop {
-    display: block;
-  }
-
-  .hiddenMobile {
-    display: none;
   }
 }
 
@@ -132,6 +139,7 @@
     padding-bottom: calc(25rem + 10%);
     transform: none;
 
+    &,
     + .phoneMockup {
       right: 2%;
     }
@@ -144,6 +152,7 @@
   }
 
   .phoneMockup {
+    &,
     + .phoneMockup {
       right: 0;
     }

@@ -12,17 +12,16 @@
 .plate {
   position: relative;
   overflow: hidden;
-  background: $color-yellow-second;
+  background-color: $color-yellow-second;
   color: $color-black;
   border-radius: $br-block;
-  text-align: left;
   padding: 3.6rem;
   min-height: 24.8rem;
 
   .title {
-    margin-bottom: 2.4rem;
-
     @include text-l;
+
+    margin-bottom: 2.4rem;
   }
 
   .description {
@@ -30,40 +29,25 @@
   }
 
   &Yellow {
-    background: $color-yellow-second;
+    background-color: $color-yellow-second;
     color: $color-black;
   }
 
   &Grey {
-    background: $color-gray-plate;
+    background-color: $color-gray-plate;
     color: $color-black;
-  }
-
-  // TODO: возможно надо будет убрать такой цвет у плашки и Plate.tsx
-  // если в финальном дизайне в итоге откажутся от такого цвета
-  &Black {
-    background: $color-black;
-    color: $color-white;
   }
 
   &LightBlack {
-    background: $color-x-dark-dim;
+    background-color: $color-x-dark-dim;
     color: $color-white;
-  }
-
-  // TODO: возможно надо будет убрать такой цвет у плашки и Plate.tsx
-  // если в финальном дизайне в итоге откажутся от такого цвета
-  &Blue {
-    background: linear-gradient(180deg, $color-blue-start 0%, $color-blue-end 100%);
-    color: $color-black;
   }
 
   &WithImage {
     .leftWrapper {
       position: relative;
       z-index: 1;
-      width: 24.9rem;
-      margin-right: 2rem;
+      width: 56%;
     }
   }
 
@@ -87,6 +71,10 @@
     .description {
       margin-bottom: 1rem;
       color: $color-dark-gray;
+    }
+
+    .image {
+      background-repeat: no-repeat;
     }
   }
 }
@@ -134,6 +122,63 @@
   }
 }
 
+.plateProfit {
+  &:nth-child(1) {
+    .leftWrapper {
+      width: 62%;
+    }
+
+    .description {
+      padding-right: 2.8rem;
+    }
+  }
+
+  &:nth-child(2),
+  &:nth-child(3) {
+    .leftWrapper {
+      width: 52.5%;
+    }
+  }
+
+  &:nth-child(4) {
+    .leftWrapper {
+      width: 60%;
+    }
+  }
+}
+
+@include tablet-landscape {
+  .plateProfit {
+    min-height: 23.5rem;
+
+    &:nth-child(n) .leftWrapper {
+      width: 100%;
+    }
+
+    .title {
+      max-width: 90%;
+    }
+
+    .description {
+      max-width: 70%;
+    }
+
+    &:nth-child(2) {
+      .description {
+        max-width: calc(10rem + 12vw);
+      }
+    }
+  }
+
+  .plateWhatCanOffer {
+    &:nth-child(6) {
+      .description {
+        padding-right: 2rem;
+      }
+    }
+  }
+}
+
 @include tablet-portrait {
   .plate {
     padding: 2.8rem;
@@ -162,6 +207,23 @@
   .plateHowItWorks {
     padding: 2.8rem;
     min-height: 14rem;
+  }
+
+  .plateProfit {
+    min-height: 19rem;
+
+    .leftWrapper {
+      max-width: 56vw;
+    }
+
+    .title {
+      max-width: 100%;
+    }
+
+    &:nth-child(n) .description {
+      max-width: 100%;
+      padding-right: 0;
+    }
   }
 }
 
@@ -216,5 +278,49 @@
   .plateHowItWorks {
     padding: 2.2rem;
     min-height: 14rem;
+  }
+
+  .plateWhatCanOffer {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0;
+    box-shadow: $block-shadow;
+
+    .leftWrapper {
+      margin-top: -1.6rem;
+      padding: $indent-xs 3.2rem;
+      background-color: $color-white;
+      border-radius: $br-block;
+    }
+
+    .image {
+      position: static;
+    }
+
+    .title {
+      font-size: 2rem;
+    }
+  }
+}
+
+@include small-phone {
+  .plateProfit {
+    padding: 2rem;
+
+    .leftWrapper {
+      max-width: 100%;
+    }
+
+    .description {
+      font-size: $text-2xs;
+    }
+
+    &:nth-child(n) .description {
+      max-width: 66%;
+    }
+
+    &:nth-child(3) .title {
+      max-width: 90%;
+    }
   }
 }
