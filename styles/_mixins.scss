@@ -294,3 +294,12 @@
   z-index: 3;
   border-radius: 1rem;
 }
+
+// tab hero template
+@mixin heroTab($width, $height) {
+  position: absolute;
+  width: $width;
+  height: $height;
+  border-radius: $br-button;
+  z-index: 2;
+}

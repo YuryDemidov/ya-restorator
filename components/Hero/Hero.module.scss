@@ -22,6 +22,103 @@
   }
 }
 
+.heroTab {
+  position: absolute;
+  display: block;
+}
+
+.heroImage {
+  position: relative;
+  left: 12rem;
+}
+
+.heroMainImage {
+  height: 47.9rem;
+  width: 60rem;
+  background: url('./HeroTabsImg/mainImage.jpg') no-repeat;
+  background-size: contain;
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.12);
+  border-radius: $br-button;
+  animation: slowshow 0.9s;
+}
+
+.heroMainBg {
+  position: absolute;
+  background-color: #333;
+  height: 47.9rem;
+  width: 60rem;
+  border-radius: $br-button;
+  left: 48px;
+  top: 28px;
+  z-index: -1;
+  animation: slidein 0.8s;
+}
+
+.heroTab1 {
+  @include heroTab(25.8rem, 6rem);
+
+  background: url('./HeroTabsImg/1.png') no-repeat;
+  box-shadow: 0 2px 19px rgba(140, 140, 140, 0.3);
+  background-size: contain;
+  bottom: 14rem;
+  left: -10rem;
+  animation: scaleShowWhiteTab 2s;
+}
+
+.heroTab2 {
+  @include heroTab(19rem, 7.8rem);
+
+  background: url('./HeroTabsImg/2.png') no-repeat;
+  background-size: contain;
+  bottom: 4rem;
+  left: -8rem;
+  animation: scaleShowYellowTab 2s;
+}
+
+.heroTab3 {
+  @include heroTab(26.8rem, 6rem);
+
+  background: url('./HeroTabsImg/3.png') no-repeat;
+  box-shadow: 0 6px 24px rgba(252, 228, 94, 0.4);
+  background-size: contain;
+  top: 8rem;
+  right: -12rem;
+  animation: scaleShowYellowTab 2s;
+}
+
+.heroTab4 {
+  @include heroTab(21.2rem, 5.2rem);
+
+  background: url('./HeroTabsImg/4.png') no-repeat;
+  box-shadow: 0 2px 19px rgba(140, 140, 140, 0.3);
+  background-size: contain;
+  top: 16rem;
+  right: -9rem;
+  animation: scaleShowWhiteTab 2s;
+}
+
+@include desktop {
+  .heroImage {
+    left: 1rem;
+  }
+
+  .heroMainImage {
+    height: 39.9rem;
+    width: 50rem;
+  }
+
+  .heroMainBg {
+    height: 39.9rem;
+    width: 50rem;
+  }
+}
+
+@include tablet-landscape {
+  .heroImage {
+    left: 0;
+  }
+}
+
 @include phone-only {
   .heroImage {
     @include box(23.8rem, 22.5rem);
@@ -47,5 +144,61 @@
 
       @include text-2xs;
     }
+  }
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slowshow {
+  0% {
+    opacity: 0;
+  }
+
+  25%,
+  55% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleShowWhiteTab {
+  0% {
+    transform: scale(0);
+  }
+
+  15%,
+  40% {
+    transform: scale(0);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleShowYellowTab {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(0);
+  }
+
+  70% {
+    transform: scale(1);
   }
 }

@@ -1,3 +1,5 @@
+import AnimatedNumber from 'animated-number-react';
+
 import { useCalculator } from '~c/Calculator/Calculator';
 import { CALCULATOR_CONFIG_VALUES } from '~u/constants/calculatorConfig';
 import { formatNumber } from '~u/helpers';
@@ -9,8 +11,9 @@ export const CalculatorOutput = () => {
   return (
     <div className={styles.mainOutput}>
       <h4 className={styles.subtitle}>Ваша выручка:</h4>
+      {/* TODO Add ids from range components */}
       <output htmlFor="ordersDaily averageCheck delivery advertising promotions period" className={styles.totalIncome}>
-        {formatNumber(profit)}
+        <AnimatedNumber formatValue={formatNumber} value={profit} duration={300} />
       </output>
       <h4 className={styles.subtitle}>Комиссия:</h4>
       <output htmlFor="delivery" className={styles.fee}>
