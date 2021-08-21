@@ -2,7 +2,7 @@ import { useCalculator } from '~c/Calculator/Calculator';
 import { BlockWithTooltip } from '~c/BlockWithTooltip/BlockWithTooltip';
 import { ToggleButtonWithOutput } from '~c/ToggleButton/ToggleButtonWithOutput';
 import { CALCULATOR_CONFIG_VALUES } from '~u/constants/calculatorConfig';
-import { formatPrice } from '~u/helpers';
+import { formatNumber } from '~u/helpers';
 import styles from '~c/Calculator/Calculator.module.scss';
 
 export const CalculatorAdditionalOptions = () => {
@@ -32,7 +32,7 @@ export const CalculatorAdditionalOptions = () => {
             <b className={styles.textHighlight}>≈{CALCULATOR_CONFIG_VALUES.advRatio * 100}%</b> к выручке
           </>
         }
-        output={`+ ${formatPrice(income * CALCULATOR_CONFIG_VALUES.advRatio)}`}
+        output={`+ ${formatNumber(income * CALCULATOR_CONFIG_VALUES.advRatio)}`}
         isOn={adsInApp}
         setState={setAdsInApp}
       />
@@ -49,7 +49,7 @@ export const CalculatorAdditionalOptions = () => {
             <b className={styles.textHighlight}>≈{CALCULATOR_CONFIG_VALUES.saleRatio * 100}%</b> к выручке
           </>
         }
-        output={`+ ${formatPrice(income * CALCULATOR_CONFIG_VALUES.saleRatio)}`}
+        output={`+ ${formatNumber(income * CALCULATOR_CONFIG_VALUES.saleRatio)}`}
         isOn={promotions}
         setState={setPromotions}
       />

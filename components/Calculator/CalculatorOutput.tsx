@@ -1,6 +1,6 @@
 import { useCalculator } from '~c/Calculator/Calculator';
 import { CALCULATOR_CONFIG_VALUES } from '~u/constants/calculatorConfig';
-import { formatPrice } from '~u/helpers';
+import { formatNumber } from '~u/helpers';
 import styles from './Calculator.module.scss';
 
 export const CalculatorOutput = () => {
@@ -9,9 +9,8 @@ export const CalculatorOutput = () => {
   return (
     <div className={styles.mainOutput}>
       <h4 className={styles.subtitle}>Ваша выручка:</h4>
-      {/* TODO Add ids from range components */}
-      <output htmlFor="delivery advertising promotions period" className={styles.totalIncome}>
-        {formatPrice(profit)}
+      <output htmlFor="ordersDaily averageCheck delivery advertising promotions period" className={styles.totalIncome}>
+        {formatNumber(profit)}
       </output>
       <h4 className={styles.subtitle}>Комиссия:</h4>
       <output htmlFor="delivery" className={styles.fee}>

@@ -1,16 +1,18 @@
-import { Tooltip } from '~c/Tooltip/Tooltip';
 import { Field } from './Field';
+import { Tooltip } from '~c/Tooltip/Tooltip';
 import styles from './InputNumberRangeFieldset.module.scss';
 
 export interface IBasicInputProps {
+  id: string;
   value: number;
   min: number;
   max: number;
   step: number;
-  units: string;
+  units?: string;
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
+
 export interface IInputNumberRangeFieldset extends IBasicInputProps {
   legend: string;
   label: string;
@@ -19,6 +21,7 @@ export interface IInputNumberRangeFieldset extends IBasicInputProps {
 }
 
 export const InputNumberRangeFieldset = ({
+  id,
   legend,
   moreInfo,
   min,
@@ -60,6 +63,7 @@ export const InputNumberRangeFieldset = ({
         )}
       </div>
       <Field
+        id={id}
         type="number"
         value={value}
         min={min}
@@ -71,6 +75,7 @@ export const InputNumberRangeFieldset = ({
         onChange={changeHandler}
       />
       <Field
+        id={id}
         type="range"
         value={value}
         min={min}
