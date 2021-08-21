@@ -1,10 +1,10 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
 
-import { splitNumberIntoDigits } from '~u/helpers';
+import { formatNumber } from '~u/helpers';
 import { IBasicInputProps } from './InputNumberRangeFieldset';
 import styles from './InputNumberRangeFieldset.module.scss';
 
-export const InputNumberPartField = ({ min, max, step, value, units, onBlur, onChange }: IBasicInputProps) => {
+export const InputNumberPartField = ({ id, min, max, step, value, units, onBlur, onChange }: IBasicInputProps) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [outputFlag, setOutputFlag] = useState(true);
 
@@ -32,11 +32,11 @@ export const InputNumberPartField = ({ min, max, step, value, units, onBlur, onC
       {outputFlag ? (
         <output
           tabIndex={0}
-          htmlFor="number range"
+          htmlFor={id}
           onFocus={setOutputFlagToFalse}
           onClick={setOutputFlagToFalse}
           className={styles.fieldNumberOutput}>
-          {splitNumberIntoDigits(value)}
+          {formatNumber(value, false, false)}
         </output>
       ) : (
         <input

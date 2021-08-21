@@ -8,6 +8,7 @@ import { ToggleButton } from '~c/ToggleButton/ToggleButton';
 import styles from './Calculator.module.scss';
 
 const ordersDailyData: IInputNumberRangeFieldset = {
+  id: 'ordersDaily',
   value: 0,
   min: 1,
   max: 40,
@@ -19,6 +20,7 @@ const ordersDailyData: IInputNumberRangeFieldset = {
 };
 
 const averageCheckData: IInputNumberRangeFieldset = {
+  id: 'averageCheck',
   value: 0,
   min: 10,
   max: 10000,

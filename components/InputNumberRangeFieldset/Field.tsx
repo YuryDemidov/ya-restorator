@@ -10,7 +10,7 @@ export interface IFieldProps extends IBasicInputProps {
   label: string;
 }
 
-export const Field = ({ type, min, max, value, units, onChange, onBlur, label, step }: IFieldProps) => {
+export const Field = ({ type, id, min, max, value, units, onChange, onBlur, label, step }: IFieldProps) => {
   const isNumber = type === 'number';
 
   return (
@@ -18,6 +18,7 @@ export const Field = ({ type, min, max, value, units, onChange, onBlur, label, s
       <span className={styles.fieldText}>{label}</span>
       {isNumber ? (
         <InputNumberPartField
+          id={id}
           min={min}
           max={max}
           step={step}
@@ -27,7 +28,7 @@ export const Field = ({ type, min, max, value, units, onChange, onBlur, label, s
           onBlur={onBlur}
         />
       ) : (
-        <InputRangePartField min={min} max={max} step={step} value={value} units={units} onChange={onChange} />
+        <InputRangePartField id={id} min={min} max={max} step={step} value={value} onChange={onChange} />
       )}
     </label>
   );
