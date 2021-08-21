@@ -133,7 +133,6 @@
       }
 
       &::-moz-range-thumb {
-        // TODO: решить проблему с шириной на firefox
         @include common-thumb;
       }
 
@@ -151,6 +150,17 @@
       &:focus {
         outline-color: $color-action-base;
       }
+
+      // Firefox only
+      @supports (-moz-appearance: none) {
+        & {
+          outline: none;
+        }
+
+        &:focus-visible {
+          outline-color: $color-action-base;
+        }
+      }
     }
   }
 }
@@ -160,7 +170,6 @@
 
   position: absolute;
   z-index: 1;
-  // FIXME: в макете указан E5E4DD. Взял ближайший из заведенных
   background: $color-light-gray;
 }
 
@@ -168,7 +177,7 @@
   &Start,
   &End {
     @include text-2xs;
-    // FIXME: В макете указан #9598AD. Взял ближайший $color-blue-gray: #696b80;
+
     color: $color-blue-gray;
     font-weight: $regular;
   }

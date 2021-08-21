@@ -8,6 +8,7 @@ export interface IBasicInputProps {
   max: number;
   step: number;
   units: string;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 export interface IInputNumberRangeFieldset extends IBasicInputProps {
@@ -28,9 +29,24 @@ export const InputNumberRangeFieldset = ({
   step,
   setOrdersDaily,
 }: IInputNumberRangeFieldset) => {
-  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = +event.target.value;
+  const changeHandler = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    let newValue = +evt.target.value;
+    evt.target.value = `${newValue}`;
+
+    if (newValue > max) {
+      newValue = max;
+    } else if (newValue < min && evt.target.value.length === `${min}`.length) {
+      newValue = min;
+    }
+
     if (setOrdersDaily) setOrdersDaily(newValue);
+  };
+
+  const blurHandler = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    if (+evt.target.value < min) {
+      evt.target.value = `${min}`;
+      if (setOrdersDaily) setOrdersDaily(+evt.target.value);
+    }
   };
 
   return (
@@ -51,7 +67,8 @@ export const InputNumberRangeFieldset = ({
         step={step}
         units={units}
         label={label}
-        onChange={onChangeHandler}
+        onBlur={blurHandler}
+        onChange={changeHandler}
       />
       <Field
         type="range"
@@ -61,7 +78,7 @@ export const InputNumberRangeFieldset = ({
         step={step}
         units={units}
         label={label}
-        onChange={onChangeHandler}
+        onChange={changeHandler}
       />
     </fieldset>
   );

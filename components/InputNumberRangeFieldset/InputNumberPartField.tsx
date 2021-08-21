@@ -4,7 +4,7 @@ import { splitNumberIntoDigits } from '~u/helpers';
 import { IBasicInputProps } from './InputNumberRangeFieldset';
 import styles from './InputNumberRangeFieldset.module.scss';
 
-export const InputNumberPartField = ({ min, max, step, value, units, onChange }: IBasicInputProps) => {
+export const InputNumberPartField = ({ min, max, step, value, units, onBlur, onChange }: IBasicInputProps) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [outputFlag, setOutputFlag] = useState(true);
 
@@ -17,6 +17,11 @@ export const InputNumberPartField = ({ min, max, step, value, units, onChange }:
 
   const setOutputFlagToFalse = useCallback(() => setOutputFlag(false), []);
   const setOutputFlagToTrue = useCallback(() => setOutputFlag(true), []);
+
+  const inputBlurHandler = (evt: React.FocusEvent<HTMLInputElement>) => {
+    setOutputFlagToTrue();
+    onBlur && onBlur(evt);
+  };
 
   useEffect(() => {
     if (!outputFlag) setSelectOnInput(inputRef.current);
@@ -42,7 +47,7 @@ export const InputNumberPartField = ({ min, max, step, value, units, onChange }:
           step={step}
           value={value}
           onChange={onChange}
-          onBlur={setOutputFlagToTrue}
+          onBlur={inputBlurHandler}
           name="number"
           autoComplete="off"
           size={value.toString().length + 1}

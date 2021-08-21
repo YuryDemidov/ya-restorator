@@ -1,7 +1,8 @@
 import { CSSProperties } from 'react';
 
-import { splitNumberIntoDigits } from '../../utils/helpers';
 import { IBasicInputProps } from './InputNumberRangeFieldset';
+import { splitNumberIntoDigits } from '~u/helpers';
+import isFirefox from '~u/functions/isFirefox';
 import styles from './InputNumberRangeFieldset.module.scss';
 
 interface IPseudoTrackProps {
@@ -25,7 +26,15 @@ const PseudoTrack = ({ value, min, max }: IPseudoTrackProps) => {
 
 export const InputRangePartField = ({ min, max, step, value, units, onChange }: IBasicInputProps) => {
   const handleFocus = () => {
-    setTimeout(() => (document.activeElement as HTMLElement).blur());
+    !isFirefox() && setTimeout(() => (document.activeElement as HTMLElement).blur());
+  };
+
+  const disableScroll = () => {
+    document.body.style.overflow = 'hidden';
+  };
+
+  const restoreScroll = () => {
+    document.body.style.overflow = '';
   };
 
   return (
@@ -43,6 +52,8 @@ export const InputRangePartField = ({ min, max, step, value, units, onChange }: 
         value={value}
         onChange={onChange}
         onMouseDown={handleFocus}
+        onTouchStart={disableScroll}
+        onTouchEnd={restoreScroll}
       />
       <span className={styles.rangeStart}>{[splitNumberIntoDigits(min), units].join(' ')}</span>
       <span className={styles.rangeEnd}>{[splitNumberIntoDigits(max), units].join(' ')}</span>
