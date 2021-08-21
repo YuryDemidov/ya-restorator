@@ -31,10 +31,12 @@ export const Header = () => {
         <div className={styles.headerRight}>
           <Menu />
           <div className={styles.headerRightButtons}>
-            <Button className={styles.mobile} appearance="secondary" link="#">
+            <Button className={styles.mobile} appearance="secondary" link="https://vendor.eda.yandex/auth">
               Личный кабинет
             </Button>
-            <Button link="#">Подключиться</Button>
+            <Button className={styles.smaller} link="https://yandex.secure.force.com/welcome/">
+              Оставить заявку
+            </Button>
           </div>
         </div>
       </div>

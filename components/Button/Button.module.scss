@@ -1,5 +1,7 @@
 @use "~s/tools.scss" as *;
 
+$border-width: 0.2rem;
+
 .button {
   display: inline-block;
   border-radius: $br-button;
@@ -16,10 +18,11 @@
 }
 
 .secondary {
-  background: $color-gray;
+  padding: $indent-vertical-button-desktop - $border-width $indent-horizontal-button-desktop - $border-width;
+  border: $border-width solid $color-action-base;
 
   &:hover {
-    background: $color-gray-hovered;
+    border-color: $color-yellow-hovered;
   }
 }
 

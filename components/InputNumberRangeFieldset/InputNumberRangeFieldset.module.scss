@@ -259,3 +259,21 @@
     }
   }
 }
+
+@include x-small-phone {
+  .field {
+    &Number {
+      &Input,
+      &Output,
+      &Currency {
+        @include title-s;
+      }
+    }
+  }
+
+  .legend {
+    &Text {
+      @include text-3xs;
+    }
+  }
+}
