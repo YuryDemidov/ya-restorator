@@ -18,7 +18,7 @@ export const plateList: IPlate[] = [
         }}
       />
     ),
-    actionBlock: <MoreInfoLink />,
+    actionBlock: <MoreInfoLink href="https://yandex.ru/promo/eda/rest_faq_promo" />,
   },
   {
     key: 1,
@@ -36,7 +36,7 @@ export const plateList: IPlate[] = [
         }}
       />
     ),
-    actionBlock: <MoreInfoLink />,
+    actionBlock: <MoreInfoLink href="https://eda-pack.ru/" />,
   },
   {
     key: 2,
@@ -54,7 +54,7 @@ export const plateList: IPlate[] = [
         }}
       />
     ),
-    actionBlock: <MoreInfoLink />,
+    actionBlock: <MoreInfoLink href="https://yandex.ru/promo/eda/rest_faq_photo" />,
   },
   {
     key: 3,
@@ -72,7 +72,7 @@ export const plateList: IPlate[] = [
         }}
       />
     ),
-    actionBlock: <MoreInfoLink />,
+    actionBlock: <MoreInfoLink href="https://yandex.ru/promo/eda/rest_faq_tablet" />,
   },
   {
     key: 4,
@@ -90,7 +90,7 @@ export const plateList: IPlate[] = [
         }}
       />
     ),
-    actionBlock: <MoreInfoLink />,
+    actionBlock: <MoreInfoLink href="https://yandex.ru/promo/eda/rest_faq_integration" />,
   },
   {
     key: 5,
@@ -108,6 +108,6 @@ export const plateList: IPlate[] = [
         }}
       />
     ),
-    actionBlock: <MoreInfoLink />,
+    actionBlock: <MoreInfoLink href="https://eda.yandex.ru/partners/delivery-button" />,
   },
 ];

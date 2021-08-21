@@ -39,7 +39,7 @@ export const Menu = ({ mobile, onClickMenu }: IMenuComponentProps) => {
       {mobile && (
         <div className={styles.mobileContactInfo}>
           <Phone noteStyle="mobile" />
-          <Button appearance="secondary" link="#">
+          <Button appearance="secondary" link="https://vendor.eda.yandex/auth">
             Личный кабинет
           </Button>
         </div>

@@ -75,4 +75,16 @@
   .mobile {
     display: none;
   }
+
+  .smaller {
+    @include text-xs;
+  }
+}
+
+@include x-small-phone {
+  .header {
+    .mobileMenu {
+      margin-right: 0;
+    }
+  }
 }

@@ -7,7 +7,7 @@ interface IMoreInfoLinkProps extends Pick<ComponentProps<typeof Link>, 'href'> {
 
 export const MoreInfoLink: React.FC<IMoreInfoLinkProps> = ({ href = '#', children = 'Подробнее' }) => {
   return (
-    <Link className={styles.moreInfoLink} defaultColor={false} href={href}>
+    <Link className={styles.moreInfoLink} defaultColor={false} href={href} target="_blank">
       {children}
     </Link>
   );

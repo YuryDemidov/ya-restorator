@@ -14,7 +14,7 @@ export const Hero = () => {
           Подключите ресторан к сервису Яндекс.Еда
         </Title>
         <p className={styles.subtitle}>Новые клиенты, больше заказов, доставка, реклама вашего ресторана</p>
-        <Button link="#">Посмотреть тарифы</Button>
+        <Button link="https://yandex.secure.force.com/welcome/">Оставить заявку</Button>
       </div>
       <div className={styles.heroImage}>
         <Image alt="Подключение ресторана Еды" src={HeroImage} />
