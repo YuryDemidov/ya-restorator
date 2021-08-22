@@ -1,6 +1,7 @@
 import { Button } from '~c/Button/Button';
 import { Link } from '~c/Link/Link';
 import { IPlate } from '~c/SectionWithPlates/SectionWithPlates';
+import { LINKS } from '~u/constants/links';
 import styles from './HowToStart.module.scss';
 
 export const plateList: IPlate[] = [
@@ -34,7 +35,7 @@ export const plateList: IPlate[] = [
         <Button
           dataYmGoal="passOrderHowToStartAction"
           defaultColor={false}
-          link="https://yandex.secure.force.com/welcome/"
+          link={LINKS.linkWelcome}
           className={styles.button}>
           Подключиться
         </Button>

@@ -1,0 +1,55 @@
+@use "~s/tools.scss" as *;
+
+.connectUs {
+  padding: $indent-m;
+  background-color: $color-yellow-second;
+  border-radius: $br-block;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  &ContentTitle {
+    margin: 0 0 $indent-s;
+  }
+
+  &ContentDescription {
+    margin: 0 0 $indent-s;
+    max-width: 44rem;
+  }
+
+  &Image {
+    width: 24rem;
+    height: 19rem;
+    margin-left: $indent-s;
+  }
+
+  &Button {
+    min-width: 23rem;
+  }
+}
+
+@include tablet-portrait {
+  .connectUs {
+    &Image {
+      width: 19rem;
+      height: 15rem;
+    }
+  }
+}
+
+@include phone-only {
+  .connectUs {
+    padding: $indent-s;
+    flex-direction: column-reverse;
+
+    &Image {
+      margin-left: 0;
+      width: 16rem;
+      height: 13rem;
+    }
+
+    &Button {
+      width: 100%;
+    }
+  }
+}

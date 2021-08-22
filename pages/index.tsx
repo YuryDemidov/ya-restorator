@@ -12,6 +12,7 @@ import { HowToStart } from '~c/HowToStart/HowToStart';
 import { WhatCanOffer } from '~c/WhatCanOffer/WhatCanOffer';
 import { Faq } from '~c/Faq/Faq';
 import { Footer } from '~c/Footer/Footer';
+import { ConnectUs } from '~c/ConnectUs/ConnectUs';
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
         <Hero />
         <Profit />
         <MobileAppScreen />
+        <ConnectUs />
         <Conditions />
         <Calculator />
         <HowToStart />

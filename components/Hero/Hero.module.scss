@@ -3,10 +3,10 @@
 .hero {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   &Content {
     z-index: 2;
+    margin-right: $indent-xs;
   }
 
   &Title {
@@ -20,116 +20,164 @@
     color: $color-dark-blue-gray;
     font-weight: $medium;
   }
-}
 
-.heroTab {
-  position: absolute;
-  display: block;
-}
+  &Tab {
+    position: absolute;
+    display: block;
+  }
 
-.heroImage {
-  position: relative;
-  left: 12rem;
-}
+  &Image {
+    position: relative;
+    left: 12rem;
+  }
 
-.heroMainImage {
-  height: 47.9rem;
-  width: 60rem;
-  background: url('./HeroTabsImg/mainImage.jpg') no-repeat;
-  background-size: contain;
-  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.12);
-  border-radius: $br-button;
-  animation: slowshow 0.9s;
-}
+  &MainImage {
+    height: 47.9rem;
+    width: 60rem;
+    background: url('./HeroTabsImg/mainImage.jpg') no-repeat;
+    background-size: contain;
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.12);
+    border-radius: $br-button;
+    animation: slowshow 0.9s;
+  }
 
-.heroMainBg {
-  position: absolute;
-  background-color: #333;
-  height: 47.9rem;
-  width: 60rem;
-  border-radius: $br-button;
-  left: 48px;
-  top: 28px;
-  z-index: -1;
-  animation: slidein 0.8s;
-}
+  &MainBg {
+    position: absolute;
+    background-color: #333;
+    height: 47.9rem;
+    width: 60rem;
+    border-radius: $br-button;
+    left: 4.8rem;
+    top: 2.8rem;
+    z-index: -1;
+    animation: slidein 0.8s;
+  }
 
-.heroTab1 {
-  @include heroTab(25.8rem, 6rem);
+  &Tab1 {
+    @include heroTab(25.8rem, 6rem);
 
-  background: url('./HeroTabsImg/1.png') no-repeat;
-  box-shadow: 0 2px 19px rgba(140, 140, 140, 0.3);
-  background-size: contain;
-  bottom: 14rem;
-  left: -10rem;
-  animation: scaleShowWhiteTab 2s;
-}
+    background: url('./HeroTabsImg/1.png') no-repeat;
+    box-shadow: 0 2px 19px rgba(140, 140, 140, 0.3);
+    background-size: contain;
+    bottom: 14rem;
+    left: -10rem;
+    animation: scaleShowWhiteTab 2s;
+  }
 
-.heroTab2 {
-  @include heroTab(19rem, 7.8rem);
+  &Tab2 {
+    @include heroTab(19rem, 7.8rem);
 
-  background: url('./HeroTabsImg/2.png') no-repeat;
-  background-size: contain;
-  bottom: 4rem;
-  left: -8rem;
-  animation: scaleShowYellowTab 2s;
-}
+    background: url('./HeroTabsImg/2.png') no-repeat;
+    background-size: contain;
+    bottom: 4rem;
+    left: -8rem;
+    animation: scaleShowYellowTab 2s;
+  }
 
-.heroTab3 {
-  @include heroTab(26.8rem, 6rem);
+  &Tab3 {
+    @include heroTab(26.8rem, 6rem);
 
-  background: url('./HeroTabsImg/3.png') no-repeat;
-  box-shadow: 0 6px 24px rgba(252, 228, 94, 0.4);
-  background-size: contain;
-  top: 8rem;
-  right: -12rem;
-  animation: scaleShowYellowTab 2s;
-}
+    background: url('./HeroTabsImg/3.png') no-repeat;
+    box-shadow: 0 6px 24px rgba(252, 228, 94, 0.4);
+    background-size: contain;
+    top: 4rem;
+    right: -9rem;
+    animation: scaleShowYellowTab 2s;
+  }
 
-.heroTab4 {
-  @include heroTab(21.2rem, 5.2rem);
+  &Tab4 {
+    @include heroTab(21.2rem, 5.2rem);
 
-  background: url('./HeroTabsImg/4.png') no-repeat;
-  box-shadow: 0 2px 19px rgba(140, 140, 140, 0.3);
-  background-size: contain;
-  top: 16rem;
-  right: -9rem;
-  animation: scaleShowWhiteTab 2s;
+    background: url('./HeroTabsImg/4.png') no-repeat;
+    box-shadow: 0 2px 19px rgba(140, 140, 140, 0.3);
+    background-size: contain;
+    top: 12rem;
+    right: -9rem;
+    animation: scaleShowWhiteTab 2s;
+  }
 }
 
 @include desktop {
-  .heroImage {
-    left: 1rem;
-  }
+  .hero {
+    &Image {
+      left: 3rem;
+    }
 
-  .heroMainImage {
-    height: 39.9rem;
-    width: 50rem;
-  }
+    &MainImage {
+      height: 36.9rem;
+      width: 46rem;
+      margin-right: 16px;
+    }
 
-  .heroMainBg {
-    height: 39.9rem;
-    width: 50rem;
+    &MainBg {
+      height: 36.9rem;
+      width: 46rem;
+      left: 2.8rem;
+      top: 1.8rem;
+    }
+
+    &Tab1 {
+      bottom: 8rem;
+      left: -5rem;
+    }
+
+    &Tab2 {
+      bottom: -1rem;
+      left: 2rem;
+    }
+
+    &Tab3 {
+      top: 23rem;
+      right: -3rem;
+    }
+
+    &Tab4 {
+      top: 30rem;
+      right: 2rem;
+    }
   }
 }
 
 @include tablet-landscape {
-  .heroImage {
-    left: 0;
+  .hero {
+    &Image {
+      left: 0;
+    }
+
+    &MainImage {
+      height: 27.3rem;
+      width: 34.2rem;
+    }
+
+    &MainBg {
+      height: 26.9rem;
+      width: 33rem;
+    }
+
+    &Tab1,
+    &Tab3 {
+      display: none;
+    }
+
+    &Tab2 {
+      bottom: 1rem;
+      left: 1rem;
+      width: 16rem;
+      height: 6.8rem;
+    }
+
+    &Tab4 {
+      top: 16rem;
+      right: 0;
+      width: 18.2rem;
+      height: 4.2rem;
+    }
   }
 }
 
 @include phone-only {
   .heroImage {
-    @include box(23.8rem, 22.5rem);
-
-    position: absolute;
-    right: 0;
-    z-index: 1;
-
-    img {
-      right: -22rem !important;
-    }
+    display: none;
   }
 
   .hero {
@@ -156,49 +204,5 @@
   to {
     opacity: 1;
     transform: translateX(0%);
-  }
-}
-
-@keyframes slowshow {
-  0% {
-    opacity: 0;
-  }
-
-  25%,
-  55% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes scaleShowWhiteTab {
-  0% {
-    transform: scale(0);
-  }
-
-  15%,
-  40% {
-    transform: scale(0);
-  }
-
-  60% {
-    transform: scale(1);
-  }
-}
-
-@keyframes scaleShowYellowTab {
-  0% {
-    transform: scale(0);
-  }
-
-  50% {
-    transform: scale(0);
-  }
-
-  70% {
-    transform: scale(1);
   }
 }

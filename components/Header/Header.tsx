@@ -6,6 +6,7 @@ import { Menu } from '~c/Menu/Menu';
 import { Logo } from '~c/Logo/Logo';
 import { Phone } from '~c/Phone/Phone';
 import styles from './Header.module.scss';
+import { LINKS } from '~u/constants/links';
 
 export const Header = () => {
   const [isOpen, setOpen] = useState(false);
@@ -35,13 +36,10 @@ export const Header = () => {
               dataYmGoal="clickMenuItemPersonalAccount"
               className={styles.mobile}
               appearance="secondary"
-              link="https://vendor.eda.yandex/auth">
+              link={LINKS.linkAuth}>
               Личный кабинет
             </Button>
-            <Button
-              dataYmGoal="passOrderTopAction"
-              className={styles.smaller}
-              link="https://yandex.secure.force.com/welcome/">
+            <Button dataYmGoal="passOrderTopAction" className={styles.smaller} link={LINKS.linkWelcome}>
               Оставить заявку
             </Button>
           </div>
