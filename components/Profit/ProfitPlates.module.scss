@@ -1,0 +1,90 @@
+@use "~s/tools.scss" as *;
+
+.image {
+  @include min-box(24.8rem);
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-size: cover;
+
+  &1 {
+    background-image: url('./images/1.png');
+  }
+
+  &2 {
+    @include min-box(23.5rem);
+
+    background-image: url('./images/2.png');
+  }
+
+  &3 {
+    background-image: url('./images/3.png');
+  }
+
+  &4 {
+    background-image: url('./images/4.png');
+  }
+}
+
+@include tablet-landscape {
+  .image {
+    @include min-box(19.5vw);
+  }
+}
+
+@include tablet-portrait {
+  .image {
+    @include min-box(19rem);
+  }
+}
+
+@include phone-only {
+  .image {
+    @include min-box(15rem);
+
+    &2 {
+      right: -2rem;
+      bottom: -1rem;
+    }
+
+    &3 {
+      right: -1rem;
+      bottom: -1rem;
+    }
+  }
+}
+
+@include small-phone {
+  .image {
+    @include min-box(calc(10rem + 10vw));
+  }
+}
+
+@include small-phone {
+  .image {
+    &1 {
+      bottom: -1rem;
+    }
+
+    &2 {
+      bottom: 0;
+    }
+
+    &4 {
+      bottom: -1rem;
+    }
+  }
+}
+
+@include x-small-phone {
+  .image {
+    &1 {
+      bottom: -1rem;
+    }
+
+    &2 {
+      bottom: 0;
+    }
+  }
+}

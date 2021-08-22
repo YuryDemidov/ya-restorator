@@ -15,9 +15,8 @@ export const MobileAppScreen = () => {
         <li className={styles.item}>Следите за оборотом, динамикой заказов и средним чеком</li>
         <li className={styles.item}>Смотрите, где находится курьер</li>
       </ul>
-      <PhoneMockup className={styles.hiddenMobile} />
-      <PhoneMockup className={styles.hiddenMobile} />
-      <PhoneMockup className={styles.hiddenDesktop} />
+      <PhoneMockup />
+      <PhoneMockup />
     </Section>
   );
 };

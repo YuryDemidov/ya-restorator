@@ -19,8 +19,8 @@ export const Hero = () => {
         </Button>
       </div>
       <div className={styles.heroImage}>
-        <div className={styles.heroMainImage}></div>
-        <div className={styles.heroMainBg}></div>
+        <div className={styles.heroMainImage} />
+        <div className={styles.heroMainBg} />
         <div className={cn(styles.heroTab1, 'heroTab')} />
         <div className={cn(styles.heroTab2, 'heroTab')} />
         <div className={cn(styles.heroTab3, 'heroTab')} />
