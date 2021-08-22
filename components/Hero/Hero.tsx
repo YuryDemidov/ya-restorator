@@ -4,6 +4,7 @@ import { Section } from '~c/Section/Section';
 import { Title } from '~c/Title/Title';
 import { Button } from '~c/Button/Button';
 import styles from './Hero.module.scss';
+import { LINKS } from '~u/constants/links';
 
 export const Hero = () => {
   return (
@@ -13,7 +14,7 @@ export const Hero = () => {
           Получайте новые заказы с сервисом Яндекс.Еда
         </Title>
         <p className={styles.subtitle}>Новые клиенты, доставка, реклама вашего ресторана</p>
-        <Button dataYmGoal="passOrderHeroAction" link="https://yandex.secure.force.com/welcome/">
+        <Button dataYmGoal="passOrderHeroAction" link={LINKS.linkWelcome}>
           Оставить заявку
         </Button>
       </div>

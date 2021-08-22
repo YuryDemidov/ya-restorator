@@ -1,1 +1,45 @@
 @use './variables' as *;
+
+@keyframes slowshow {
+  0% {
+    opacity: 0;
+  }
+
+  25%,
+  55% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleShowWhiteTab {
+  0% {
+    transform: scale(0);
+  }
+
+  15%,
+  40% {
+    transform: scale(0);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleShowYellowTab {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(0);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+}

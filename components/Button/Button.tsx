@@ -4,7 +4,7 @@ import { ILinkDefaultProps, Link } from '~c/Link/Link';
 import styles from './Button.module.scss';
 
 interface IButtonProps extends ILinkDefaultProps {
-  appearance?: 'primary' | 'secondary';
+  appearance?: 'primary' | 'secondary' | 'thirdly';
   link: string;
   className?: string;
   dataYmGoal?: string;
@@ -26,6 +26,7 @@ export const Button: React.FC<IButtonProps> = ({
       className={cn(styles.button, className, {
         [styles.primary]: appearance === 'primary',
         [styles.secondary]: appearance === 'secondary',
+        [styles.thirdly]: appearance === 'thirdly',
       })}>
       {children}
     </Link>

@@ -4,6 +4,7 @@ $border-width: 0.2rem;
 
 .button {
   display: inline-block;
+  text-align: center;
   border-radius: $br-button;
   padding: $indent-vertical-button-desktop $indent-horizontal-button-desktop;
 }
@@ -23,6 +24,16 @@ $border-width: 0.2rem;
 
   &:hover {
     border-color: $color-yellow-hovered;
+  }
+}
+
+.thirdly {
+  padding: $indent-vertical-button-desktop $indent-horizontal-button-desktop;
+  background: $color-black;
+  color: $color-white;
+
+  &:hover {
+    background: $color-x-dark-dim;
   }
 }
 
