@@ -1,10 +1,20 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
 
-import { formatNumber } from '~u/helpers';
+import { formatNumber, ymHandler } from '~u/helpers';
 import { IBasicInputProps } from './InputNumberRangeFieldset';
 import styles from './InputNumberRangeFieldset.module.scss';
 
-export const InputNumberPartField = ({ id, min, max, step, value, units, onBlur, onChange }: IBasicInputProps) => {
+export const InputNumberPartField = ({
+  id,
+  min,
+  max,
+  step,
+  value,
+  units,
+  onBlur,
+  onChange,
+  dataYmGoal,
+}: IBasicInputProps) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [outputFlag, setOutputFlag] = useState(true);
 
@@ -20,6 +30,7 @@ export const InputNumberPartField = ({ id, min, max, step, value, units, onBlur,
 
   const inputBlurHandler = (evt: React.FocusEvent<HTMLInputElement>) => {
     setOutputFlagToTrue();
+    ymHandler(evt);
     onBlur && onBlur(evt);
   };
 
@@ -40,6 +51,7 @@ export const InputNumberPartField = ({ id, min, max, step, value, units, onBlur,
         </output>
       ) : (
         <input
+          data-ymgoal={dataYmGoal}
           className={styles.fieldNumberInput}
           type="number"
           min={min}

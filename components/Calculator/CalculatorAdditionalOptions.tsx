@@ -20,6 +20,7 @@ export const CalculatorAdditionalOptions = () => {
         <h3 className={styles.title}>Дополнительные инструменты</h3>
       </BlockWithTooltip>
       <ToggleButtonWithOutput
+        dataYmGoal="inputCheckboxCalcAdvertising"
         id="advertising"
         labelContent={
           // TODO Add tooltip text
@@ -37,6 +38,7 @@ export const CalculatorAdditionalOptions = () => {
         setState={setAdsInApp}
       />
       <ToggleButtonWithOutput
+        dataYmGoal="inputCheckboxCalcPromotion"
         id="promotions"
         labelContent={
           // TODO Add tooltip text

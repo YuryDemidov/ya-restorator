@@ -17,6 +17,8 @@ const ordersDailyData: IInputNumberRangeFieldset = {
   label: 'Введите нужное количество c помощью клавиатуры или выставите бегунок',
   units: '',
   moreInfo: 'Это рыба текста для всплывающего тултипа',
+  numberDataYmGoal: 'inputNumberCalcDailyOrders',
+  rangeDataYmGoal: 'inputRangeCalcDailyOrders',
 };
 
 const averageCheckData: IInputNumberRangeFieldset = {
@@ -29,6 +31,8 @@ const averageCheckData: IInputNumberRangeFieldset = {
   label: 'Введите ваш текущий средний чек с клавиатуры или используйте бегунок',
   units: '₽',
   moreInfo: 'Это рыба текста для всплывающего тултипа',
+  numberDataYmGoal: 'inputNumberCalcAverageCheck',
+  rangeDataYmGoal: 'inputRangeCalcAverageCheck',
 };
 
 export const CalculatorBaseValues = () => {
@@ -52,6 +56,7 @@ export const CalculatorBaseValues = () => {
       <InputNumberRangeFieldset {...averageCheckData} value={averageCheck} setOrdersDaily={setAverageCheck} />
 
       <ToggleButton
+        dataYmGoal="inputCheckboxCalcDelivery"
         id="delivery"
         wrapClassName={styles.deliveryToggle}
         labelContent={

@@ -11,7 +11,7 @@ export const plateList: IPlate[] = [
     description: (
       <>
         Мы сотрудничаем c отвественными ресторанами. Дождитесь проверки вашей заявки,{' '}
-        <Link defaultTextDecoration={false} href="https://yandex.ru/legal/oferta_eda/">
+        <Link dataYmGoal="clickPayOffer" defaultTextDecoration={false} href="https://yandex.ru/legal/oferta_eda/">
           оплатите оферту.
         </Link>
       </>
@@ -31,7 +31,11 @@ export const plateList: IPlate[] = [
     title: <>Запускайте доставку одной кнопкой</>,
     actionBlock: (
       <>
-        <Button defaultColor={false} link="https://yandex.secure.force.com/welcome/" className={styles.button}>
+        <Button
+          dataYmGoal="passOrderHowToStartAction"
+          defaultColor={false}
+          link="https://yandex.secure.force.com/welcome/"
+          className={styles.button}>
           Подключиться
         </Button>
       </>

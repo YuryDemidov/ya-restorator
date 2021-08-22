@@ -2,17 +2,19 @@ import { useState } from 'react';
 import cn from 'classnames';
 
 import { Icon } from '~c/Icon/Icon';
+import { ymHandler } from '~u/helpers';
 import styles from './Faq.module.scss';
 
 interface IFaqItemProps {
   id: number;
   question: React.ReactChild;
   answer: React.ReactChild;
+  dataYmGoal?: string;
 }
 
 type TTabIndexValue = 0 | -1;
 
-export const FaqItem = ({ id, question, answer }: IFaqItemProps) => {
+export const FaqItem = ({ id, question, answer, dataYmGoal }: IFaqItemProps) => {
   const [answerHeight, setAnswerHeight] = useState(0);
   const isExpanded = answerHeight > 0;
 
@@ -41,6 +43,7 @@ export const FaqItem = ({ id, question, answer }: IFaqItemProps) => {
         (document.activeElement as HTMLElement).blur();
       }
     } else {
+      ymHandler(evt);
       setAnswerHeight(answerNode.scrollHeight || 0);
       enableLinksFocus(answerNode);
     }
@@ -53,6 +56,7 @@ export const FaqItem = ({ id, question, answer }: IFaqItemProps) => {
           [styles.termOpened]: isExpanded,
         })}>
         <button
+          data-ymgoal={dataYmGoal}
           className={styles.trigger}
           type="button"
           aria-controls={`faq${id}`}

@@ -7,6 +7,7 @@ interface IButtonProps extends ILinkDefaultProps {
   appearance?: 'primary' | 'secondary';
   link: string;
   className?: string;
+  dataYmGoal?: string;
 }
 
 export const Button: React.FC<IButtonProps> = ({
@@ -14,11 +15,13 @@ export const Button: React.FC<IButtonProps> = ({
   appearance = 'primary',
   className,
   children,
+  dataYmGoal,
   ...defaultLinkProps
 }) => {
   return (
     <Link
       {...defaultLinkProps}
+      dataYmGoal={dataYmGoal}
       href={link}
       className={cn(styles.button, className, {
         [styles.primary]: appearance === 'primary',

@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
 
 import { IBasicInputProps } from './InputNumberRangeFieldset';
-import { isFirefox, formatNumber } from '~u/helpers';
+import { isFirefox, formatNumber, ymHandler } from '~u/helpers';
 import styles from './InputNumberRangeFieldset.module.scss';
 
 interface IPseudoTrackProps {
@@ -23,8 +23,9 @@ const PseudoTrack = ({ value, min, max }: IPseudoTrackProps) => {
   return <span className={styles.pseudoTrack} style={style} />;
 };
 
-export const InputRangePartField = ({ id, min, max, step, value, onChange }: IBasicInputProps) => {
-  const handleFocus = () => {
+export const InputRangePartField = ({ id, min, max, step, value, onChange, dataYmGoal }: IBasicInputProps) => {
+  const handleFocus = (event: React.SyntheticEvent<HTMLElement>) => {
+    ymHandler(event);
     !isFirefox() && setTimeout(() => (document.activeElement as HTMLElement).blur());
   };
 
@@ -40,6 +41,7 @@ export const InputRangePartField = ({ id, min, max, step, value, onChange }: IBa
     <>
       <PseudoTrack value={value} min={min} max={max} />
       <input
+        data-ymgoal={dataYmGoal}
         id={id}
         className={styles.fieldRangeInput}
         type="range"
