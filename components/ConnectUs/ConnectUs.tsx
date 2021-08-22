@@ -1,5 +1,3 @@
-import { AnimatePresence } from 'framer-motion';
-
 import { Title } from '~c/Title/Title';
 import { Button } from '~c/Button/Button';
 import styles from './ConnectUs.module.scss';
@@ -23,9 +21,7 @@ export const ConnectUs = () => {
         </Button>
       </div>
       <div className={styles.connectUsImage}>
-        <AnimatePresence>
-          <ConnectUsImage />
-        </AnimatePresence>
+        <ConnectUsImage />
       </div>
     </Section>
   );
