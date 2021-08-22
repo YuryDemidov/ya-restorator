@@ -47,7 +47,8 @@
   }
 
   &Note,
-  &Phone {
+  &Phone,
+  &Email {
     text-align: right;
   }
 
@@ -56,14 +57,24 @@
 
     font-weight: $light;
     margin-bottom: $indent-2xs;
-    // Взял максимально близкий из уже заведенных
     color: $color-text-second;
+  }
+
+  &Email {
+    @include text-m;
+
+    font-weight: $light;
+    margin-top: 0.3rem;
   }
 
   &Phone {
     @include text-l;
 
     font-weight: $medium;
+  }
+
+  &Phone,
+  &Email {
     display: block;
     color: $color-white;
 
@@ -83,7 +94,8 @@
     }
 
     &Note,
-    &Phone {
+    &Phone,
+    &Email {
       text-align: left;
     }
   }

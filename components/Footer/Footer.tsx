@@ -18,8 +18,15 @@ export const Footer = () => {
         </div>
         <div className={styles.footerRight}>
           <p className={styles.footerNote}>Есть вопросы? Задайте нам</p>
-          <Link dataYmGoal="phoneNumberTop" href="tel:+78006001310" className={styles.footerPhone} defaultColor={false}>
+          <Link
+            dataYmGoal="phoneNumberBottom"
+            href="tel:+78006001310"
+            className={styles.footerPhone}
+            defaultColor={false}>
             +7 800 600 13 10
+          </Link>
+          <Link dataYmGoal="emailBottom" href="tel:+78006001310" className={styles.footerEmail} defaultColor={false}>
+            rest@eda.yandex.ru
           </Link>
         </div>
       </div>

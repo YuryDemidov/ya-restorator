@@ -10,9 +10,9 @@ export const Hero = () => {
     <Section className={styles.hero}>
       <div className={styles.heroContent}>
         <Title className={styles.heroTitle} level="h1">
-          Подключите ресторан к сервису Яндекс.Еда
+          Получайте новые заказы с сервисом Яндекс.Еда
         </Title>
-        <p className={styles.subtitle}>Новые клиенты, больше заказов, доставка, реклама вашего ресторана</p>
+        <p className={styles.subtitle}>Новые клиенты, доставка, реклама вашего ресторана</p>
         <Button dataYmGoal="passOrderHeroAction" link="https://yandex.secure.force.com/welcome/">
           Оставить заявку
         </Button>

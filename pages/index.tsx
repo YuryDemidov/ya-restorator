@@ -6,7 +6,6 @@ import { Header } from '~c/Header/Header';
 import { Hero } from '~c/Hero/Hero';
 import { Profit } from '~c/Profit/Profit';
 import { MobileAppScreen } from '~c/MobileAppScreen/MobileAppScreen';
-import { HowItWorks } from '~c/HowItWorks/HowItWorks';
 import { Conditions } from '~c/Conditions/Conditions';
 import { Calculator } from '~c/Calculator/Calculator';
 import { HowToStart } from '~c/HowToStart/HowToStart';
@@ -37,7 +36,6 @@ export default function Home() {
         <Hero />
         <Profit />
         <MobileAppScreen />
-        <HowItWorks />
         <Conditions />
         <Calculator />
         <HowToStart />

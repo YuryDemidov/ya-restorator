@@ -16,7 +16,7 @@ const ordersDailyData: IInputNumberRangeFieldset = {
   legend: 'Укажите ежедневное кол-во заказов',
   label: 'Введите нужное количество c помощью клавиатуры или выставите бегунок',
   units: '',
-  moreInfo: 'Это рыба текста для всплывающего тултипа',
+  moreInfo: '',
   numberDataYmGoal: 'inputNumberCalcDailyOrders',
   rangeDataYmGoal: 'inputRangeCalcDailyOrders',
 };
@@ -30,7 +30,7 @@ const averageCheckData: IInputNumberRangeFieldset = {
   legend: 'Ваш средний чек',
   label: 'Введите ваш текущий средний чек с клавиатуры или используйте бегунок',
   units: '₽',
-  moreInfo: 'Это рыба текста для всплывающего тултипа',
+  moreInfo: '',
   numberDataYmGoal: 'inputNumberCalcAverageCheck',
   rangeDataYmGoal: 'inputRangeCalcAverageCheck',
 };
@@ -41,15 +41,7 @@ export const CalculatorBaseValues = () => {
 
   return (
     <div className={styles.baseValues}>
-      <BlockWithTooltip
-        tooltipText={
-          <>
-            Подключите инструменты для увеличения объемов вашего бизнеса. В калькуляторе используются средние значения
-            на основе статистики за последний год.
-          </>
-        }>
-        <h3 className={styles.title}>Основные параметры</h3>
-      </BlockWithTooltip>
+      <h3 className={styles.title}>Укажите параметры для рассчета</h3>
 
       <InputNumberRangeFieldset {...ordersDailyData} value={ordersDaily} setOrdersDaily={setOrdersDaily} />
 
@@ -60,8 +52,7 @@ export const CalculatorBaseValues = () => {
         id="delivery"
         wrapClassName={styles.deliveryToggle}
         labelContent={
-          // TODO Add tooltip text
-          <BlockWithTooltip tooltipText="Здесь должен быть текст" noMargin>
+          <BlockWithTooltip tooltipText="Вы можете воспользоваться доставкой партнерами Яндекс.Еды" noMargin>
             Доставка Яндекс.Еды
           </BlockWithTooltip>
         }

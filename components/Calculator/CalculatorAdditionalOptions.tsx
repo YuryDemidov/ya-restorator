@@ -10,22 +10,15 @@ export const CalculatorAdditionalOptions = () => {
 
   return (
     <div className={styles.additional}>
-      <BlockWithTooltip
-        tooltipText={
-          <>
-            Подключите инструменты для увеличения объемов вашего бизнеса. В калькуляторе используются средние значения
-            на основе статистики за последний год.
-          </>
-        }>
-        <h3 className={styles.title}>Дополнительные инструменты</h3>
-      </BlockWithTooltip>
+      <h3 className={styles.title}>Дополнительные инструменты</h3>
       <ToggleButtonWithOutput
         dataYmGoal="inputCheckboxCalcAdvertising"
         id="advertising"
         labelContent={
-          // TODO Add tooltip text
-          <BlockWithTooltip tooltipText="Здесь должен быть текст" noMargin>
-            Реклама в приложении
+          <BlockWithTooltip
+            tooltipText="Удобные инструменты для продвижения вашего ресторана в личном кабинете"
+            noMargin>
+            Реклама в приложении
           </BlockWithTooltip>
         }
         description={
@@ -41,9 +34,10 @@ export const CalculatorAdditionalOptions = () => {
         dataYmGoal="inputCheckboxCalcPromotion"
         id="promotions"
         labelContent={
-          // TODO Add tooltip text
-          <BlockWithTooltip tooltipText="Здесь должен быть текст" noMargin>
-            Акции, скидки, мотивация
+          <BlockWithTooltip
+            tooltipText="В личном кабинете вы можете создавать акции для пользователей: 1+1, скидка на меню или блюдо в подарок"
+            noMargin>
+            Скидки и акции
           </BlockWithTooltip>
         }
         description={

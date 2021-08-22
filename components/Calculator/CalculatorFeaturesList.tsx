@@ -1,17 +1,16 @@
 import { useCalculator } from '~c/Calculator/Calculator';
 import styles from './Calculator.module.scss';
 
-const featuresList = [
-  'Доставка Яндекс Едой за ~32 минуты',
-  'Размещение в каталоге',
-  'Эквайринг',
-  'Кроссплатформенное приложение для управления заказами',
-  'Продвижение сервиса',
-  'Бухгалтерская отчетность',
-];
-
 export const CalculatorFeaturesList = () => {
   const { deliveryByYandex } = useCalculator();
+
+  const featuresList: React.ReactChild[] = [
+    `Доставка ${deliveryByYandex ? 'партнерами Яндекс.Еды' : 'курьерами вашего ресторана'}`,
+    'Кросплатформенное приложение для управления заказами',
+    'Размещение в каталоге ресторанов и сервисах Яндекса',
+    'Эквайринг',
+    'Бухгалтерская отчетность',
+  ];
 
   return (
     <div className={styles.featuresList}>
@@ -19,11 +18,9 @@ export const CalculatorFeaturesList = () => {
       <ol className={styles.features}>
         {featuresList.map((feature, i) => {
           return (
-            (i !== 0 || deliveryByYandex) && (
-              <li className={styles.feature} key={i}>
-                {feature}
-              </li>
-            )
+            <li className={styles.feature} key={i}>
+              {feature}
+            </li>
           );
         })}
       </ol>
