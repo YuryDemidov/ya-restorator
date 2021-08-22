@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { YMInitializer } from 'react-yandex-metrika';
 
 import { Wrapper } from '~c/Wrapper/Wrapper';
 import { Header } from '~c/Header/Header';
@@ -29,8 +30,8 @@ export default function Home() {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script src="/analytics/ya-metrika.js" async />
       </Head>
+      <YMInitializer accounts={[84037351]} options={{ webvisor: true }} version="2" />
       <Header />
       <Wrapper>
         <Hero />

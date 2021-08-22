@@ -3,6 +3,7 @@ import { CalculatorOutput } from '~c/Calculator/CalculatorOutput';
 import { CalculatorFeaturesList } from '~c/Calculator/CalculatorFeaturesList';
 import { TabRadioInput, TTabRadioInputValue } from '~c/TabRadioInput/TabRadioInput';
 import { PERIODS, TPeriodKey } from '~u/constants/periods';
+import { toUppercaseFirstLetter } from '~u/helpers';
 import styles from '~c/Calculator/Calculator.module.scss';
 
 const periodOptions: TTabRadioInputValue[] = [];
@@ -11,6 +12,7 @@ const periodOptions: TTabRadioInputValue[] = [];
   periodOptions.push({
     label: period.readableDescription,
     value: periodName,
+    dataYmGoal: `inputRadioButtonCalcPeriod${toUppercaseFirstLetter(periodName)}`,
   });
 });
 

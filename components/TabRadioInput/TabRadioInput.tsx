@@ -2,11 +2,13 @@ import React, { useCallback } from 'react';
 import cn from 'classnames';
 
 import { TPeriodKey } from '~u/constants/periods';
+import { ymHandler } from '~u/helpers';
 import styles from './TabRadioInput.module.scss';
 
 export type TTabRadioInputValue = {
   label: string;
   value: TPeriodKey;
+  dataYmGoal?: string;
 };
 
 interface ITabRadioInputProps {
@@ -23,6 +25,7 @@ export const TabRadioInput = ({ name, values, defaultChecked, labelContent, setS
       if ((evt.nativeEvent as MouseEvent).clientX && (evt.nativeEvent as MouseEvent).clientY) {
         (document.activeElement as HTMLElement).blur();
       }
+      ymHandler(evt);
       setState && setState(() => evt.target.value as TPeriodKey);
     },
     [setState],
@@ -31,7 +34,7 @@ export const TabRadioInput = ({ name, values, defaultChecked, labelContent, setS
   return (
     <fieldset id={name} className={styles.container}>
       <legend className={styles.legend}>{labelContent}</legend>
-      {values.map(({ value, label }, i) => {
+      {values.map(({ value, label, dataYmGoal }, i) => {
         const id = `${name}${i}`;
         return (
           <React.Fragment key={value}>
@@ -43,6 +46,7 @@ export const TabRadioInput = ({ name, values, defaultChecked, labelContent, setS
               value={value}
               defaultChecked={defaultChecked === value}
               onChange={changeHandler}
+              data-ymgoal={dataYmGoal}
             />
             <label className={styles.label} htmlFor={id}>
               {label}

@@ -21,6 +21,7 @@ export const Phone = ({ noteStyle }: IPhoneProps) => {
           [styles.phoneMobile]: noteStyle,
           [styles.phone]: !noteStyle,
         })}
+        dataYmGoal="phoneNumberTop"
         href={`tel:${phoneNumber.replace(/\s/g, '')}`}>
         {phoneNumber}
       </Link>

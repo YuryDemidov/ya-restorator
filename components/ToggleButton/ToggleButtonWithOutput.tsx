@@ -16,10 +16,11 @@ export const ToggleButtonWithOutput = ({
   output,
   isOn,
   setState,
+  dataYmGoal,
 }: IToggleButtonWithOutputProps) => {
   return (
     <div className={styles.block}>
-      <ToggleButton id={id} labelContent={labelContent} isOn={isOn} setState={setState} />
+      <ToggleButton dataYmGoal={dataYmGoal} id={id} labelContent={labelContent} isOn={isOn} setState={setState} />
       <p className={styles.output}>
         <span className={styles.description}>{description}</span>
         <output

@@ -8,9 +8,24 @@ import styles from './InputNumberRangeFieldset.module.scss';
 export interface IFieldProps extends IBasicInputProps {
   type: 'number' | 'range';
   label: string;
+  numberDataYmGoal?: string;
+  rangeDataYmGoal?: string;
 }
 
-export const Field = ({ type, id, min, max, value, units, onChange, onBlur, label, step }: IFieldProps) => {
+export const Field = ({
+  id,
+  type,
+  min,
+  max,
+  value,
+  units,
+  onChange,
+  onBlur,
+  label,
+  step,
+  numberDataYmGoal,
+  rangeDataYmGoal,
+}: IFieldProps) => {
   const isNumber = type === 'number';
 
   return (
@@ -18,6 +33,7 @@ export const Field = ({ type, id, min, max, value, units, onChange, onBlur, labe
       <span className={styles.fieldText}>{label}</span>
       {isNumber ? (
         <InputNumberPartField
+          dataYmGoal={numberDataYmGoal}
           id={id}
           min={min}
           max={max}
@@ -28,7 +44,16 @@ export const Field = ({ type, id, min, max, value, units, onChange, onBlur, labe
           onBlur={onBlur}
         />
       ) : (
-        <InputRangePartField id={id} min={min} max={max} step={step} value={value} onChange={onChange} />
+        <InputRangePartField
+          id={id}
+          dataYmGoal={rangeDataYmGoal}
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          units={units}
+          onChange={onChange}
+        />
       )}
     </label>
   );

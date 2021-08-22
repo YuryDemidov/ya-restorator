@@ -11,6 +11,9 @@ export interface IBasicInputProps {
   units?: string;
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  dataYmGoal?: string;
+  numberDataYmGoal?: string;
+  rangeDataYmGoal?: string;
 }
 
 export interface IInputNumberRangeFieldset extends IBasicInputProps {
@@ -31,6 +34,8 @@ export const InputNumberRangeFieldset = ({
   label,
   step,
   setOrdersDaily,
+  numberDataYmGoal,
+  rangeDataYmGoal,
 }: IInputNumberRangeFieldset) => {
   const changeHandler = (evt: React.ChangeEvent<HTMLInputElement>) => {
     let newValue = +evt.target.value;
@@ -63,6 +68,7 @@ export const InputNumberRangeFieldset = ({
         )}
       </div>
       <Field
+        numberDataYmGoal={numberDataYmGoal}
         id={id}
         type="number"
         value={value}
@@ -75,6 +81,7 @@ export const InputNumberRangeFieldset = ({
         onChange={changeHandler}
       />
       <Field
+        rangeDataYmGoal={rangeDataYmGoal}
         id={id}
         type="range"
         value={value}

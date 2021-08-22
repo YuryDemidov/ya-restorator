@@ -8,6 +8,7 @@ import styles from './Menu.module.scss';
 interface IMenuProps {
   name: string;
   link: string;
+  dataYmGoal?: string;
 }
 
 interface IMenuComponentProps {
@@ -16,8 +17,8 @@ interface IMenuComponentProps {
 }
 
 const menuLinks: IMenuProps[] = [
-  { name: 'Условия', link: '#conditions' },
-  { name: 'Калькулятор', link: '#calculator' },
+  { name: 'Условия', link: '#conditions', dataYmGoal: 'readConditionsTop' },
+  { name: 'Калькулятор', link: '#calculator', dataYmGoal: 'calculatorTop' },
 ];
 
 export const Menu = ({ mobile, onClickMenu }: IMenuComponentProps) => {
@@ -25,10 +26,14 @@ export const Menu = ({ mobile, onClickMenu }: IMenuComponentProps) => {
     <div className={cn({ [styles.mobileMenuContent]: mobile })}>
       <nav>
         <ul className={cn({ [styles.menuContent]: !mobile })}>
-          {menuLinks.map(({ name, link }) => {
+          {menuLinks.map(({ name, link, dataYmGoal }) => {
             return (
               <li key={link}>
-                <Link className={styles.link} onClick={mobile ? onClickMenu : undefined} href={link}>
+                <Link
+                  dataYmGoal={dataYmGoal}
+                  className={styles.link}
+                  onClickHandler={mobile ? onClickMenu : undefined}
+                  href={link}>
                   {name}
                 </Link>
               </li>
@@ -39,7 +44,10 @@ export const Menu = ({ mobile, onClickMenu }: IMenuComponentProps) => {
       {mobile && (
         <div className={styles.mobileContactInfo}>
           <Phone noteStyle="mobile" />
-          <Button appearance="secondary" link="https://vendor.eda.yandex/auth">
+          <Button
+            dataYmGoal="clickMenuItemPersonalAccount"
+            appearance="secondary"
+            link="https://vendor.eda.yandex/auth">
             Личный кабинет
           </Button>
         </div>
