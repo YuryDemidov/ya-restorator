@@ -23,7 +23,7 @@ const PseudoTrack = ({ value, min, max }: IPseudoTrackProps) => {
   return <span className={styles.pseudoTrack} style={style} />;
 };
 
-export const InputRangePartField = ({ id, min, max, step, value, onChange, dataYmGoal }: IBasicInputProps) => {
+export const InputRangePartField = ({ id, min, max, step, value, onChange, units, dataYmGoal }: IBasicInputProps) => {
   const handleFocus = (event: React.SyntheticEvent<HTMLElement>) => {
     ymHandler(event);
     !isFirefox() && setTimeout(() => (document.activeElement as HTMLElement).blur());
@@ -57,8 +57,8 @@ export const InputRangePartField = ({ id, min, max, step, value, onChange, dataY
         onTouchStart={disableScroll}
         onTouchEnd={restoreScroll}
       />
-      <span className={styles.rangeStart}>{formatNumber(min, false, true)}</span>
-      <span className={styles.rangeEnd}>{formatNumber(max, false, true)}</span>
+      <span className={styles.rangeStart}>{formatNumber(min, false, !!units)}</span>
+      <span className={styles.rangeEnd}>{formatNumber(max, false, !!units)}</span>
     </>
   );
 };
