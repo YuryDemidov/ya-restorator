@@ -17,7 +17,7 @@ export const Conditions = () => {
       <div className={styles.conditionsBlock}>
         {conditionsRowList}
         <p className={styles.conditionsDescribe}>
-          Оплата <b>только</b> за выполненные заказы
+          Комиссия только за <b>выполненные</b> заказы:
         </p>
         <p className={styles.conditionsFee}>15%</p>
         <p className={styles.conditionsFee}>35%</p>

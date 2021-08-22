@@ -10,9 +10,9 @@ export const MobileAppScreen = () => {
         Управляйте рестораном через приложение
       </Title>
       <ul className={styles.list}>
-        <li className={styles.item}>Принимайте и&nbsp;выполняйте заказы</li>
-        <li className={styles.item}>Редактируйте меню, время работы доставки, если ресторан загружен</li>
-        <li className={styles.item}>Следите за&nbsp;оборотом и&nbsp;динамикой заказов, средним чеком</li>
+        <li className={styles.item}>Принимайте и выполняйте заказы по мере загруженности ресторана</li>
+        <li className={styles.item}>Редактируйте меню и время работы</li>
+        <li className={styles.item}>Следите за оборотом, динамикой заказов и средним чеком</li>
         <li className={styles.item}>Смотрите, где находится курьер</li>
       </ul>
       <PhoneMockup className={styles.hiddenMobile} />
