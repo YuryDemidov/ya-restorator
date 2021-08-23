@@ -273,7 +273,9 @@
 
 // animation
 @mixin link-animation {
-  transition: all 0.3s ease-in-out;
+  transition-property: background-color, border-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 // input range

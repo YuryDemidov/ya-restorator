@@ -65,6 +65,7 @@ export const Tooltip: React.FC<ITooltipProps> = ({ id, className, children }) =>
 
   return (
     <span
+      data-test="tooltipIcon"
       ref={spanRef}
       className={cn(styles.icon, className)}
       tabIndex={0}

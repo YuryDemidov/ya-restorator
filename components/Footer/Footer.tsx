@@ -25,7 +25,11 @@ export const Footer = () => {
             defaultColor={false}>
             +7 800 600 13 10
           </Link>
-          <Link dataYmGoal="emailBottom" href="tel:+78006001310" className={styles.footerEmail} defaultColor={false}>
+          <Link
+            dataYmGoal="emailBottom"
+            href="mailto:rest@eda.yandex.ru"
+            className={styles.footerEmail}
+            defaultColor={false}>
             rest@eda.yandex.ru
           </Link>
         </div>

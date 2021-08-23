@@ -9,6 +9,8 @@
 
 # testing
 /coverage
+/backstop_data/html_report/
+/backstop_data/bitmaps_test/
 
 # next.js
 /.next/

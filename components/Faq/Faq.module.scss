@@ -71,7 +71,7 @@
   color: $color-link;
 }
 
-@media (max-width: 54rem) {
+@include phone-only {
   .list {
     font-size: 1.4rem;
   }

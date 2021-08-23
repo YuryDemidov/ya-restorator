@@ -7,5 +7,9 @@ interface IPhoneMockupProps {
 }
 
 export const PhoneMockup: React.FC<IPhoneMockupProps> = ({ className, children }) => {
-  return <div className={cn(styles.phoneMockup, className)}>{children}</div>;
+  return (
+    <div className={cn(styles.phoneMockup, className)} data-test="phoneMockup">
+      {children}
+    </div>
+  );
 };
