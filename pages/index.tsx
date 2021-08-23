@@ -8,7 +8,6 @@ import { Profit } from '~c/Profit/Profit';
 import { MobileAppScreen } from '~c/MobileAppScreen/MobileAppScreen';
 import { Conditions } from '~c/Conditions/Conditions';
 import { Calculator } from '~c/Calculator/Calculator';
-import { HowToStart } from '~c/HowToStart/HowToStart';
 import { WhatCanOffer } from '~c/WhatCanOffer/WhatCanOffer';
 import { Faq } from '~c/Faq/Faq';
 import { Footer } from '~c/Footer/Footer';
@@ -39,10 +38,9 @@ export default function Home() {
         <Hero />
         <Profit />
         <MobileAppScreen />
-        <ConnectUs />
         <Conditions />
         <Calculator />
-        <HowToStart />
+        <ConnectUs />
         <WhatCanOffer />
         <Faq />
       </Wrapper>
