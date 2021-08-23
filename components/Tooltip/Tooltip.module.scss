@@ -25,7 +25,7 @@
   box-shadow: 0 0.5rem 2rem rgba(99, 97, 95, 0.3);
   z-index: 3;
   opacity: 0;
-  transition: 0.4s opacity ease;
+  transition: opacity 0.4s ease;
   pointer-events: none;
   cursor: auto;
 

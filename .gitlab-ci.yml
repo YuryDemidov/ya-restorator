@@ -1,7 +1,7 @@
 default:
   image: node:16.6.1-alpine
   before_script:
-    - apk add --no-cache libc6-compat
+    - apk add --no-cache libc6-compat chromium
 
 stages:
   - build
@@ -27,7 +27,7 @@ build-job:
   script:
     - npm run build
 
-unit-test-job:
+unit-tests-job:
   stage: test
   only:
     - merge_requests
@@ -37,15 +37,16 @@ unit-test-job:
   script:
     - npm test
 
-intg-test-job:
-  stage: test
-  only:
-    - merge_requests
-    - master
-  before_script:
-    - npm ci --cache .npm --prefer-offline
-  script:
-    - echo "TODO integration tests"
+# visual-tests-job:
+#   stage: test
+#   only:
+#     - merge_requests
+#     - master
+#   before_script:
+#     - npm ci --cache .npm --prefer-offline
+#     - npm run build
+#   script:
+#     - npm run backstop:starttest
 
 image-push-job:
   stage: image-push

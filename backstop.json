@@ -1,0 +1,192 @@
+{
+  "id": "backstop_default",
+  "viewports": [
+    {
+      "label": "big-desktop",
+      "width": 1500,
+      "height": 700
+    },
+    {
+      "label": "desktop",
+      "width": 1200,
+      "height": 700
+    },
+    {
+      "label": "tablet-landscape",
+      "width": 900,
+      "height": 600
+    },
+    {
+      "label": "tablet-portrait",
+      "width": 700,
+      "height": 480
+    },
+    {
+      "label": "phone-only",
+      "width": 500,
+      "height": 480
+    },
+    {
+      "label": "small-phone",
+      "width": 400,
+      "height": 480
+    },
+    {
+      "label": "x-small-phone",
+      "width": 350,
+      "height": 480
+    }
+  ],
+  "onBeforeScript": "puppet/onBefore.js",
+  "onReadyScript": "puppet/onReady.js",
+  "scenarios": [
+    {
+      "label": "without css animations blocks",
+      "cookiePath": "",
+      "url": "http://localhost:3000/",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 5000,
+      "hideSelectors": [],
+      "removeSelectors": ["[data-test='heroImage']", "[data-test='phoneMockup']"],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "beforeInteractionWait": 0,
+      "postInteractionWait": 0,
+      "selectors": [],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "with hero block",
+      "cookiePath": "",
+      "url": "http://localhost:3000/",
+      "referenceUrl": "",
+      "readyEvent": "hero_main_animation_ended",
+      "readySelector": "",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": ["[data-test='phoneMockup']"],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "beforeInteractionWait": 5000,
+      "postInteractionWait": 0,
+      "selectors": [],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true,
+      "viewports": [
+        {
+          "label": "phone-only",
+          "width": 500,
+          "height": 480
+        },
+        {
+          "label": "small-phone",
+          "width": 400,
+          "height": 480
+        },
+        {
+          "label": "x-small-phone",
+          "width": 350,
+          "height": 480
+        }
+      ]
+    },
+    {
+      "label": "with phone block",
+      "cookiePath": "",
+      "url": "http://localhost:3000/",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": ["[data-test='heroImage']"],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "beforeInteractionWait": 5000,
+      "postInteractionWait": 0,
+      "selectors": [],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true,
+      "viewports": [
+        {
+          "label": "big-desktop",
+          "width": 1500,
+          "height": 700
+        },
+        {
+          "label": "desktop",
+          "width": 1200,
+          "height": 700
+        },
+        {
+          "label": "tablet-landscape",
+          "width": 900,
+          "height": 600
+        }
+      ]
+    },
+    {
+      "label": "click on first faq item",
+      "cookiePath": "",
+      "url": "http://localhost:3000/",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "[aria-controls='faq1']",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": ["[data-test='heroImage']", "[data-test='phoneMockup']"],
+      "hoverSelector": "",
+      "clickSelector": "[aria-controls='faq1']",
+      "postInteractionWait": 5000,
+      "selectors": [],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "hover tooltip icon",
+      "cookiePath": "",
+      "url": "http://localhost:3000/",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "[data-test='tooltipIcon']",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": ["[data-test='heroImage']", "[data-test='phoneMockup']"],
+      "hoverSelector": "[data-test='tooltipIcon']",
+      "clickSelector": "",
+      "postInteractionWait": 5000,
+      "selectors": [],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"]
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}
