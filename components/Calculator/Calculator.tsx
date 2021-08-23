@@ -59,12 +59,16 @@ export const Calculator = () => {
     setProfit(newProfit);
   }, [deliveryByYandex, adsInApp, promotions, ordersDaily, averageCheck, period]);
 
+  const submitHandler = (evt: React.SyntheticEvent<HTMLFormElement>) => {
+    evt.preventDefault();
+  };
+
   return (
     <Section id="calculator" className={styles.calculatorSection}>
       <Title className={styles.headline} level="h2">
         Выгода в цифрах
       </Title>
-      <div className={styles.calculator}>
+      <form className={styles.calculator} autoComplete="off" method="post" onSubmit={submitHandler}>
         <CalculatorContext.Provider
           value={{
             profit,
@@ -86,7 +90,7 @@ export const Calculator = () => {
           <CalculatorResults />
           <CalculatorAdditionalOptions />
         </CalculatorContext.Provider>
-      </div>
+      </form>
       <p className={styles.annotation}>
         Пример расчета носит исключительно информационный характер и не является публичной офертой
       </p>

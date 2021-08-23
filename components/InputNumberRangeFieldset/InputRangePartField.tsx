@@ -49,6 +49,7 @@ export const InputRangePartField = ({ id, min, max, step, value, onChange, units
         min={min}
         max={max}
         step={step}
+        size={value.toString().length + 1}
         value={value}
         onChange={onChange}
         onMouseDown={handleFocus}
