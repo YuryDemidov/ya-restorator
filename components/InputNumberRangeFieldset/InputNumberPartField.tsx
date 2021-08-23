@@ -61,7 +61,6 @@ export const InputNumberPartField = ({
           onChange={onChange}
           onBlur={inputBlurHandler}
           name="number"
-          autoComplete="off"
           size={value.toString().length + 1}
           ref={inputRef}
         />

@@ -16,6 +16,7 @@ export const CalculatorAdditionalOptions = () => {
         id="advertising"
         labelContent={
           <BlockWithTooltip
+            id="advertisingTooltip"
             tooltipText="Удобные инструменты для продвижения вашего ресторана в личном кабинете"
             noMargin>
             Реклама в приложении
@@ -35,6 +36,7 @@ export const CalculatorAdditionalOptions = () => {
         id="promotions"
         labelContent={
           <BlockWithTooltip
+            id="promotionsTooltip"
             tooltipText="В личном кабинете вы можете создавать акции для пользователей: 1+1, скидка на меню или блюдо в подарок"
             noMargin>
             Скидки и акции

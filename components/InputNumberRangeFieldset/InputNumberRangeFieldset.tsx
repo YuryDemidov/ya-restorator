@@ -57,13 +57,17 @@ export const InputNumberRangeFieldset = ({
     }
   };
 
+  const legendId = `${id}Legend`;
+
   return (
-    <fieldset className={styles.fieldset}>
+    <fieldset className={styles.fieldset} aria-labelledby={legendId}>
       <div className={styles.legend}>
-        <legend className={styles.legendText}>{legend}</legend>
+        <span id={legendId} className={styles.legendText}>
+          {legend}
+        </span>
         {moreInfo && (
           <div className={styles.legendIconBox}>
-            <Tooltip>{moreInfo}</Tooltip>
+            <Tooltip id={`${id}Tooltip`}>{moreInfo}</Tooltip>
           </div>
         )}
       </div>

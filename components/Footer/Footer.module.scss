@@ -1,12 +1,10 @@
 @use '~s/tools.scss' as *;
 
 .footer {
-  padding: $indent-l $indent-xs;
-  background: $color-x-dark-dim;
   display: flex;
   justify-content: center;
-  // Временное решение
-  margin-top: auto;
+  padding: $indent-l $indent-xs;
+  background-color: $color-x-dark-dim;
 
   &Section {
     display: flex;
