@@ -5,7 +5,6 @@ import { Hero } from '~c/Hero/Hero';
 import { MobileAppScreen } from '~c/MobileAppScreen/MobileAppScreen';
 import { Profit } from '~c/Profit/Profit';
 import { WhatCanOffer } from '~c/WhatCanOffer/WhatCanOffer';
-import { HowToStart } from '~c/HowToStart/HowToStart';
 import { Conditions } from '~c/Conditions/Conditions';
 import { Faq, faqList } from '~c/Faq/Faq';
 
@@ -71,21 +70,6 @@ describe('Базовые тесты', () => {
 
       it('Содержит правильный текст', () => {
         expect(title.text()).toEqual('Условия сотрудничества');
-      });
-    });
-  });
-
-  describe('Компонент HowToStart', () => {
-    const component = mount(<HowToStart />);
-    const title = component.find('Title');
-
-    describe('Заголовок', () => {
-      it('Только один в компоненте', () => {
-        expect(title.length).toEqual(1);
-      });
-
-      it('Содержит правильный текст', () => {
-        expect(title.text()).toEqual('Три шага, чтобы начать');
       });
     });
   });

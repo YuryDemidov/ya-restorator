@@ -13,7 +13,7 @@ interface IPseudoTrackProps {
 const generateBg = (value: number, min: number, max: number): CSSProperties => {
   const percent = ((value - min) / (max - min)) * 100;
   return {
-    background: `linear-gradient(to right, #FFCC00 ${percent}%, #E6E9F0 ${percent}% 100%)`,
+    backgroundImage: `linear-gradient(to right, #FFCC00 ${percent}%, #E6E9F0 ${percent}%, #E6E9F0 100%)`,
   };
 };
 
@@ -46,11 +46,10 @@ export const InputRangePartField = ({ id, min, max, step, value, onChange, units
         className={styles.fieldRangeInput}
         type="range"
         name="range"
-        autoComplete="off"
-        size={value.toString().length + 1}
         min={min}
         max={max}
         step={step}
+        size={value.toString().length + 1}
         value={value}
         onChange={onChange}
         onMouseDown={handleFocus}

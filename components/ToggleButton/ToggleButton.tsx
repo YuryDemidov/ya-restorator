@@ -42,7 +42,6 @@ export const ToggleButton = ({
         type="checkbox"
         defaultChecked={isOn}
         onChange={changeHandler}
-        autoComplete="off"
       />
       <label className={styles.label} htmlFor={id}>
         {labelContent}

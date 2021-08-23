@@ -4,9 +4,9 @@ import cn from 'classnames';
 import styles from './Tooltip.module.scss';
 
 const useTooltipPosition = (tooltipIconRef: MutableRefObject<HTMLSpanElement | null>) => {
-  const baseDiffX = 118,
-    additionlDiffX = 10,
-    defaultDiffX = '';
+  const baseDiffX = 118;
+  const additionalDiffX = 10;
+  const defaultDiffX = '';
   const [diffX, setDiffX] = useState(defaultDiffX);
 
   useLayoutEffect(() => {
@@ -26,9 +26,9 @@ const useTooltipPosition = (tooltipIconRef: MutableRefObject<HTMLSpanElement | n
 
       let diffStr = defaultDiffX;
       if (tooltipDiffXLeft > 0) {
-        diffStr = ` + ${tooltipDiffXLeft + additionlDiffX}px`;
+        diffStr = ` + ${tooltipDiffXLeft + additionalDiffX}px`;
       } else if (tooltipDiffXRight > 0) {
-        diffStr = ` - ${tooltipDiffXRight + additionlDiffX}px`;
+        diffStr = ` - ${tooltipDiffXRight + additionalDiffX}px`;
       }
       setDiffX(diffStr);
     };
@@ -41,23 +41,24 @@ const useTooltipPosition = (tooltipIconRef: MutableRefObject<HTMLSpanElement | n
 };
 
 interface ITooltipProps {
+  id: string;
   className?: string;
 }
 
-export const Tooltip: React.FC<ITooltipProps> = ({ className, children }) => {
+export const Tooltip: React.FC<ITooltipProps> = ({ id, className, children }) => {
   const [isVisible, setIsVisible] = useState(false);
   const spanRef = useRef<HTMLSpanElement | null>(null);
   const diffX = useTooltipPosition(spanRef);
 
-  const handleMouseEnter = useCallback(() => {
+  const show = useCallback(() => {
     setIsVisible(true);
-  }, []);
-  const handleMouseLeave = useCallback(() => {
+  }, [setIsVisible]);
+  const hide = useCallback(() => {
     setIsVisible(false);
-  }, []);
-  const handleTouchStart = useCallback(() => {
+  }, [setIsVisible]);
+  const toggle = useCallback(() => {
     setIsVisible((prevValue) => !prevValue);
-  }, []);
+  }, [setIsVisible]);
   const handleClick = useCallback((event: React.SyntheticEvent<HTMLSpanElement>) => {
     event.preventDefault();
   }, []);
@@ -66,15 +67,20 @@ export const Tooltip: React.FC<ITooltipProps> = ({ className, children }) => {
     <span
       ref={spanRef}
       className={cn(styles.icon, className)}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onTouchStart={handleTouchStart}
-      onClick={handleClick}>
+      tabIndex={0}
+      onMouseEnter={show}
+      onMouseLeave={hide}
+      onTouchStart={toggle}
+      onClick={handleClick}
+      onFocus={show}
+      onBlur={hide}>
       <span
-        style={{ left: `calc(50%${diffX})` }}
+        id={id}
         className={cn(styles.text, {
           [styles.visible]: isVisible,
-        })}>
+        })}
+        style={{ left: `calc(50%${diffX})` }}
+        aria-hidden={!isVisible}>
         {children}
       </span>
     </span>

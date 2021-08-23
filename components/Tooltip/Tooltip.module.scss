@@ -7,6 +7,10 @@
   cursor: pointer;
   position: relative;
   -webkit-tap-highlight-color: $color-transparent;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .text {

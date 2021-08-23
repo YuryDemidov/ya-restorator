@@ -52,7 +52,10 @@ export const CalculatorBaseValues = () => {
         id="delivery"
         wrapClassName={styles.deliveryToggle}
         labelContent={
-          <BlockWithTooltip tooltipText="Вы можете воспользоваться доставкой партнерами Яндекс.Еды" noMargin>
+          <BlockWithTooltip
+            id="deliveryTooltip"
+            tooltipText="Вы можете воспользоваться доставкой партнерами Яндекс.Еды"
+            noMargin>
             Доставка Яндекс.Еды
           </BlockWithTooltip>
         }

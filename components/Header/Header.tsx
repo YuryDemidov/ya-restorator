@@ -21,7 +21,13 @@ export const Header = () => {
       <div className={styles.wrapper}>
         <div className={styles.headerLeft}>
           <div className={styles.mobileMenu}>
-            <Hamburger toggled={isOpen} toggle={hideMenuOnClick} rounded size={24} />
+            <Hamburger
+              toggled={isOpen}
+              toggle={hideMenuOnClick}
+              rounded
+              size={24}
+              label={`${isOpen ? 'Закрыть' : 'Открыть'} меню`}
+            />
             {isOpen && <Menu onClickMenu={hideMenuOnClick} mobile />}
           </div>
           <div className={styles.logo}>
